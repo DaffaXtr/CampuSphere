@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Complete Payment | CampuSphere</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#131b2e",
+                    "surface-tint": "#0055d5",
+                    "inverse-surface": "#2e3039",
+                    "surface-dim": "#d8d9e5",
+                    "background": "#faf8ff",
+                    "secondary": "#565e74",
+                    "tertiary-fixed": "#ffdbce",
+                    "on-surface-variant": "#424655",
+                    "on-secondary-fixed-variant": "#3f465c",
+                    "surface-container-highest": "#e1e2ee",
+                    "primary-container": "#1a6bff",
+                    "border": "#E2E8F0",
+                    "tertiary-fixed-dim": "#ffb599",
+                    "on-primary-container": "#fffeff",
+                    "on-error": "#ffffff",
+                    "inverse-on-surface": "#eff0fc",
+                    "on-secondary-container": "#5c647a",
+                    "on-tertiary-fixed-variant": "#7f2b00",
+                    "primary": "#0053d3",
+                    "on-error-container": "#93000a",
+                    "error": "#EF4444",
+                    "on-surface": "#191b24",
+                    "surface": "#F8FAFC",
+                    "surface-container-lowest": "#ffffff",
+                    "text-primary": "#0F172A",
+                    "primary-hover": "#0052E0",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#cd4a00",
+                    "on-primary-fixed": "#001849",
+                    "error-container": "#ffdad6",
+                    "on-tertiary": "#ffffff",
+                    "surface-bright": "#faf8ff",
+                    "on-primary": "#ffffff",
+                    "surface-container-low": "#f2f3ff",
+                    "secondary-fixed": "#dae2fd",
+                    "primary-fixed": "#dae1ff",
+                    "surface-container-high": "#e7e7f4",
+                    "outline": "#727687",
+                    "warning": "#F59E0B",
+                    "on-background": "#191b24",
+                    "inverse-primary": "#b3c5ff",
+                    "success": "#10B981",
+                    "text-secondary": "#475569",
+                    "outline-variant": "#c2c6d8",
+                    "tertiary": "#a43a00",
+                    "on-tertiary-container": "#fffdff",
+                    "surface-container": "#ecedf9",
+                    "primary-fixed-dim": "#b3c5ff",
+                    "surface-variant": "#e1e2ee",
+                    "secondary-container": "#dae2fd",
+                    "on-tertiary-fixed": "#370e00",
+                    "secondary-fixed-dim": "#bec6e0",
+                    "on-primary-fixed-variant": "#003fa4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "8px",
+                    "3xl": "80px",
+                    "margin-desktop": "80px",
+                    "2xl": "48px",
+                    "xl": "32px",
+                    "md": "16px",
+                    "margin-mobile": "16px",
+                    "lg": "24px",
+                    "gutter": "24px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "headline-xl-mobile": ["Plus Jakarta Sans"],
+                    "numeric-tabular": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-xl": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "label-sm": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"]
+            },
+            "fontSize": {
+                    "headline-lg": ["2rem", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "headline-xl-mobile": ["2.25rem", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "numeric-tabular": ["1rem", {"fontWeight": "500"}],
+                    "label-md": ["0.875rem", {"lineHeight": "1", "fontWeight": "600"}],
+                    "headline-xl": ["3rem", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["1.5rem", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "label-sm": ["0.75rem", {"lineHeight": "1", "fontWeight": "500"}],
+                    "body-sm": ["0.875rem", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-md": ["1rem", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["1.125rem", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #faf8ff;
+            color: #0F172A;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .flat-card {
+            background: #FFFFFF;
+            border: 1px solid #E2E8F0;
+            border-radius: 12px;
+        }
+        .step-pill {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            border-radius: 9999px;
+            background-color: #f2f3ff;
+            color: #0053d3;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="w-full top-0 sticky z-50 bg-surface-container-lowest border-b border-border">
+<div class="flex justify-between items-center h-20 px-margin-desktop max-w-[1440px] mx-auto">
+<div class="text-headline-md font-headline-md text-primary tracking-tight">CampuSphere</div>
+<div class="hidden md:flex items-center space-y-0 space-x-xl">
+<a class="font-label-md text-label-md text-primary border-b-2 border-primary pb-1" href="#">Merchandise</a>
+<a class="font-label-md text-label-md text-text-secondary hover:text-primary transition-colors" href="#">Articles</a>
+<a class="font-label-md text-label-md text-text-secondary hover:text-primary transition-colors" href="#">Events</a>
+<a class="font-label-md text-label-md text-text-secondary hover:text-primary transition-colors" href="#">About Us</a>
+</div>
+<div class="flex items-center gap-md">
+<div class="relative hidden lg:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface border border-border rounded-lg focus:ring-2 focus:ring-primary/10 focus:border-primary outline-none text-body-sm w-64" placeholder="Search..." type="text"/>
+</div>
+<button class="font-label-md text-label-md px-lg py-sm rounded-lg hover:bg-surface-container-low transition-all active:scale-95 text-text-secondary">Sign In</button>
+<button class="font-label-md text-label-md px-lg py-sm rounded-lg bg-primary text-on-primary hover:bg-primary-hover transition-all active:scale-95">Join Now</button>
+</div>
+</div>
+</nav>
+<main class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-xl">
+<!-- Hero Status Section -->
+<section class="flex flex-col items-center text-center mb-2xl">
+<div class="w-16 h-16 bg-warning/10 text-warning rounded-full flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-[32px]">schedule</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-text-primary mb-xs">Waiting for Payment</h1>
+<p class="text-text-secondary font-body-md mb-lg">Please complete your payment before the timer expires to secure your order.</p>
+<div class="bg-surface-container-low border border-border px-xl py-md rounded-full inline-flex items-center gap-md">
+<span class="text-text-secondary font-label-md">Pay within:</span>
+<span class="font-numeric-tabular text-headline-md text-primary tracking-widest" id="countdown">23:59:59</span>
+</div>
+</section>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: Bank Details & QRIS -->
+<div class="lg:col-span-7 space-y-gutter">
+<!-- Bank Transfer Card -->
+<div class="flat-card p-xl">
+<div class="flex items-center justify-between mb-xl">
+<h2 class="font-headline-md text-headline-md">Bank Transfer Details</h2>
+<img alt="Bank Logo" class="h-8 object-contain" data-alt="A clean, professional minimalist logo of a modern corporate bank with deep navy and silver colors. The logo represents stability and institutional trust, presented on a pure white background in a flat, vector graphic style consistent with a modern SaaS financial interface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqB_AJ5ktGs2PNb61kLrGd18zE8qCtB3SBW3pFi57LDthUEQgW-V0orEmPOLcWAUgFDlFK7O9caaJcGpEUxup01u9iDJNdQ4pdVgxlqX4TNT-KIlFqslIOqxKigp3z-75djequAqvvBLIX5n46Z8Brzv0Bh2igI_3MgITzlyqFtdzsPHPaIm0R1CSeM5Opzoe33yedahcWgcw_FJUMGSllullHEKewmPZE5O46mx4YQLjC8NFvyDNkn5EPsewmIKdQ3eF4QT3PEuoW"/>
+</div>
+<div class="space-y-lg">
+<div class="flex flex-col gap-xs">
+<span class="text-label-sm text-outline uppercase tracking-wider">Bank Name</span>
+<span class="font-body-lg text-text-primary">Bank Central Campus</span>
+</div>
+<div class="flex items-center justify-between p-lg bg-surface border border-border rounded-xl">
+<div class="flex flex-col gap-xs">
+<span class="text-label-sm text-outline uppercase tracking-wider">Account Number</span>
+<span class="font-headline-md text-text-primary tracking-tight">8830 1928 3342 1109</span>
+</div>
+<button class="flex items-center gap-xs text-primary font-label-md hover:bg-primary/5 px-md py-sm rounded-lg transition-colors" onclick="copyToClipboard('8830192833421109', this)">
+<span class="material-symbols-outlined text-[20px]">content_copy</span>
+                                Copy
+                            </button>
+</div>
+<div class="flex flex-col gap-xs">
+<span class="text-label-sm text-outline uppercase tracking-wider">Account Name</span>
+<span class="font-body-lg text-text-primary">CampuSphere Merchandise</span>
+</div>
+</div>
+</div>
+<!-- QRIS Section -->
+<div class="flat-card p-xl">
+<h2 class="font-headline-md text-headline-md mb-xl">E-Wallet / QRIS</h2>
+<div class="flex flex-col md:flex-row items-center gap-xl">
+<div class="p-lg bg-white border border-border rounded-xl shadow-sm relative overflow-hidden group">
+<div class="w-48 h-48 bg-surface-container flex items-center justify-center border-2 border-dashed border-outline-variant rounded-lg">
+<!-- QR Placeholder -->
+<div class="text-center p-md">
+<span class="material-symbols-outlined text-outline-variant text-[48px] mb-sm">qr_code_2</span>
+<p class="text-label-sm text-outline-variant">QR Code will appear here</p>
+</div>
+</div>
+<!-- Mock QR Overlay for visuals -->
+<div class="absolute inset-0 p-lg bg-white opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[64px]">qr_code_scanner</span>
+</div>
+</div>
+<div class="flex-1 space-y-md">
+<p class="text-body-md text-text-secondary">Scan the QRIS code using your preferred E-Wallet application (GoPay, OVO, Dana, ShopeePay) or any mobile banking app.</p>
+<div class="flex flex-wrap gap-md opacity-60">
+<span class="px-md py-xs bg-surface border border-border rounded-full text-label-sm">QRIS Supported</span>
+<span class="px-md py-xs bg-surface border border-border rounded-full text-label-sm">Instant Verification</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Summary & Steps -->
+<div class="lg:col-span-5 space-y-gutter">
+<!-- Total Amount Card -->
+<div class="flat-card p-xl bg-primary-container border-none text-on-primary-container">
+<span class="text-label-sm opacity-80 uppercase tracking-widest">Total Amount to Pay</span>
+<div class="flex items-center justify-between mt-sm">
+<div class="font-headline-xl text-headline-xl">$54.50</div>
+<button class="bg-white/10 hover:bg-white/20 px-lg py-sm rounded-lg backdrop-blur-md transition-all flex items-center gap-xs font-label-md" onclick="copyToClipboard('54.50', this)">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+                            Copy
+                        </button>
+</div>
+<div class="mt-lg pt-lg border-t border-white/20 flex justify-between items-center text-body-sm">
+<span class="opacity-80">Order ID: #CS-MERCH-88219</span>
+<span class="bg-white/20 px-md py-1 rounded-full">Merchandise</span>
+</div>
+</div>
+<!-- Payment Instructions -->
+<div class="flat-card p-xl">
+<h2 class="font-headline-md text-headline-md mb-xl">Payment Instructions</h2>
+<ul class="space-y-lg">
+<li class="flex gap-md">
+<div class="step-pill shrink-0">1</div>
+<p class="text-body-md text-text-primary">Open your <span class="font-semibold text-primary">Mobile Banking App</span> or log in to your Online Banking account.</p>
+</li>
+<li class="flex gap-md">
+<div class="step-pill shrink-0">2</div>
+<p class="text-body-md text-text-primary">Select <span class="font-semibold">Transfer</span>, then choose <span class="font-semibold">Virtual Account</span> or Other Bank.</p>
+</li>
+<li class="flex gap-md">
+<div class="step-pill shrink-0">3</div>
+<p class="text-body-md text-text-primary">Input the virtual account number and the <span class="font-semibold">exact nominal amount</span> mentioned above.</p>
+</li>
+<li class="flex gap-md">
+<div class="step-pill shrink-0">4</div>
+<p class="text-body-md text-text-primary">Verify that the recipient name is <span class="font-semibold">CampuSphere Merchandise</span> and confirm payment.</p>
+</li>
+</ul>
+</div>
+<!-- Action Buttons -->
+<div class="space-y-md pt-lg">
+<button class="w-full py-lg bg-primary text-on-primary font-label-md rounded-xl hover:bg-primary-hover shadow-lg shadow-primary/20 active:scale-[0.98] transition-all flex items-center justify-center gap-md">
+                        I Have Paid
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<div class="grid grid-cols-2 gap-md">
+<button class="py-md border border-border bg-white text-text-primary font-label-md rounded-xl hover:bg-surface transition-all active:scale-[0.98] flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-[20px]">history</span>
+                            History
+                        </button>
+<button class="py-md border border-border bg-white text-text-primary font-label-md rounded-xl hover:bg-surface transition-all active:scale-[0.98] flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined text-[20px]">sync</span>
+                            Check Status
+                        </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Help Section -->
+<section class="mt-3xl text-center max-w-2xl mx-auto">
+<h3 class="font-headline-md text-headline-md mb-md">Need Assistance?</h3>
+<p class="text-text-secondary mb-xl">If you experience any issues or your payment hasn't been verified within 10 minutes, please reach out to our campus support team.</p>
+<div class="flex flex-wrap justify-center gap-md">
+<a class="inline-flex items-center gap-sm font-label-md text-primary hover:underline" href="#">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+                    Live Chat
+                </a>
+<span class="text-outline-variant">|</span>
+<a class="inline-flex items-center gap-sm font-label-md text-primary hover:underline" href="#">
+<span class="material-symbols-outlined text-[20px]">mail</span>
+                    support@campusphere.edu
+                </a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-xl bg-on-secondary-fixed text-surface-container-lowest">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop max-w-[1440px] mx-auto space-y-md md:space-y-0">
+<div class="font-headline-md text-headline-md text-surface-container-lowest">CampuSphere</div>
+<div class="flex flex-wrap justify-center gap-xl">
+<a class="font-label-sm text-label-sm text-outline-variant hover:text-surface-container-lowest transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-outline-variant hover:text-surface-container-lowest transition-colors" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-outline-variant hover:text-surface-container-lowest transition-colors" href="#">Cookie Policy</a>
+<a class="font-label-sm text-label-sm text-outline-variant hover:text-surface-container-lowest transition-colors" href="#">Contact</a>
+</div>
+<div class="font-body-sm text-body-sm text-outline-variant">
+                © 2024 CampuSphere. All rights reserved.
+            </div>
+</div>
+</footer>
+<script>
+        // Countdown Timer Logic
+        function startTimer(duration, display) {
+            var timer = duration, hours, minutes, seconds;
+            setInterval(function () {
+                hours = parseInt(timer / 3600, 10);
+                minutes = parseInt((timer % 3600) / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                hours = hours < 10 ? "0" + hours : hours;
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = hours + ":" + minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    timer = 0;
+                    display.textContent = "EXPIRED";
+                    display.classList.add('text-error');
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            var twentyFourHours = 24 * 60 * 60 - 1;
+            var display = document.querySelector('#countdown');
+            startTimer(twentyFourHours, display);
+        };
+
+        // Copy Clipboard Helper
+        function copyToClipboard(text, btn) {
+            navigator.clipboard.writeText(text).then(() => {
+                const originalContent = btn.innerHTML;
+                btn.innerHTML = `<span class="material-symbols-outlined text-[20px]">check</span> Copied!`;
+                btn.classList.add('text-success');
+                setTimeout(() => {
+                    btn.innerHTML = originalContent;
+                    btn.classList.remove('text-success');
+                }, 2000);
+            });
+        }
+    </script>
+</body></html>

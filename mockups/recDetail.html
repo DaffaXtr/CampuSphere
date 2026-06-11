@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CampuSphere | Student Developer Club Recruitment 2026</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-fixed": "#dae1ff",
+                        "primary-fixed-dim": "#b3c5ff",
+                        "primary-container": "#1a6bff",
+                        "border": "#E2E8F0",
+                        "tertiary-container": "#cd4a00",
+                        "on-surface": "#191b24",
+                        "on-secondary-container": "#5c647a",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#370e00",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "text-secondary": "#475569",
+                        "surface-container-low": "#f2f3ff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-high": "#e7e7f4",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed-variant": "#003fa4",
+                        "surface-variant": "#e1e2ee",
+                        "outline-variant": "#c2c6d8",
+                        "success": "#10B981",
+                        "surface-dim": "#d8d9e5",
+                        "error": "#EF4444",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "on-secondary-fixed": "#131b2e",
+                        "inverse-on-surface": "#eff0fc",
+                        "on-tertiary-container": "#fffdff",
+                        "inverse-surface": "#2e3039",
+                        "surface-tint": "#0055d5",
+                        "tertiary-fixed": "#ffdbce",
+                        "on-primary-fixed": "#001849",
+                        "surface-bright": "#faf8ff",
+                        "surface": "#F8FAFC",
+                        "outline": "#727687",
+                        "surface-container-highest": "#e1e2ee",
+                        "tertiary-fixed-dim": "#ffb599",
+                        "primary": "#0053d3",
+                        "on-primary-container": "#fffeff",
+                        "on-tertiary-fixed-variant": "#7f2b00",
+                        "on-primary-hover": "#0047b5",
+                        "warning": "#F59E0B",
+                        "secondary-container": "#dae2fd",
+                        "text-primary": "#0F172A",
+                        "surface-container": "#ecedf9",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "background": "#faf8ff",
+                        "secondary-fixed": "#dae2fd",
+                        "on-background": "#191b24",
+                        "secondary": "#565e74",
+                        "tertiary": "#a43a00",
+                        "on-secondary": "#ffffff",
+                        "inverse-primary": "#b3c5ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "sm": "8px",
+                        "3xl": "80px",
+                        "margin-desktop": "80px",
+                        "lg": "24px",
+                        "margin-mobile": "16px",
+                        "xs": "4px",
+                        "gutter": "24px",
+                        "2xl": "48px",
+                        "md": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-xl-mobile": ["Plus Jakarta Sans"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "body-lg": ["Inter"],
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "numeric-tabular": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "headline-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "headline-xl-mobile": ["2.25rem", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["0.875rem", {"lineHeight": "1", "fontWeight": "600"}],
+                        "body-md": ["1rem", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-sm": ["0.875rem", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "headline-md": ["1.5rem", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "body-lg": ["1.125rem", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-xl": ["3rem", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "numeric-tabular": ["1rem", {"fontWeight": "500"}],
+                        "label-sm": ["0.75rem", {"lineHeight": "1", "fontWeight": "500"}],
+                        "headline-lg": ["2rem", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar -->
+<header class="w-full top-0 sticky z-50 bg-surface-container-lowest dark:bg-inverse-surface border-b border-border dark:border-outline-variant flat no shadows">
+<nav class="flex justify-between items-center px-margin-desktop py-md max-w-full mx-auto">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">CampuSphere</div>
+<div class="hidden md:flex gap-xl items-center">
+<a class="text-primary dark:text-primary-fixed border-b-2 border-primary pb-1 font-label-md text-label-md hover:text-primary-hover transition-colors duration-200" href="#">Explore</a>
+<a class="text-text-secondary dark:text-on-surface-variant font-label-md text-label-md hover:text-primary-hover transition-colors duration-200" href="#">Merchandise</a>
+<a class="text-text-secondary dark:text-on-surface-variant font-label-md text-label-md hover:text-primary-hover transition-colors duration-200" href="#">Article</a>
+<a class="text-text-secondary dark:text-on-surface-variant font-label-md text-label-md hover:text-primary-hover transition-colors duration-200" href="#">About Us</a>
+</div>
+<div class="flex items-center gap-lg">
+<button class="material-symbols-outlined text-text-secondary dark:text-on-surface-variant scale-95 active:scale-90 transition-transform">shopping_cart</button>
+<button class="bg-primary text-on-primary px-lg py-sm rounded-lg font-label-md text-label-md hover:bg-primary-hover scale-95 active:scale-90 transition-transform">Login</button>
+</div>
+</nav>
+</header>
+<main class="max-w-[1440px] mx-auto px-margin-desktop py-3xl">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-3xl">
+<!-- Left Column: Poster -->
+<div class="lg:col-span-5">
+<div class="sticky top-2xl bg-white rounded-xl border border-border overflow-hidden group shadow-sm transition-all duration-300 hover:shadow-md">
+<img alt="SDC Recruitment Poster" class="w-full aspect-[3/4] object-cover transition-transform duration-500 group-hover:scale-[1.02]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYXjKaOYj38rvdw5FTMz4hNI65pj-zmRRK5dkCRFK21NA-CNACfBl8_DiMDqRGyEjjQgZJV_gq44_AHMRkW7wRuEPv9IBvt0ay5nsRRdbBx2hn_rAkdrdD1pT7vjbwGpi7EZHWAeuGzMohGwkRqtCXZ7vDHLjO_l4Fz3TChzcHNG6G2hCaB-Pl61yhCgL1O8mf1GCI2LCZGY4GJIGEX4Tt1E54S462SQxrM7NnPaLKL0idK4-jGQs54VrW4uHV794xKxXiXJ_sDWNR"/>
+<div class="p-lg bg-surface border-t border-border flex justify-between items-center">
+<div class="flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">terminal</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-text-primary">SDC Portal</p>
+<p class="font-body-sm text-body-sm text-text-secondary">Official Hub</p>
+</div>
+</div>
+<div class="bg-primary-fixed text-primary px-sm py-xs rounded-full text-label-sm font-label-sm">ACTIVE</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Details -->
+<div class="lg:col-span-7 flex flex-col gap-2xl">
+<!-- Header Info -->
+<div class="flex flex-col gap-md">
+<div class="flex items-center gap-sm">
+<span class="bg-secondary-container text-on-secondary-container px-sm py-xs rounded-full text-label-sm font-label-sm">Recruitment 2026</span>
+<span class="text-text-secondary text-label-sm">•</span>
+<span class="text-text-secondary text-label-sm">ID: 0294-SDC</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-text-primary leading-tight">Student Developer Club Recruitment 2026</h1>
+<div class="flex items-center gap-md">
+<div class="font-bold text-headline-md text-primary tracking-tighter">SDC</div>
+<div class="h-6 w-[1px] bg-border"></div>
+<p class="text-text-secondary font-body-md">Student Developer Club</p>
+</div>
+</div>
+<!-- Description -->
+<div class="bg-white p-lg rounded-xl border border-border">
+<p class="text-text-primary text-body-lg leading-relaxed">
+                        Join our community of student innovators and coders. We're looking for passionate individuals to help us build the future of campus tech. At SDC, we don't just write code; we solve real-world problems for students, by students.
+                    </p>
+</div>
+<!-- Bento Grid Sections -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+<!-- Available Roles -->
+<div class="bg-white p-lg rounded-xl border border-border flex flex-col gap-md">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">work</span>
+<h3 class="font-headline-md text-headline-md">Available Roles</h3>
+</div>
+<ul class="flex flex-col gap-sm">
+<li class="flex items-center gap-md p-sm hover:bg-surface rounded-lg transition-colors group">
+<span class="material-symbols-outlined text-text-secondary group-hover:text-primary transition-colors">code</span>
+<span class="text-body-md text-text-primary">Frontend Developer</span>
+</li>
+<li class="flex items-center gap-md p-sm hover:bg-surface rounded-lg transition-colors group">
+<span class="material-symbols-outlined text-text-secondary group-hover:text-primary transition-colors">palette</span>
+<span class="text-body-md text-text-primary">UI/UX Designer</span>
+</li>
+<li class="flex items-center gap-md p-sm hover:bg-surface rounded-lg transition-colors group">
+<span class="material-symbols-outlined text-text-secondary group-hover:text-primary transition-colors">assignment</span>
+<span class="text-body-md text-text-primary">Project Manager</span>
+</li>
+<li class="flex items-center gap-md p-sm hover:bg-surface rounded-lg transition-colors group">
+<span class="material-symbols-outlined text-text-secondary group-hover:text-primary transition-colors">database</span>
+<span class="text-body-md text-text-primary">Backend Developer</span>
+</li>
+</ul>
+</div>
+<!-- Stats & Metadata -->
+<div class="flex flex-col gap-lg">
+<div class="bg-primary p-lg rounded-xl border border-primary text-on-primary flex flex-col gap-xs">
+<p class="text-label-sm font-label-sm opacity-80 uppercase tracking-wider">Application Deadline</p>
+<p class="text-headline-md font-headline-md">Closing in 10 days</p>
+<p class="text-body-sm opacity-70">March 25, 2026</p>
+</div>
+<div class="bg-surface p-lg rounded-xl border border-border flex justify-between items-center">
+<div>
+<p class="text-label-sm font-label-sm text-text-secondary">Current Applicants</p>
+<p class="text-headline-md font-headline-md text-text-primary">142</p>
+</div>
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-white bg-slate-200 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A close-up portrait of a diverse college student smiling warmly, representing an applicant profile. The lighting is soft and natural, emphasizing a bright light-mode aesthetic consistent with a clean campus brand. The background is softly blurred to keep focus on the individual's friendly expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCN8HjGKu6mwUyiwh2MvcOx8-oNND3hcZx6VUE24ZSv2QBQdqBHjilxMpnZGO-sD7lTZpaiXHyykYaDJQS9xxIrIruV7Ue0bixXNK0Fj8ti5YZ5SciEgAjApzk6JMH_Cjo0jwUfbRXhLGYdj2p4F4TL_80qZUz-UwJtvPHWX1gOrXjsIycIBRMbvLJAs0N97yDum6vOzs_eT_NHmpwHu48SXzKBaSqK00oSwbktWIzWbrztYk427V_j01uw03nsKDFhnD23mPCUDD0z"/>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-slate-300 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A portrait of a young female student with glasses, looking professional and enthusiastic. The visual style follows the modern SaaS aesthetic with high-key lighting and a pristine white backdrop. She represents the ambitious student population targeted by the developer club recruitment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1Q7UWgKkczbW3kFiXvXKjdaBYF4ezRNGzryONQXnpqx6C0u7FuunmRp9aC822aVnJxRO64TzbbR4DZ5lPt8sTyfafx-RL9SJk8lEXMM6ZrOm6kYOFGyH80hRpHBouBrVjyl8hZMP2hCGnbquXhnx8uRFlXnm_bCSKfjbywh-skGcettXcXdWOEm8I_JyACFl7Bn9aKujBVyTm76cwjlpB5aeul1fZsnIim2lJz96FRBknNReCMZTrDnikS677sGrpwhyVAPnyR73f"/>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-primary-fixed flex items-center justify-center text-[10px] font-bold text-primary">+140</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Requirements -->
+<div class="bg-white p-lg rounded-xl border border-border flex flex-col gap-md">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">checklist</span>
+<h3 class="font-headline-md text-headline-md">Requirements</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-success mt-1">check_circle</span>
+<p class="text-body-md text-text-primary">Enrolled in at least one STEM-related course this semester.</p>
+</div>
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-success mt-1">check_circle</span>
+<p class="text-body-md text-text-primary">Basic proficiency in Git/GitHub and collaborative workflows.</p>
+</div>
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-success mt-1">check_circle</span>
+<p class="text-body-md text-text-primary">Willingness to commit 5-10 hours per week for club projects.</p>
+</div>
+<div class="flex items-start gap-md">
+<span class="material-symbols-outlined text-success mt-1">check_circle</span>
+<p class="text-body-md text-text-primary">A portfolio or repository showcasing at least one personal project.</p>
+</div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col sm:flex-row gap-lg items-center">
+<button class="w-full sm:w-auto bg-primary text-on-primary px-margin-desktop py-lg rounded-lg font-label-md text-headline-md hover:bg-primary-hover shadow-lg shadow-primary/10 transition-all hover:-translate-y-1 active:translate-y-0">
+                        Apply Now
+                    </button>
+<button class="w-full sm:w-auto bg-white text-text-primary border border-border px-margin-desktop py-lg rounded-lg font-label-md text-headline-md hover:bg-surface transition-all flex items-center justify-center gap-sm group">
+                        Learn More about SDC
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<!-- Sharing/Saved -->
+<div class="flex items-center justify-between py-md border-t border-border">
+<div class="flex gap-md">
+<button class="flex items-center gap-xs text-text-secondary hover:text-primary transition-colors text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-md">share</span> Share Position
+                        </button>
+<button class="flex items-center gap-xs text-text-secondary hover:text-primary transition-colors text-label-sm font-label-sm">
+<span class="material-symbols-outlined text-md">bookmark_border</span> Save for later
+                        </button>
+</div>
+<p class="text-label-sm font-label-sm text-text-secondary italic">Last updated: 2 days ago</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-3xl bg-surface-container dark:bg-inverse-surface border-t border-border dark:border-outline-variant flat no shadows">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-2xl w-full max-w-[1440px] mx-auto">
+<div class="flex flex-col gap-sm items-center md:items-start mb-lg md:mb-0">
+<div class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">CampuSphere</div>
+<p class="font-body-sm text-body-sm text-text-secondary dark:text-on-surface-variant">© 2024 CampuSphere. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-xl">
+<a class="font-body-sm text-body-sm text-text-secondary dark:text-on-surface-variant hover:underline transition-all opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-body-sm text-body-sm text-text-secondary dark:text-on-surface-variant hover:underline transition-all opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="font-body-sm text-body-sm text-text-secondary dark:text-on-surface-variant hover:underline transition-all opacity-80 hover:opacity-100" href="#">Contact Us</a>
+<a class="font-body-sm text-body-sm text-text-secondary dark:text-on-surface-variant hover:underline transition-all opacity-80 hover:opacity-100" href="#">FAQ</a>
+</div>
+</div>
+</footer>
+<script>
+        // Micro-interaction for buttons and hover effects
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('mousedown', () => {
+                btn.style.transform = 'scale(0.97)';
+            });
+            btn.addEventListener('mouseup', () => {
+                btn.style.transform = '';
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = '';
+            });
+        });
+
+        // Simple scroll reveal effect
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-8');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.lg\\:col-span-7 > div').forEach(el => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-8');
+            observer.observe(el);
+        });
+    </script>
+</body></html>

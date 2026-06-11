@@ -1,0 +1,390 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Explore | CampuSphere</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Plus+Jakarta+Sans:wght@100..900&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#424655",
+                        "surface-container-highest": "#e1e2ee",
+                        "on-tertiary-container": "#fffdff",
+                        "primary-fixed-dim": "#b3c5ff",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#131b2e",
+                        "on-secondary-container": "#5c647a",
+                        "text-secondary": "#475569",
+                        "primary-fixed": "#dae1ff",
+                        "border": "#E2E8F0",
+                        "outline-variant": "#c2c6d8",
+                        "inverse-on-surface": "#eff0fc",
+                        "on-primary-fixed-variant": "#003fa4",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#faf8ff",
+                        "surface-container-high": "#e7e7f4",
+                        "background": "#faf8ff",
+                        "tertiary-fixed-dim": "#ffb599",
+                        "secondary-container": "#dae2fd",
+                        "secondary": "#565e74",
+                        "outline": "#727687",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#a43a00",
+                        "surface-container": "#ecedf9",
+                        "on-surface": "#191b24",
+                        "primary-container": "#1a6bff",
+                        "inverse-primary": "#b3c5ff",
+                        "success": "#10B981",
+                        "surface-container-low": "#f2f3ff",
+                        "surface-variant": "#e1e2ee",
+                        "on-primary-fixed": "#001849",
+                        "tertiary-fixed": "#ffdbce",
+                        "primary": "#1A6BFF",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-hover": "#0052E0",
+                        "error-container": "#ffdad6",
+                        "surface-dim": "#d8d9e5",
+                        "on-tertiary": "#ffffff",
+                        "text-primary": "#0F172A",
+                        "inverse-surface": "#2e3039",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "on-primary-container": "#fffeff",
+                        "on-tertiary-fixed": "#370e00",
+                        "error": "#EF4444",
+                        "surface-tint": "#0055d5",
+                        "tertiary-container": "#cd4a00",
+                        "secondary-fixed": "#dae2fd",
+                        "on-background": "#191b24",
+                        "warning": "#F59E0B",
+                        "surface": "#F8FAFC",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "on-tertiary-fixed-variant": "#7f2b00",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "8px",
+                        "xl": "12px",
+                        "2xl": "16px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "3xl": "80px",
+                        "2xl": "48px",
+                        "lg": "24px",
+                        "xs": "4px",
+                        "sm": "8px",
+                        "gutter": "24px",
+                        "md": "16px",
+                        "margin-mobile": "16px",
+                        "xl": "32px",
+                        "margin-desktop": "80px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-xl-mobile": ["Plus Jakarta Sans"],
+                        "headline-md": ["Plus Jakarta Sans"],
+                        "headline-lg": ["Plus Jakarta Sans"],
+                        "label-sm": ["Inter"],
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "numeric-tabular": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["1.125rem", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-xl-mobile": ["2.25rem", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["1.5rem", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "headline-lg": ["2rem", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "label-sm": ["0.75rem", {"lineHeight": "1", "fontWeight": "500"}],
+                        "headline-xl": ["3rem", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "numeric-tabular": ["1rem", {"fontWeight": "500"}],
+                        "label-md": ["0.875rem", {"lineHeight": "1", "fontWeight": "600"}],
+                        "body-sm": ["0.875rem", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "body-md": ["1rem", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #faf8ff;
+            color: #191b24;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(8px);
+            border: 1px solid #E2E8F0;
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md overflow-x-hidden">
+<header class="bg-surface-container-lowest dark:bg-inverse-surface border-b border-border dark:border-outline-variant fixed top-0 left-0 right-0 z-50">
+<div class="flex justify-between items-center w-full px-margin-desktop py-md max-w-full mx-auto"><div class="flex items-center">
+  <span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim cursor-pointer">CampuSphere</span>
+</div>
+<nav class="hidden md:flex items-center gap-lg font-body-md text-body-md"><a class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors cursor-pointer" href="#">Explore</a><a class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors cursor-pointer" href="#">Merchandise</a><a class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors cursor-pointer" href="#">Article</a><a class="text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed-dim transition-colors cursor-pointer" href="#">About Us</a></nav>
+<div class="flex items-center gap-md">
+  <button class="p-2 text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center">
+    <span class="material-symbols-outlined">shopping_cart</span>
+  </button>
+  <button class="p-2 text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center"><span class="material-symbols-outlined">shopping_cart</span></button><button class="bg-primary hover:bg-primary-hover text-on-primary px-lg py-2 rounded-lg font-label-md transition-all active:scale-95">Login</button>
+</div></div>
+</header>
+<main class="pt-[100px] px-margin-desktop pb-3xl mx-auto max-w-full space-y-3xl">
+<!-- Header Section -->
+<div>
+<div class="mb-xl">
+<h1 class="font-headline-xl text-headline-xl text-text-primary mb-xs">Explore CampuSphere</h1>
+<p class="text-text-secondary font-body-lg text-body-lg">Discover what's happening around your campus community today.</p>
+</div>
+<!-- Full-width Sub-nav -->
+<div class="flex items-center gap-lg border-b border-border overflow-x-auto whitespace-nowrap scrollbar-hide">
+<button class="text-primary dark:text-primary-fixed-dim font-bold border-b-2 border-primary dark:border-primary-fixed-dim pb-lg px-2 transition-colors">All</button>
+<button class="text-on-surface-variant hover:text-primary pb-lg px-2 transition-colors">Events</button>
+<button class="text-on-surface-variant hover:text-primary pb-lg px-2 transition-colors">Recruitment</button>
+<button class="text-on-surface-variant hover:text-primary pb-lg px-2 transition-colors">Challenges</button>
+</div>
+</div>
+<!-- Row 1: Featured Event (Full-width Horizontal) -->
+<section>
+<div class="bg-white rounded-2xl border border-border overflow-hidden hover:shadow-lg transition-shadow group flex flex-col md:flex-row">
+<div class="md:w-1/2 lg:w-2/5 h-64 md:h-auto overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A grand university lecture hall filled with students attending a modern technology seminar." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC64WMTr1JSH3GzEwX4GKeKQczvQs2ldcPlNHLjb6cRcHhz53NhyeJXEZQbgBxVyA9OQH6SnTFPv02xTZFaNExMV5MLFNyrsBEOpFdmhdnqDeZzsvJM-HsexhahfzR6IC3sdU-79bQ4PmBzHzowwNDZ_dXWgnBgzB1b00_tmej0gaCk2jE8Lbv-n4ax-5aSEDj0PqOHt4BRPIaXUg2dzrnL_YYeEN_bmiol-TvqFR8LGjJOROb79fsdHTSXAYgHzM9qjSv0aod08dly">
+<div class="absolute top-4 left-4 bg-primary text-white px-3 py-1 rounded-full text-label-sm font-bold uppercase tracking-wider">Featured Event</div>
+</div>
+<div class="p-lg flex flex-col flex-grow justify-center">
+<div class="mb-lg">
+<div class="flex items-center gap-2 text-primary font-label-md mb-2">
+<span class="material-symbols-outlined text-body-md" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+<span class="">June 25, 2026</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg mb-md text-text-primary">Grand Annual Tech Seminar 2026</h2>
+<div class="flex items-center gap-2 text-text-secondary font-body-sm">
+<span class="material-symbols-outlined text-body-sm">location_on</span>
+<span class="">Airlangga Convention Center</span>
+</div>
+<p class="mt-md text-text-secondary font-body-md max-w-2xl">Join us for the most anticipated tech event of the year. Featuring keynote speakers from global tech giants and hands-on workshops on emerging AI trends.</p>
+</div>
+<button class="bg-primary hover:bg-primary-hover text-white px-lg py-3 rounded-lg font-label-md transition-all active:scale-95 w-fit">Register Ticket</button>
+</div>
+</div>
+</section><section class="mt-2xl">
+<h2 class="font-headline-md text-headline-md mb-lg">Other Upcoming Events</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Card 1: HIMA Teknik Informatika -->
+<div class="bg-white border border-border rounded-xl overflow-hidden hover:border-primary transition-colors flex flex-col">
+<div class="aspect-video overflow-hidden">
+<img alt="HIMA Teknik Informatika Poster" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIqB2zFNt3nWkgMg_bYksFuB8HPv8bMuFHeCmEmOYfGrX7_zkwhSUlAZvuVLxLYFQCNvG2lT9rLYTc1AhCwNHIzT4s4cUokwmUzqG9dLr4nyN7B1kTChLzu4k4KyN0Rsj3Hwl9wsARgFSdZRiYdhUYfJqSW0asuJivvL-gFlMWL6nJ3fYwxolOG9Gs4RpYZqb_V_DFPpJcDLMOjJnSZDASzxrIRJ_eYQR-JLYkTZcF5arwc7ftYOAyi04YJ7eJt40facEw3U78Ckm2">
+</div>
+<div class="p-lg flex flex-col flex-grow gap-md">
+<div class="flex items-start gap-md">
+<div class="w-10 h-10 bg-surface rounded-lg flex items-center justify-center border border-border flex-shrink-0">
+<span class="material-symbols-outlined text-primary">groups</span>
+</div>
+<div>
+<h4 class="font-bold text-text-primary">HIMA Teknik Informatika</h4>
+<p class="text-text-secondary text-label-sm">Staff Recruitment 2026</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-xs">
+<span class="bg-surface-container-low text-on-surface-variant px-2 py-0.5 rounded-full text-label-sm">Front-End</span>
+<span class="bg-surface-container-low text-on-surface-variant px-2 py-0.5 rounded-full text-label-sm">UI/UX</span>
+</div>
+<div class="flex items-center justify-between mt-auto pt-md">
+<span class="text-error font-label-md text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-body-sm">schedule</span> Closing in 2d
+</span>
+<button class="text-primary font-label-md hover:underline">Apply</button>
+</div>
+</div>
+</div>
+<!-- Card 2: Campus Startup Hub -->
+<div class="bg-white border border-border rounded-xl overflow-hidden hover:border-primary transition-colors flex flex-col">
+<div class="aspect-video overflow-hidden">
+<img alt="Campus Startup Hub Poster" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLsAuycVp7COkXQOKwJJ6oX5uW6flNZFbj0jl1yuY8Wp7vsYADcYQcFcEEQK_A-G-LnmPn7_bCMbNXU5kQxl2u8VjtnyinjU1V6oU_fVBkggNshHeKx10xE2bRCpRz3zU7oww7v2y6qM2BN_vM7uUnOEEiBqFfcSESN6eq5WmHkG2_ent737jdvci7Nr0h-I8sZ4mjWmVu8otIocLscQXejb21tnLc31jC5YCPHLh5JUrwmFOpF3nCk0-6w">
+</div>
+<div class="p-lg flex flex-col flex-grow gap-md">
+<div class="flex items-start gap-md">
+<div class="w-10 h-10 bg-surface rounded-lg flex items-center justify-center border border-border flex-shrink-0">
+<span class="material-symbols-outlined text-tertiary">rocket_launch</span>
+</div>
+<div>
+<h4 class="font-bold text-text-primary">Campus Startup Hub</h4>
+<p class="text-text-secondary text-label-sm">Project Lead &amp; Ops</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-xs">
+<span class="bg-surface-container-low text-on-surface-variant px-2 py-0.5 rounded-full text-label-sm">Operations</span>
+<span class="bg-surface-container-low text-on-surface-variant px-2 py-0.5 rounded-full text-label-sm">Leadership</span>
+</div>
+<div class="flex items-center justify-between mt-auto pt-md">
+<span class="text-text-secondary font-label-md text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-body-sm">schedule</span> Closing in 5d
+</span>
+<button class="text-primary font-label-md hover:underline">Apply</button>
+</div>
+</div>
+</div>
+<!-- Card 3: Creative Arts Club -->
+<div class="bg-white border border-border rounded-xl overflow-hidden hover:border-primary transition-colors flex flex-col">
+<div class="aspect-video overflow-hidden">
+<img alt="Creative Arts Club Poster" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTbHz_veFBGzKf__BPngKfjfx6cmeYGCKwyaNBGHnfdvxKinxchVqrPmiywjOU85owbpVQQLfn8CLWCMbidgd2F-zLFv39dbAy4vsVxR2eQd6MOFOPbWjTzcXJUCAJWj6611ECrA7er9SeeOppyBqymtDFM29_rW_jHlHC_2y6qLYgzbGkYD1-_NeZpWkIg3iGhy1NJtzwc2GvQ2KZlLYc1YhEnfgTFzAH0z6-rTs1HujlZnUOVev1m4UYt1-6IX3V4wiDqrvdLE7c">
+</div>
+<div class="p-lg flex flex-col flex-grow gap-md">
+<div class="flex items-start gap-md">
+<div class="w-10 h-10 bg-surface rounded-lg flex items-center justify-center border border-border flex-shrink-0">
+<span class="material-symbols-outlined text-warning">palette</span>
+</div>
+<div>
+<h4 class="font-bold text-text-primary">Creative Arts Club</h4>
+<p class="text-text-secondary text-label-sm">Creative Designer</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-xs">
+<span class="bg-surface-container-low text-on-surface-variant px-2 py-0.5 rounded-full text-label-sm">Design</span>
+<span class="bg-surface-container-low text-on-surface-variant px-2 py-0.5 rounded-full text-label-sm">Photography</span>
+</div>
+<div class="flex items-center justify-between mt-auto pt-md">
+<span class="text-text-secondary font-label-md text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-body-sm">schedule</span> Closing in 7d
+</span>
+<button class="text-primary font-label-md hover:underline">Apply</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Row 2: Skill Challenges (2-Column Grid) -->
+<!-- Row 3: Social & Achievements (2-Column Layout) -->
+<!-- Row 4: Recruitment Board (Full-width Grid) -->
+<section>
+<div class="flex items-center justify-between mb-lg">
+<h2 class="font-headline-md text-headline-md">Organization Recruitment Board</h2>
+<button class="text-primary font-label-md hover:underline">View All Positions</button>
+</div>
+<div class="grid grid-cols-1 gap-lg md:grid-cols-3"><!-- Recruitment Card 1 -->
+<div class="bg-white border border-border rounded-xl p-md hover:border-primary transition-colors flex flex-col gap-md">
+<div class="aspect-video overflow-hidden rounded-lg mb-sm">
+<img alt="HIMA Teknik Informatika Recruitment Poster" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLthEoxDQAXNGxGycOnjvX9UF4mGwOoEDgyNlUK0iSsJ5Ei9-sWaUITGC-sGsiivfAjxxhV_WOHoOPwe23_nKQhFY6PnRn0578_OgGCsmDM8H521ip9bS4ZiIC4_eaKjAesK-ajaUjE4BfaRUVHnYA8GYhpdkW7Dg1q1X2hgLh7ksP-m8cu7iUd78qp83HZS67hPvX6YVnrXhVaAL-lwpooizzNJOKLcsMrVCDRdXQh4FIfp14-zExsjELDB">
+</div>
+<div class="flex items-start gap-sm">
+<div class="w-8 h-8 bg-surface rounded-lg flex items-center justify-center border border-border flex-shrink-0">
+<span class="material-symbols-outlined text-primary text-body-md">groups</span>
+</div>
+<div>
+<h4 class="font-bold text-body-sm truncate">HIMA Teknik Informatika</h4>
+<p class="text-text-secondary text-label-sm">Staff Recruitment 2026</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-xs">
+<span class="bg-surface-container-low text-on-surface-variant px-2 py-0.5 rounded-full text-label-sm">Front-End</span>
+<span class="bg-surface-container-low text-on-surface-variant px-2 py-0.5 rounded-full text-label-sm">UI/UX</span>
+</div>
+<div class="flex items-center justify-between mt-auto pt-sm">
+<span class="text-error font-label-md text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-body-sm">schedule</span> 2d
+        </span>
+<button class="text-primary text-label-sm font-label-md hover:underline">Apply</button>
+</div>
+</div>
+<!-- Recruitment Card 2 -->
+<div class="bg-white border border-border rounded-xl p-md hover:border-primary transition-colors flex flex-col gap-md">
+<div class="aspect-video overflow-hidden rounded-lg mb-sm">
+<img alt="Campus Startup Hub Recruitment Poster" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLtndD7xiKSfw-r5BQLLWT1uWya9XLneM_557l3ZKr88Jk1hmf8CeSiezea0ccTwrvcs11ClXtUIwveJxoNbyuuF1gWgaCR5mqdbIbE2-qoq2lP5C5pVok0SnsyGo0kuQiu-yq84GUtiGP9ypninRx_nKEEef5AqIibTZolPKhZAIuLyKPdnNbskxkG8X2kdkY6MTNjzRikJupFiQI78XG21DNSL1ck0QVJXvW7cBku0li37NNGuFmzhFlDn">
+</div>
+<div class="flex items-start gap-sm">
+<div class="w-8 h-8 bg-surface rounded-lg flex items-center justify-center border border-border flex-shrink-0">
+<span class="material-symbols-outlined text-tertiary text-body-md">rocket_launch</span>
+</div>
+<div>
+<h4 class="font-bold text-body-sm truncate">Campus Startup Hub</h4>
+<p class="text-text-secondary text-label-sm">Project Lead &amp; Ops</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-xs">
+<span class="bg-surface-container-low text-on-surface-variant px-2 py-0.5 rounded-full text-label-sm">Operations</span>
+<span class="bg-surface-container-low text-on-surface-variant px-2 py-0.5 rounded-full text-label-sm">Leadership</span>
+</div>
+<div class="flex items-center justify-between mt-auto pt-sm">
+<span class="text-text-secondary font-label-md text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-body-sm">schedule</span> 5d
+        </span>
+<button class="text-primary text-label-sm font-label-md hover:underline">Apply</button>
+</div>
+</div>
+<!-- Recruitment Card 3 -->
+<div class="bg-white border border-border rounded-xl p-md hover:border-primary transition-colors flex flex-col gap-md">
+<div class="aspect-video overflow-hidden rounded-lg mb-sm">
+<img alt="Creative Arts Club Recruitment Poster" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTbHz_veFBGzKf__BPngKfjfx6cmeYGCKwyaNBGHnfdvxKinxchVqrPmiywjOU85owbpVQQLfn8CLWCMbidgd2F-zLFv39dbAy4vsVxR2eQd6MOFOPbWjTzcXJUCAJWj6611ECrA7er9SeeOppyBqymtDFM29_rW_jHlHC_2y6qLYgzbGkYD1-_NeZpWkIg3iGhy1NJtzwc2GvQ2KZlLYc1YhEnfgTFzAH0z6-rTs1HujlZnUOVev1m4UYt1-6IX3V4wiDqrvdLE7c">
+</div>
+<div class="flex items-start gap-sm">
+<div class="w-8 h-8 bg-surface rounded-lg flex items-center justify-center border border-border flex-shrink-0">
+<span class="material-symbols-outlined text-warning text-body-md">palette</span>
+</div>
+<div>
+<h4 class="font-bold text-body-sm truncate">Creative Arts Club</h4>
+<p class="text-text-secondary text-label-sm">Creative Designer</p>
+</div>
+</div>
+<div class="flex flex-wrap gap-xs">
+<span class="bg-surface-container-low text-on-surface-variant px-2 py-0.5 rounded-full text-label-sm">Design</span>
+<span class="bg-surface-container-low text-on-surface-variant px-2 py-0.5 rounded-full text-label-sm">Photography</span>
+</div>
+<div class="flex items-center justify-between mt-auto pt-sm">
+<span class="text-text-secondary font-label-md text-label-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-body-sm">schedule</span> 7d
+        </span>
+<button class="text-primary text-label-sm font-label-md hover:underline">Apply</button>
+</div>
+</div></div>
+</section>
+</main>
+<footer class="bg-surface-container-low dark:bg-on-secondary-fixed border-t border-border dark:border-outline-variant">
+<div class="flex flex-col md:flex-row justify-between items-center w-full px-margin-desktop py-lg max-w-full mx-auto gap-lg">
+<div class="flex flex-col md:flex-row items-center gap-lg">
+<span class="font-headline-md text-headline-md font-bold text-on-surface dark:text-inverse-on-surface">CampuSphere</span>
+<p class="font-label-md text-label-md text-on-surface-variant dark:text-on-secondary-container">© 2024 CampuSphere. All rights reserved.</p>
+</div>
+<div class="flex gap-lg font-label-md text-label-md">
+<a class="text-on-surface-variant dark:text-on-secondary-container hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all duration-300" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant dark:text-on-secondary-container hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all duration-300" href="#">Terms of Service</a>
+<a class="text-on-surface-variant dark:text-on-secondary-container hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all duration-300" href="#">Campus Directory</a>
+<a class="text-on-surface-variant dark:text-on-secondary-container hover:text-primary dark:hover:text-primary-fixed-dim underline transition-all duration-300" href="#">Support</a>
+</div>
+</div>
+</footer>
+<script>
+    // Tab Interaction
+    const tabs = document.querySelectorAll('button.transition-colors');
+    tabs.forEach(tab => {
+        if (tab.parentElement.classList.contains('border-b')) {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => {
+                    if (t.parentElement.classList.contains('border-b')) {
+                        t.classList.remove('text-primary', 'dark:text-primary-fixed-dim', 'font-bold', 'border-b-2', 'border-primary', 'dark:border-primary-fixed-dim');
+                        t.classList.add('text-on-surface-variant');
+                    }
+                });
+                tab.classList.add('text-primary', 'dark:text-primary-fixed-dim', 'font-bold', 'border-b-2', 'border-primary', 'dark:border-primary-fixed-dim');
+                tab.classList.remove('text-on-surface-variant');
+            });
+        }
+    });
+</script>
+
+
+</body></html>
