@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Breadcrumb from '../../components/common/Breadcrumb';
+import ProfileSidebar from '../../components/profile/ProfileSidebar';
 
 const dummyHistory = [
   {
@@ -48,6 +49,7 @@ const dummyHistory = [
 
 const HistoryPage = () => {
   const [activeTab, setActiveTab] = useState('All');
+  const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
 
   // Scroll to top on mount
@@ -58,19 +60,42 @@ const HistoryPage = () => {
   const tabs = ['All', 'Merchandise', 'Events'];
 
   const filteredHistory = dummyHistory.filter(item => {
-    if (activeTab === 'Merchandise') return item.type === 'merchandise';
-    if (activeTab === 'Events') return item.type === 'event';
-    return true;
+    // Filter by Tab
+    const matchesTab = 
+      activeTab === 'All' || 
+      (activeTab === 'Merchandise' && item.type === 'merchandise') || 
+      (activeTab === 'Events' && item.type === 'event');
+    
+    // Filter by Search Query
+    const matchesSearch = item.id.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.items.some(prod => prod.name.toLowerCase().includes(searchQuery.toLowerCase()));
+
+    return matchesTab && matchesSearch;
   });
 
   const getStatusBadge = (status) => {
     switch(status) {
       case 'success':
-        return <span className="px-sm py-xs bg-success/10 text-success text-label-sm font-bold rounded-full flex items-center gap-1"><span className="material-symbols-outlined text-[14px]">check_circle</span> Berhasil</span>;
+        return (
+          <span className="px-3 py-0.5 bg-success/10 text-success text-[11px] font-bold rounded-full flex items-center gap-1 border border-success/20">
+            <span className="material-symbols-outlined text-[14px]">check_circle</span>
+            Berhasil
+          </span>
+        );
       case 'pending':
-        return <span className="px-sm py-xs bg-warning/10 text-warning text-label-sm font-bold rounded-full flex items-center gap-1"><span className="material-symbols-outlined text-[14px]">schedule</span> Menunggu Pembayaran</span>;
+        return (
+          <span className="px-3 py-0.5 bg-warning/10 text-warning text-[11px] font-bold rounded-full flex items-center gap-1 border border-warning/20">
+            <span className="material-symbols-outlined text-[14px]">schedule</span>
+            Menunggu Pembayaran
+          </span>
+        );
       case 'failed':
-        return <span className="px-sm py-xs bg-error/10 text-error text-label-sm font-bold rounded-full flex items-center gap-1"><span className="material-symbols-outlined text-[14px]">cancel</span> Dibatalkan</span>;
+        return (
+          <span className="px-3 py-0.5 bg-error/10 text-error text-[11px] font-bold rounded-full flex items-center gap-1 border border-error/20">
+            <span className="material-symbols-outlined text-[14px]">cancel</span>
+            Dibatalkan
+          </span>
+        );
       default:
         return null;
     }
@@ -81,114 +106,156 @@ const HistoryPage = () => {
   };
 
   const getCardBgByType = (type) => {
-    return type === 'merchandise' ? 'bg-primary/5 text-primary' : 'bg-warning/10 text-warning';
+    return type === 'merchandise' 
+      ? 'bg-primary-magenta/10 text-primary-magenta' 
+      : 'bg-primary-green/10 text-primary-green';
   };
 
   return (
-    <div className="py-lg md:py-xl px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto min-h-screen">
-      <div className="mb-xl">
-        <Breadcrumb items={[
-          { label: 'Profile' },
-          { label: 'Riwayat Transaksi' }
-        ]} />
-      </div>
-
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-md mb-xl">
-        <h1 className="font-headline-lg text-headline-lg text-text-primary">Riwayat Transaksi</h1>
+    <div className="max-w-[1440px] mx-auto min-h-screen flex flex-col relative text-left">
+      
+      {/* Main Layout Container: 2 Columns */}
+      <div className="flex flex-col md:flex-row w-full flex-grow items-stretch">
         
-        {/* Search Bar - Optional UI element */}
-        <div className="relative">
-          <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline-variant text-[20px]">search</span>
-          <input 
-            type="text" 
-            placeholder="Cari Order ID..." 
-            className="pl-10 pr-4 py-2 bg-surface border border-border rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none text-body-sm w-full md:w-64"
-          />
-        </div>
-      </div>
+        {/* Left Side: Sidebar */}
+        <ProfileSidebar activeTab="history" />
 
-      {/* Tabs */}
-      <div className="flex gap-md border-b border-border mb-xl overflow-x-auto no-scrollbar">
-        {tabs.map(tab => (
-          <button
-            key={tab}
-            onClick={() => setActiveTab(tab)}
-            className={`pb-sm font-label-md transition-colors border-b-2 whitespace-nowrap px-sm ${activeTab === tab ? 'text-primary border-primary' : 'text-text-secondary border-transparent hover:text-text-primary'}`}
-          >
-            {tab === 'All' ? 'Semua' : tab}
-          </button>
-        ))}
-      </div>
+        {/* Right Side: Content Area */}
+        <main className="flex-1 py-lg md:py-xl px-margin-mobile md:px-margin-desktop flex flex-col gap-xl">
+          
+          {/* Breadcrumb & Header */}
+          <div>
+            <header className="mb-md hidden md:block">
+              <Breadcrumb items={[
+                { label: 'Profile', path: '/profile' },
+                { label: 'Transactions' }
+              ]} />
+            </header>
 
-      {/* History List */}
-      <div className="space-y-md">
-        {filteredHistory.length === 0 ? (
-          <div className="text-center py-3xl bg-surface border border-border rounded-2xl">
-            <span className="material-symbols-outlined text-[48px] text-outline-variant mb-md">receipt_long</span>
-            <h2 className="font-headline-md text-text-primary mb-xs">Belum Ada Transaksi</h2>
-            <p className="text-text-secondary">Anda belum melakukan transaksi di kategori ini.</p>
-          </div>
-        ) : (
-          filteredHistory.map((item) => (
-            <div key={item.id} className="bg-white border border-border rounded-xl p-md sm:p-lg hover:border-primary/50 transition-colors shadow-sm">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-md mb-md border-b border-border pb-md">
-                <div className="flex items-center gap-sm">
-                  <div className={`w-10 h-10 rounded-full flex items-center justify-center ${getCardBgByType(item.type)}`}>
-                    <span className="material-symbols-outlined text-[20px]">{getIconByType(item.type)}</span>
-                  </div>
-                  <div>
-                    <span className="text-label-sm text-text-secondary uppercase tracking-wider block mb-1">
-                      {item.type === 'merchandise' ? 'Belanja Merchandise' : 'Tiket Event'}
-                    </span>
-                    <span className="font-bold text-text-primary text-label-md">{item.date}</span>
-                  </div>
-                </div>
-                <div className="flex flex-row sm:flex-col items-center sm:items-end justify-between gap-2">
-                  {getStatusBadge(item.status)}
-                  <span className="text-label-sm text-text-secondary font-mono">{item.id}</span>
-                </div>
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-md border-b border-border/60 pb-md mb-lg">
+              <div>
+                <h1 className="font-headline-xl text-headline-xl text-text-primary tracking-tight mb-2">
+                  Riwayat Transaksi
+                </h1>
+                <p className="font-body-md text-body-md text-text-secondary">
+                  Daftar transaksi merchandise resmi dan tiket event kampus Anda.
+                </p>
               </div>
 
-              <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-md">
-                <div className="space-y-1">
-                  {item.items.map((prod, idx) => (
-                    <div key={idx} className="font-body-md text-text-primary">
-                      <span className="font-semibold">{prod.qty}x</span> {prod.name}
-                    </div>
-                  ))}
-                  {item.items.length > 1 && (
-                    <div className="text-label-sm text-text-secondary mt-1">
-                      + {item.items.length - 1} barang lainnya
-                    </div>
-                  )}
-                </div>
-                
-                <div className="flex flex-col sm:items-end gap-2 w-full sm:w-auto mt-md sm:mt-0 pt-md sm:pt-0 border-t border-border sm:border-t-0">
-                  <div className="flex flex-col sm:items-end">
-                    <span className="text-label-sm text-text-secondary mb-1">Total Belanja</span>
-                    <span className="font-bold text-headline-sm text-text-primary">{item.totalAmount}</span>
-                  </div>
-                  
-                  <div className="flex gap-2 w-full sm:w-auto mt-2">
-                    {item.status === 'pending' && (
-                      <button 
-                        onClick={() => navigate(`/merchandise/1/payment`)} 
-                        className="flex-1 sm:flex-none px-md py-sm bg-primary text-white rounded-lg font-bold text-label-sm hover:bg-primary-hover transition-colors text-center"
-                      >
-                        Lanjut Bayar
-                      </button>
-                    )}
-                    <button className="flex-1 sm:flex-none px-md py-sm bg-surface text-text-primary border border-border rounded-lg font-bold text-label-sm hover:bg-surface-container transition-colors text-center">
-                      Lihat Detail
-                    </button>
-                  </div>
-                </div>
+              {/* Search Bar */}
+              <div className="relative">
+                <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary text-[20px]">search</span>
+                <input 
+                  type="text" 
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Cari Order ID / barang..." 
+                  className="pl-10 pr-4 py-2.5 bg-white border border-border rounded-xl focus:ring-1 focus:ring-primary-green focus:border-primary-green outline-none text-sm w-full sm:w-64 transition-all"
+                />
               </div>
             </div>
-          ))
-        )}
-      </div>
+          </div>
 
+          {/* Tabs */}
+          <div className="flex gap-md border-b border-border pb-1 overflow-x-auto no-scrollbar">
+            {tabs.map(tab => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`pb-2 font-label-md transition-colors border-b-2 whitespace-nowrap px-md text-sm ${
+                  activeTab === tab 
+                    ? 'text-primary-green border-primary-green font-bold' 
+                    : 'text-text-secondary border-transparent hover:text-text-primary'
+                }`}
+              >
+                {tab === 'All' ? 'Semua Transaksi' : tab === 'Merchandise' ? 'Merchandise' : 'Tiket Event'}
+              </button>
+            ))}
+          </div>
+
+          {/* History List */}
+          <div className="flex flex-col gap-md">
+            {filteredHistory.length === 0 ? (
+              <div className="text-center py-3xl bg-white border border-border border-dashed rounded-2xl flex flex-col items-center justify-center">
+                <span className="material-symbols-outlined text-[48px] text-text-secondary mb-md">receipt_long</span>
+                <h2 className="font-bold text-lg text-text-primary mb-xs">Belum Ada Transaksi</h2>
+                <p className="text-text-secondary text-sm max-w-xs">Anda belum melakukan transaksi di kategori ini.</p>
+              </div>
+            ) : (
+              filteredHistory.map((item) => (
+                <div 
+                  key={item.id} 
+                  className={`bg-white border border-border rounded-2xl p-md sm:p-lg transition-all duration-300 relative overflow-hidden group shadow-sm ${
+                    item.type === 'merchandise' 
+                      ? 'hover:border-primary-magenta/40' 
+                      : 'hover:border-primary-green/40'
+                  }`}
+                >
+                  {/* Decorative side accent bar */}
+                  <div className={`absolute top-0 left-0 w-1.5 h-full transition-opacity ${
+                    item.type === 'merchandise' 
+                      ? 'bg-primary-magenta opacity-30 group-hover:opacity-100' 
+                      : 'bg-primary-green opacity-30 group-hover:opacity-100'
+                  }`}></div>
+
+                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-md mb-md border-b border-border/40 pb-md pl-2">
+                    <div className="flex items-center gap-sm">
+                      <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${getCardBgByType(item.type)}`}>
+                        <span className="material-symbols-outlined text-[20px]">{getIconByType(item.type)}</span>
+                      </div>
+                      <div>
+                        <span className="text-[10px] font-bold text-text-secondary uppercase tracking-wider block mb-0.5">
+                          {item.type === 'merchandise' ? 'Belanja Merchandise' : 'Tiket Event'}
+                        </span>
+                        <span className="font-bold text-text-primary text-sm">{item.date}</span>
+                      </div>
+                    </div>
+                    <div className="flex flex-row sm:flex-col items-center sm:items-end justify-between gap-2">
+                      {getStatusBadge(item.status)}
+                      <span className="text-[11px] text-text-secondary font-mono">{item.id}</span>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-md pl-2">
+                    <div className="space-y-1">
+                      {item.items.map((prod, idx) => (
+                        <div key={idx} className="text-sm text-text-primary">
+                          <span className="font-bold text-text-secondary mr-1">{prod.qty}x</span> {prod.name}
+                        </div>
+                      ))}
+                    </div>
+                    
+                    <div className="flex flex-col sm:items-end gap-2 w-full sm:w-auto mt-md sm:mt-0 pt-md sm:pt-0 border-t border-border/40 sm:border-t-0">
+                      <div className="flex flex-row sm:flex-col items-center sm:items-end justify-between sm:justify-start gap-1 w-full sm:w-auto">
+                        <span className="text-xs text-text-secondary">Total Belanja</span>
+                        <span className={`font-bold text-base md:text-lg ${
+                          item.type === 'merchandise' ? 'text-primary-magenta' : 'text-primary-green'
+                        }`}>
+                          {item.totalAmount}
+                        </span>
+                      </div>
+                      
+                      <div className="flex gap-2 w-full sm:w-auto mt-2">
+                        {item.status === 'pending' && (
+                          <button 
+                            onClick={() => navigate(`/merchandise/1/payment`)} 
+                            className="flex-1 sm:flex-none px-md py-2 bg-primary-magenta hover:bg-bright-magenta text-white rounded-xl font-bold text-xs transition-colors shadow-sm whitespace-nowrap"
+                          >
+                            Lanjut Bayar
+                          </button>
+                        )}
+                        <button className="flex-1 sm:flex-none px-md py-2 bg-surface hover:bg-surface-container-high border border-border text-text-primary rounded-xl font-bold text-xs transition-colors whitespace-nowrap">
+                          Lihat Detail
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))
+            )}
+          </div>
+        </main>
+      </div>
     </div>
   );
 };

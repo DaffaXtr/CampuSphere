@@ -20,6 +20,13 @@ import MerchPaymentPage from './pages/merchandise/MerchPaymentPage';
 import MerchSuccessPage from './pages/merchandise/MerchSuccessPage';
 import MerchCartPage from './pages/merchandise/MerchCartPage';
 import HistoryPage from './pages/profile/HistoryPage';
+import ArticlePage from './pages/article/ArticlePage';
+import ArticleDetailPage from './pages/article/ArticleDetailPage';
+import AboutPage from './pages/about/AboutPage';
+import ProfilePage from './pages/profile/ProfilePage';
+import TicketsPage from './pages/profile/TicketsPage';
+import CertificatesPage from './pages/profile/CertificatesPage';
+import SettingsPage from './pages/profile/SettingsPage';
 
 function App() {
   return (
@@ -46,8 +53,13 @@ function App() {
           <Route path="/merchandise/:id/payment" element={<MerchPaymentPage />} />
           <Route path="/merchandise/success" element={<MerchSuccessPage />} />
           <Route path="/history" element={<HistoryPage />} />
-          <Route path="/article" element={<div className="py-xl px-margin-mobile md:px-margin-desktop max-w-full mx-auto"><h1 className="font-headline-xl">Article</h1></div>} />
-          <Route path="/about" element={<div className="py-xl px-margin-mobile md:px-margin-desktop max-w-full mx-auto"><h1 className="font-headline-xl">About Us</h1></div>} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/tickets" element={<TicketsPage />} />
+          <Route path="/certificates" element={<CertificatesPage />} />
+          <Route path="/settings" element={<SettingsPage />} />
+          <Route path="/article" element={<ArticlePage />} />
+          <Route path="/article/:id" element={<ArticleDetailPage />} />
+          <Route path="/about" element={<AboutPage />} />
         </Routes>
       </Layout>
     </Router>

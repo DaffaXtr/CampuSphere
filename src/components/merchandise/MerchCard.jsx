@@ -1,56 +1,113 @@
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-const MerchCard = ({ id = 1, name, category, price, imageSrc, rating }) => {
+const MerchCard = ({ 
+  id = 1, 
+  name, 
+  category, 
+  price, 
+  imageSrc, 
+  ratingValue = 4.8, 
+  reviewsCount = 120, 
+  soldCount = 150, 
+  storeName = 'HIMTI Official Store', 
+  tag = null 
+}) => {
   const navigate = useNavigate();
+  const [isLiked, setIsLiked] = useState(false);
 
   const handleAddToCart = (e) => {
-    e.preventDefault(); // Mencegah pindah ke halaman detail
-    // Simulasi penambahan barang ke keranjang
+    e.preventDefault(); 
+    e.stopPropagation(); // Mencegah event click merambat ke Link induk
     navigate('/merchandise/cart');
   };
 
+  const handleLikeToggle = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsLiked(!isLiked);
+  };
+
+  const getTagBgColor = (tagText) => {
+    const text = tagText.toUpperCase();
+    if (text === 'BEST SELLER' || text === 'NEW ARRIVAL' || text === 'NEW') {
+      return 'bg-primary-magenta text-white';
+    }
+    if (text === 'POPULAR') {
+      return 'bg-orange-500 text-white';
+    }
+    return 'bg-primary-green text-white'; // default
+  };
+
   return (
-    <Link to={`/merchandise/${id}`} className="bg-white border border-border rounded-xl p-sm md:p-md hover:border-primary transition-colors flex flex-col gap-2 md:gap-md group relative cursor-pointer">
-      {/* Product Image */}
-      <div className="aspect-square overflow-hidden rounded-lg mb-1 md:mb-sm bg-surface-variant flex items-center justify-center relative">
+    <Link 
+      to={`/merchandise/${id}`} 
+      className="bg-white border border-border rounded-2xl p-md hover:border-primary-green/50 hover:shadow-md transition-all duration-300 flex flex-col gap-sm group relative cursor-pointer text-left"
+    >
+      {/* Product Image Area */}
+      <div className="aspect-square overflow-hidden rounded-xl bg-surface-container-high flex items-center justify-center relative">
         <img 
           alt={name} 
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
           src={imageSrc} 
         />
-        {/* Hover overlay for quick action - optional */}
-        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-          <button className="bg-white text-primary px-4 py-2 rounded-lg font-bold text-label-sm shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-all">
-            Quick View
-          </button>
-        </div>
+
+        {/* Top-Left Tag Badge */}
+        {tag && (
+          <span className={`absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full text-[9px] font-bold tracking-wider uppercase ${getTagBgColor(tag)}`}>
+            {tag}
+          </span>
+        )}
+
+        {/* Top-Right Favorite Button */}
+        <button 
+          onClick={handleLikeToggle}
+          className="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-white/85 hover:bg-white text-text-secondary hover:text-primary-magenta shadow-sm flex items-center justify-center transition-all"
+        >
+          <span className={`material-symbols-outlined text-[18px] ${isLiked ? 'fill-primary-magenta text-primary-magenta' : 'text-text-secondary'}`}>
+            favorite
+          </span>
+        </button>
       </div>
       
       {/* Product Details */}
-      <div className="flex flex-col flex-1">
-        <div className="flex items-start justify-between gap-2 mb-1">
-          <h4 className="font-bold text-[13px] md:text-body-md text-text-primary line-clamp-2 group-hover:text-primary transition-colors">
-            {name}
-          </h4>
+      <div className="flex flex-col flex-1 gap-1">
+        {/* Title */}
+        <h4 className="font-bold text-sm text-text-primary line-clamp-2 group-hover:text-primary-green transition-colors leading-snug">
+          {name}
+        </h4>
+        
+        {/* Organization Official Store */}
+        <div className="flex items-center gap-1 mt-0.5">
+          <span className="text-text-secondary font-semibold text-[11px] truncate">
+            {storeName}
+          </span>
+          <span className="material-symbols-outlined text-[14px] text-success fill-success">
+            verified
+          </span>
         </div>
         
-        <p className="text-text-secondary text-[10px] md:text-label-sm mb-2">{category}</p>
-        
-        {/* Rating */}
-        <div className="flex items-center gap-1 mb-auto">
-          <span className="material-symbols-outlined text-warning text-[14px]">star</span>
-          <span className="font-label-sm text-text-secondary text-[10px] md:text-label-sm">{rating}</span>
+        {/* Rating & Sold Social Proof */}
+        <div className="flex items-center gap-1.5 mt-1 text-[11px] text-text-secondary">
+          <div className="flex items-center gap-0.5 text-warning">
+            <span className="material-symbols-outlined text-[13px] fill-current">star</span>
+            <span className="font-bold text-text-primary">{ratingValue}</span>
+            <span className="text-text-secondary text-[10px]">({reviewsCount})</span>
+          </div>
+          <span className="text-border/80">|</span>
+          <span>Terjual {soldCount}</span>
         </div>
 
-        {/* Price & Action */}
-        <div className="flex items-center justify-between mt-3 pt-3 border-t border-border border-dashed">
-          <span className="font-bold text-primary text-[14px] md:text-headline-sm">{price}</span>
+        {/* Price & Cart CTA */}
+        <div className="flex items-center justify-between mt-auto pt-3 border-t border-border/40">
+          <span className="font-extrabold text-primary-green text-sm md:text-base">{price}</span>
+          
           <button 
             onClick={handleAddToCart}
-            className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-surface-container-highest hover:bg-primary text-text-secondary hover:text-white transition-colors flex items-center justify-center"
+            className="w-8 h-8 md:w-9 md:h-9 rounded-xl bg-primary-green hover:bg-secondary-green text-white transition-all shadow-sm flex items-center justify-center active:scale-95 group-hover:shadow"
             title="Tambah ke Keranjang"
           >
-            <span className="material-symbols-outlined text-[16px] md:text-[20px]">add_shopping_cart</span>
+            <span className="material-symbols-outlined text-[18px]">add_shopping_cart</span>
           </button>
         </div>
       </div>

@@ -11,59 +11,68 @@ export default {
   theme: {
     extend: {
       colors: {
-        "on-surface-variant": "#424655",
-        "surface-container-highest": "#e1e2ee",
-        "on-tertiary-container": "#fffdff",
-        "primary-fixed-dim": "#b3c5ff",
+        "on-surface-variant": "#374151", // Dark Gray
+        "surface-container-highest": "#E8F5E9", // Soft Green
+        "on-tertiary-container": "#ffffff",
+        "primary-fixed-dim": "#A5D6A7", // Soft Green Tint
         "on-error": "#ffffff",
-        "on-secondary-fixed": "#131b2e",
-        "on-secondary-container": "#5c647a",
-        "text-secondary": "#475569",
-        "primary-fixed": "#dae1ff",
-        "border": "#E2E8F0",
-        "outline-variant": "#c2c6d8",
-        "inverse-on-surface": "#eff0fc",
-        "on-primary-fixed-variant": "#003fa4",
+        "on-secondary-fixed": "#374151", // Dark Gray
+        "on-secondary-container": "#6B7280", // Medium Gray
+        "text-secondary": "#6B7280", // Medium Gray
+        "primary-fixed": "#C8E6C9", // Soft Green Light
+        "border": "#D1D5DB", // Light Gray
+        "outline-variant": "#D1D5DB", // Light Gray
+        "inverse-on-surface": "#F9FAFB", // Extra Light Gray
+        "on-primary-fixed-variant": "#1B5E20", // Dark Green
         "on-secondary": "#ffffff",
-        "surface-bright": "#faf8ff",
-        "surface-container-high": "#e7e7f4",
-        "background": "#faf8ff",
-        "tertiary-fixed-dim": "#ffb599",
-        "secondary-container": "#dae2fd",
-        "secondary": "#565e74",
-        "outline": "#727687",
+        "surface-bright": "#F9FAFB", // Extra Light Gray
+        "surface-container-high": "#E8F5E9", // Soft Green
+        "background": "#F9FAFB", // Extra Light Gray
+        "tertiary-fixed-dim": "#F8BBD0", // Soft Magenta Tint
+        "secondary-container": "#E8F5E9", // Soft Green
+        "secondary": "#4CAF50", // Secondary Green
+        "outline": "#6B7280", // Medium Gray
         "on-error-container": "#93000a",
-        "tertiary": "#a43a00",
-        "surface-container": "#ecedf9",
-        "on-surface": "#191b24",
-        "primary-container": "#1a6bff",
-        "inverse-primary": "#b3c5ff",
-        "success": "#10B981",
-        "surface-container-low": "#f2f3ff",
-        "surface-variant": "#e1e2ee",
-        "on-primary-fixed": "#001849",
-        "tertiary-fixed": "#ffdbce",
-        "primary": "#1A6BFF",
+        "tertiary": "#D81B60", // Primary Magenta
+        "surface-container": "#F4FAF4", // Light Green
+        "on-surface": "#374151", // Dark Gray
+        "primary-container": "#2E7D32",
+        "inverse-primary": "#A5D6A7", // Soft Green
+        "success": "#2E7D32", // Primary Green
+        "surface-container-low": "#F4FAF4", // Light Green
+        "surface-variant": "#E8F5E9", // Soft Green
+        "on-primary-fixed": "#1B5E20", // Dark Green
+        "tertiary-fixed": "#F8BBD0", // Soft Magenta Tint
+        "primary": "#2E7D32", // Primary Green
         "surface-container-lowest": "#ffffff",
-        "primary-hover": "#0052E0",
+        "primary-hover": "#4CAF50", // Secondary Green
         "error-container": "#ffdad6",
-        "surface-dim": "#d8d9e5",
+        "surface-dim": "#D1D5DB", // Light Gray
         "on-tertiary": "#ffffff",
-        "text-primary": "#0F172A",
-        "inverse-surface": "#2e3039",
-        "on-secondary-fixed-variant": "#3f465c",
-        "on-primary-container": "#fffeff",
-        "on-tertiary-fixed": "#370e00",
+        "text-primary": "#374151", // Dark Gray
+        "inverse-surface": "#374151", // Dark Gray
+        "on-secondary-fixed-variant": "#6B7280", // Medium Gray
+        "on-primary-container": "#ffffff",
+        "on-tertiary-fixed": "#AD1457", // Dark Magenta
         "error": "#EF4444",
-        "surface-tint": "#0055d5",
-        "tertiary-container": "#cd4a00",
-        "secondary-fixed": "#dae2fd",
-        "on-background": "#191b24",
+        "surface-tint": "#2E7D32", // Primary Green
+        "tertiary-container": "#E91E63", // Bright Magenta
+        "secondary-fixed": "#C8E6C9", // Soft Green
+        "on-background": "#374151", // Dark Gray
         "warning": "#F59E0B",
-        "surface": "#F8FAFC",
-        "secondary-fixed-dim": "#bec6e0",
-        "on-tertiary-fixed-variant": "#7f2b00",
-        "on-primary": "#ffffff"
+        "surface": "#F9FAFB", // Extra Light Gray
+        "secondary-fixed-dim": "#A5D6A7", // Soft Green
+        "on-tertiary-fixed-variant": "#AD1457", // Dark Magenta
+        "on-primary": "#ffffff",
+        // Brand Style Guide Specific Palette
+        "primary-green": "#2E7D32",
+        "secondary-green": "#4CAF50",
+        "soft-green": "#E8F5E9",
+        "light-green": "#F4FAF4",
+        "primary-magenta": "#D81B60",
+        "bright-magenta": "#E91E63",
+        "soft-magenta": "#FCE4EC",
+        "dark-magenta": "#AD1457"
       },
       borderRadius: {
         "DEFAULT": "0.25rem",

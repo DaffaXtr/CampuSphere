@@ -18,6 +18,8 @@ const Header = () => {
     return baseClass + "text-on-surface-variant dark:text-on-secondary-fixed-variant hover:text-primary dark:hover:text-primary-fixed-dim";
   };
 
+  const [cartCount, setCartCount] = useState(parseInt(localStorage.getItem('cartCount') || '2'));
+
   // Close profile dropdown if clicked outside
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -27,6 +29,15 @@ const Header = () => {
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
+  // Listen for cart updates
+  useEffect(() => {
+    const handleCartUpdate = () => {
+      setCartCount(parseInt(localStorage.getItem('cartCount') || '2'));
+    };
+    window.addEventListener('cartUpdated', handleCartUpdate);
+    return () => window.removeEventListener('cartUpdated', handleCartUpdate);
   }, []);
 
   return (
@@ -63,9 +74,11 @@ const Header = () => {
         <div className="flex items-center gap-2 md:gap-md">
           <Link to="/merchandise/cart" className="p-1 md:p-2 text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center relative">
             <span className="material-symbols-outlined text-[20px] md:text-[24px]">shopping_cart</span>
-            <span className="absolute top-0 right-0 md:top-1 md:right-1 bg-error text-white text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full border-2 border-surface-container-lowest">
-              2
-            </span>
+            {cartCount > 0 && (
+              <span className="absolute top-0 right-0 md:top-1 md:right-1 bg-error text-white text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full border-2 border-surface-container-lowest">
+                {cartCount > 9 ? '9+' : cartCount}
+              </span>
+            )}
           </Link>
           
           {/* Profile Dropdown */}
@@ -74,7 +87,7 @@ const Header = () => {
               className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-surface-variant overflow-hidden border-2 border-border cursor-pointer hover:border-primary transition-colors shrink-0"
               onClick={() => setIsProfileDropdownOpen(!isProfileDropdownOpen)}
             >
-              <img src="https://ui-avatars.com/api/?name=Student+User&background=0D8ABC&color=fff&size=128" alt="Profile" className="w-full h-full object-cover" />
+              <img src="https://ui-avatars.com/api/?name=Student+User&background=2E7D32&color=fff&size=128" alt="Profile" className="w-full h-full object-cover" />
             </div>
             
             {/* Dropdown Menu */}

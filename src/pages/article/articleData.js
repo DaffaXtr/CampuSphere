@@ -1,0 +1,143 @@
+export const articles = [
+  {
+    id: 1,
+    title: 'Tips Bertahan di Semester 4: Menyeimbangkan Kuliah & Organisasi',
+    excerpt: 'Semester 4 sering kali menjadi titik balik tersibuk mahasiswa dengan beban matakuliah yang semakin berat ditambah tanggung jawab kepengurusan organisasi.',
+    content: [
+      'Memasuki semester 4, atmosfer perkuliahan biasanya mulai berubah secara drastis. Jika pada tahun pertama Anda disibukkan dengan adaptasi kampus dan semester ketiga dengan eksplorasi minat, maka semester 4 adalah masa di mana beban akademis mencapai puncaknya bersamaan dengan tanggung jawab kepengurusan di berbagai organisasi kemahasiswaan.',
+      'Bagi sebagian orang, masa ini terasa sangat melelahkan dan rentan memicu burnout. Namun, dengan strategi manajemen waktu dan prioritas yang matang, Anda tidak hanya bisa bertahan tetapi juga bersinar baik secara akademis maupun keorganisasian.',
+      'Langkah pertama yang paling krusial adalah memahami kapasitas diri. Anda tidak harus menerima setiap tawaran kepanitiaan atau proyek baru. Belajarlah untuk berkata "tidak" pada hal-hal yang sekiranya dapat mengganggu fokus utama Anda saat ini.',
+      'Gunakan alat bantu manajemen waktu digital seperti Google Calendar atau Notion untuk menyusun jadwal secara mingguan. Kelompokkan aktivitas ke dalam blok waktu khusus: waktu kuliah, belajar mandiri, rapat organisasi, dan yang paling penting, waktu untuk beristirahat.',
+      'Ingatlah bahwa tujuan utama Anda berada di kampus adalah untuk belajar. Ketika IPK Anda mulai terancam, saat itulah Anda perlu menarik diri sejenak dari aktivitas non-akademis untuk melakukan evaluasi total.'
+    ],
+    category: 'Tips Kampus',
+    date: '22 Juni 2026',
+    readTime: '5 mnt baca',
+    image: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=800&auto=format&fit=crop',
+    tags: ['Mahasiswa', 'Organisasi', 'Produktif'],
+    author: {
+      name: 'Rian Adisukma',
+      role: 'Staff Humas HIMA TI',
+      avatar: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=150&auto=format&fit=crop',
+      bio: 'Mahasiswa Teknik Informatika angkatan 2024 yang aktif menulis esai dan artikel bertema kemahasiswaan di berbagai media kampus.'
+    }
+  },
+  {
+    id: 2,
+    title: 'Mahasiswa IT CampuSphere Sabet Juara 1 Hackathon Nasional',
+    excerpt: 'Tim mahasiswa dari fakultas Teknologi Informasi berhasil menciptakan aplikasi solusi penanganan sampah mandiri berbasis kecerdasan buatan (AI) di ajang HackFest 2026.',
+    content: [
+      'Kabar membanggakan kembali datang dari dunia prestasi mahasiswa. Tim "SphereTech" yang beranggotakan tiga mahasiswa aktif program studi Teknik Informatika CampuSphere sukses merebut podium pertama dalam kompetisi HackFest Nasional 2026 yang berlangsung akhir pekan lalu.',
+      'Dalam ajang yang diikuti oleh lebih dari 150 tim dari berbagai universitas ternama di Indonesia tersebut, Tim SphereTech mengajukan sebuah inovasi sistem pengelolaan sampah lokal terintegrasi yang dinamai "RecycleAI". Aplikasi ini memanfaatkan algoritma Computer Vision untuk mengenali dan memilah jenis sampah secara real-time.',
+      'Ide ini berawal dari keprihatinan mereka terhadap masalah penumpukan sampah organik dan anorganik di sekitar area kos mahasiswa yang tidak terkelola dengan baik. Dengan RecycleAI, pengguna cukup mengarahkan kamera ponsel ke arah sampah, dan aplikasi akan mendeteksi kategori sampah serta memberikan rekomendasi daur ulang yang cocok.',
+      'Selain visualisasi pemilahan sampah, aplikasi ini juga terhubung dengan pengepul sampah daur ulang terdekat. Pengguna yang aktif menyetorkan sampah terpilah akan mendapatkan poin digital yang bisa ditukarkan dengan berbagai merchandise kampus menarik atau diskon di kantin.',
+      'Kemenangan ini diharapkan mampu memicu semangat inovasi bagi mahasiswa lainnya untuk terus berkarya dan menciptakan solusi nyata yang berdampak langsung bagi masyarakat.'
+    ],
+    category: 'Prestasi',
+    date: '18 Juni 2026',
+    readTime: '4 mnt baca',
+    image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop',
+    tags: ['Prestasi', 'Inovasi', 'Teknologi'],
+    author: {
+      name: 'Sarah Nabila',
+      role: 'Redaktur CampuSphere News',
+      avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop',
+      bio: 'Jurnalis mahasiswa yang bersemangat meliput kisah-kisah inspiratif, inovasi teknologi, dan ajang kompetisi di lingkungan perguruan tinggi.'
+    }
+  },
+  {
+    id: 3,
+    title: 'Panduan Sukses Magang di Perusahaan Startup bagi Pemula',
+    excerpt: 'Magang di startup menawarkan kultur kerja yang dinamis dan kesempatan belajar yang luas. Berikut tips mempersiapkan diri agar magangmu sukses.',
+    content: [
+      'Kini, semakin banyak mahasiswa yang tertarik untuk memulai karir magang mereka di perusahaan rintisan (startup). Fleksibilitas kerja, struktur organisasi yang flat, serta kesempatan memegang tanggung jawab besar menjadi daya tarik utamanya.',
+      'Namun, kultur startup yang bergerak sangat cepat sering kali mengejutkan para pemagang pemula yang belum terbiasa dengan ritme kerja mandiri. Di startup, Anda sering kali dituntut untuk berinisiatif tinggi tanpa menunggu arahan mendetail dari atasan.',
+      'Sebelum melamar, pastikan Anda memahami produk dan visi perusahaan target. Pelajari dasar-dasar industri yang mereka geluti. Hal ini akan tecermin dengan sangat baik saat sesi wawancara, menunjukkan bahwa Anda benar-benar peduli dengan kontribusi yang akan Anda bawa.',
+      'Selama masa magang, jangan ragu untuk bertanya dan berdiskusi. Manfaatkan kesempatan emas ini untuk melakukan networking dengan para profesional yang berpengalaman di bidangnya. Cobalah tawarkan bantuan di luar deskripsi pekerjaan utama Anda jika pekerjaan Anda sudah selesai.',
+      'Terakhir, selalu minta umpan balik (feedback) secara berkala dari mentor atau supervisor Anda. Hal ini sangat penting untuk pertumbuhan profesional dan menjadi poin plus jika perusahaan berniat menawarkan kontrak kerja tetap setelah Anda lulus.'
+    ],
+    category: 'Akademik',
+    date: '15 Juni 2026',
+    readTime: '6 mnt baca',
+    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop',
+    tags: ['Magang', 'Karier', 'Startup'],
+    author: {
+      name: 'Budi Darmawan',
+      role: 'Koordinator Karir & Alumni',
+      avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop',
+      bio: 'Konsultan karir akademis yang berdedikasi membantu mahasiswa menjembatani teori perkuliahan dengan dunia industri kerja nyata.'
+    }
+  },
+  {
+    id: 4,
+    title: 'Mengenal Unit Kegiatan Mahasiswa (UKM) Seni Musik & Teater',
+    excerpt: 'Menjelajahi kreativitas tanpa batas di UKM Seni Musik & Teater CampuSphere, wadah berekspresi bagi mahasiswa pencinta seni panggung.',
+    content: [
+      'Bagi Anda yang memiliki minat mendalam di dunia seni peran, musik, atau sekadar ingin belajar bersosialisasi lewat pertunjukan panggung, Unit Kegiatan Mahasiswa (UKM) Seni Musik & Teater CampuSphere adalah tempat yang paling tepat.',
+      'UKM ini telah lama menjadi salah satu komunitas paling aktif di kampus dengan melahirkan puluhan pementasan teater megah dan konser musik tahunan. Anggota tidak hanya belajar bagaimana cara bernyanyi atau berakting di atas panggung, tetapi juga mendalami manajemen produksi seni.',
+      'Dari tata pencahayaan (lighting), tata suara (sound system), penulisan naskah, hingga promosi acara, semua dikerjakan secara mandiri oleh mahasiswa dengan bimbingan mentor profesional.',
+      'Bergabung dengan UKM seni memberikan Anda ruang aman untuk mengekspresikan diri tanpa takut dihakimi. Banyak anggota baru yang awalnya pemalu kini tampil percaya diri berbicara atau tampil di hadapan ratusan penonton.',
+      'Jika Anda tertarik, pendaftaran anggota baru biasanya dibuka bertepatan dengan masa orientasi mahasiswa. Siapkan mental dan kreativitas Anda untuk memulai petualangan seni yang tak terlupakan!'
+    ],
+    category: 'Kreatif & Seni',
+    date: '10 Juni 2026',
+    readTime: '5 mnt baca',
+    image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=800&auto=format&fit=crop',
+    tags: ['UKM', 'Seni', 'Musik', 'Teater'],
+    author: {
+      name: 'Rian Adisukma',
+      role: 'Staff Humas HIMA TI',
+      avatar: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=150&auto=format&fit=crop',
+      bio: 'Mahasiswa Teknik Informatika angkatan 2024 yang aktif menulis esai dan artikel bertema kemahasiswaan di berbagai media kampus.'
+    }
+  },
+  {
+    id: 5,
+    title: '5 Rekomendasi Buku yang Wajib Dibaca Mahasiswa Baru',
+    excerpt: 'Mulai perjalanan kuliahmu dengan perspektif baru. Berikut adalah 5 buku pilihan yang akan membuka wawasan akademis dan pengembangan dirimu.',
+    content: [
+      'Menjadi mahasiswa baru adalah langkah awal memasuki fase kehidupan yang menuntut kedewasaan berpikir dan kemandirian. Membaca buku pengembangan diri yang berkualitas dapat menjadi pemandu arah yang sangat berguna di masa-masa transisi ini.',
+      'Rekomendasi pertama adalah "Atomic Habits" karya James Clear. Buku ini sangat penting untuk membantu mahasiswa baru membangun rutinitas belajar dan kebiasaan harian yang produktif melalui perubahan-perubahan kecil yang konsisten.',
+      'Kedua, "Deep Work" oleh Cal Newport. Di era gangguan media sosial saat ini, buku ini mengajarkan bagaimana cara fokus secara mendalam pada tugas-tugas akademis yang rumit demi menghasilkan kualitas karya terbaik.',
+      'Ketiga, "Thinking, Fast and Slow" oleh Daniel Kahneman, untuk melatih cara berpikir kritis dan rasional dalam memecahkan masalah akademis maupun sosial di kampus.',
+      'Keempat, "Grit" oleh Angela Duckworth yang membahas pentingnya ketekunan dan passion dalam meraih kesuksesan jangka panjang di perkuliahan.',
+      'Kelima, "How to Win Friends and Influence People" karya Dale Carnegie untuk mengasah kemampuan komunikasi, negosiasi, dan kepemimpinan di organisasi kemahasiswaan.'
+    ],
+    category: 'Tips Kampus',
+    date: '05 Juni 2026',
+    readTime: '4 mnt baca',
+    image: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=800&auto=format&fit=crop',
+    tags: ['Buku', 'Self-Development', 'Mahasiswa Baru'],
+    author: {
+      name: 'Sarah Nabila',
+      role: 'Redaktur CampuSphere News',
+      avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop',
+      bio: 'Jurnalis mahasiswa yang bersemangat meliput kisah-kisah inspiratif, inovasi teknologi, dan ajang kompetisi di lingkungan perguruan tinggi.'
+    }
+  },
+  {
+    id: 6,
+    title: 'Bagaimana Menulis CV yang Menarik untuk Staff Recruitment Kampus',
+    excerpt: 'Ingin lolos kepengurusan BEM atau Himpunan Mahasiswa? Terapkan strategi penulisan CV ATS-friendly dan informatif khusus untuk organisasi kampus.',
+    content: [
+      'Proses seleksi kepengurusan organisasi mahasiswa seperti BEM, Himpunan, atau UKM kini semakin ketat. Salah satu syarat administratif yang sering kali menjadi filter utama adalah Curriculum Vitae (CV).',
+      'Banyak mahasiswa baru yang bingung dalam menulis CV karena belum memiliki pengalaman kerja formal. Padahal, penilai dari kalangan senior lebih berfokus pada potensi kepemimpinan, kepanitiaan di sekolah, serta keahlian teknis dasar.',
+      'Mulailah dengan deskripsi diri yang singkat, padat, dan mencerminkan motivasi Anda bergabung di divisi organisasi yang dituju. Cantumkan riwayat pendidikan formal dan non-formal serta prestasi akademik maupun non-akademik selama sekolah menengah.',
+      'Tuliskan pengalaman kepanitiaan atau organisasi sekolah dengan menjabarkan kontribusi nyata Anda menggunakan metode "Action + Result", bukan sekadar menuliskan daftar tugas. Contoh: "Mengelola anggaran sebesar Rp 5 Juta untuk pensi sekolah dengan tingkat efisiensi 10%".',
+      'Terakhir, perhatikan desain CV Anda. Gunakan template yang bersih, mudah dibaca, dengan ukuran font yang konsisten, dan simpan dalam format PDF untuk mencegah pergeseran tata letak saat dibuka oleh panitia seleksi.'
+    ],
+    category: 'Akademik',
+    date: '02 Juni 2026',
+    readTime: '5 mnt baca',
+    image: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=800&auto=format&fit=crop',
+    tags: ['CV', 'Organisasi', 'Tips Karier'],
+    author: {
+      name: 'Budi Darmawan',
+      role: 'Koordinator Karir & Alumni',
+      avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop',
+      bio: 'Konsultan karir akademis yang berdedikasi membantu mahasiswa menjembatani teori perkuliahan dengan dunia industri kerja nyata.'
+    }
+  }
+];
+
+export const categories = ['Semua Artikel', 'Tips Kampus', 'Prestasi', 'Akademik', 'Kreatif & Seni'];

@@ -27,23 +27,53 @@ const MerchCartPage = () => {
   const [cartItems, setCartItems] = useState(dummyCartItems);
   const navigate = useNavigate();
 
-  // Scroll to top on mount
+  // Scroll to top and sync dummy items with global count on mount
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    const globalCount = parseInt(localStorage.getItem('cartCount') || '2');
+    if (globalCount === 0) {
+      setCartItems([]);
+    } else {
+      const items = [...dummyCartItems];
+      if (globalCount === 1) {
+        items[0].quantity = 1;
+        setCartItems([items[0]]);
+      } else {
+        // distribute the count so the total matches globalCount
+        items[0].quantity = globalCount - 1;
+        items[1].quantity = 1;
+        setCartItems([items[0], items[1]]);
+      }
+    }
   }, []);
 
+  const updateGlobalCartCount = (items) => {
+    const total = items.reduce((acc, curr) => acc + curr.quantity, 0);
+    localStorage.setItem('cartCount', total);
+    window.dispatchEvent(new Event('cartUpdated'));
+  };
+
   const handleQuantityChange = (id, change) => {
-    setCartItems(prev => prev.map(item => {
-      if (item.id === id) {
-        const newQuantity = Math.max(1, item.quantity + change);
-        return { ...item, quantity: newQuantity };
-      }
-      return item;
-    }));
+    setCartItems(prev => {
+      const newItems = prev.map(item => {
+        if (item.id === id) {
+          const newQuantity = Math.max(1, item.quantity + change);
+          return { ...item, quantity: newQuantity };
+        }
+        return item;
+      });
+      updateGlobalCartCount(newItems);
+      return newItems;
+    });
   };
 
   const handleRemove = (id) => {
-    setCartItems(prev => prev.filter(item => item.id !== id));
+    setCartItems(prev => {
+      const newItems = prev.filter(item => item.id !== id);
+      updateGlobalCartCount(newItems);
+      return newItems;
+    });
   };
 
   const calculateSubtotal = () => {

@@ -4,8 +4,8 @@
 
 @layer base {
   body {
-    background-color: #faf8ff;
-    color: #191b24;
+    background-color: #F9FAFB;
+    color: #374151;
     -webkit-font-smoothing: antialiased;
   }
 }
@@ -20,15 +20,15 @@
   .glass-card {
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(8px);
-    border: 1px solid #E2E8F0;
+    border: 1px solid #D1D5DB;
   }
   .bento-card {
     background: #ffffff;
-    border: 1px solid #E2E8F0;
+    border: 1px solid #D1D5DB;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
   .input-glow:focus {
-    box-shadow: 0 0 0 2px rgba(26, 107, 255, 0.1);
+    box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.1);
   }
 }
 

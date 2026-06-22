@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import Breadcrumb from '../../components/common/Breadcrumb';
 import MerchCard from '../../components/merchandise/MerchCard';
 
 const MerchDetailPage = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
 
   // Scroll to top on mount or when ID changes
   useEffect(() => {
@@ -13,6 +14,8 @@ const MerchDetailPage = () => {
 
   const [selectedSize, setSelectedSize] = useState('M');
   const [quantity, setQuantity] = useState(1);
+  const [isAdding, setIsAdding] = useState(false);
+  const [isAdded, setIsAdded] = useState(false);
 
   // Mock product data based on ID
   // In a real app, you would fetch this data from an API
@@ -62,6 +65,28 @@ const MerchDetailPage = () => {
 
   const handleIncreaseQuantity = () => {
     if (quantity < product.stock) setQuantity(quantity + 1);
+  };
+
+  const handleAddToCart = () => {
+    if (isAdding || isAdded) return;
+    
+    setIsAdding(true);
+    
+    // Simulate network request
+    setTimeout(() => {
+      const currentCount = parseInt(localStorage.getItem('cartCount') || '2');
+      localStorage.setItem('cartCount', currentCount + quantity);
+      window.dispatchEvent(new Event('cartUpdated'));
+      
+      setIsAdding(false);
+      setIsAdded(true);
+      
+      // Reset back to normal after 2 seconds
+      setTimeout(() => {
+        setIsAdded(false);
+        setQuantity(1); // optional reset
+      }, 2000);
+    }, 600);
   };
 
   return (
@@ -178,11 +203,30 @@ const MerchDetailPage = () => {
           {/* Call to Actions */}
           <div className="flex flex-col sm:flex-row gap-sm mt-auto">
             <button 
-              onClick={() => navigate('/merchandise/cart')}
-              className="flex-1 py-md border-2 border-primary text-primary rounded-xl font-bold text-label-lg hover:bg-primary hover:text-white transition-colors flex items-center justify-center gap-2 active:scale-95"
+              onClick={handleAddToCart}
+              disabled={isAdding}
+              className={`flex-1 py-md border-2 rounded-xl font-bold text-label-lg transition-all flex items-center justify-center gap-2 active:scale-95 ${
+                isAdded 
+                  ? 'bg-success border-success text-white' 
+                  : 'border-primary text-primary hover:bg-primary hover:text-white disabled:opacity-70 disabled:cursor-wait'
+              }`}
             >
-              <span className="material-symbols-outlined">add_shopping_cart</span>
-              Tambah ke Keranjang
+              {isAdding ? (
+                <>
+                  <span className="material-symbols-outlined">sync</span>
+                  Memproses...
+                </>
+              ) : isAdded ? (
+                <>
+                  <span className="material-symbols-outlined">check_circle</span>
+                  Berhasil Ditambahkan
+                </>
+              ) : (
+                <>
+                  <span className="material-symbols-outlined">add_shopping_cart</span>
+                  Tambah ke Keranjang
+                </>
+              )}
             </button>
             <Link to={`/merchandise/${product.id}/checkout`} className="flex-1 py-md rounded-xl font-bold text-label-lg bg-primary text-white hover:bg-primary-hover transition-colors shadow-md flex items-center justify-center">
               Beli Sekarang
