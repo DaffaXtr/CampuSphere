@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import Breadcrumb from '../../components/common/Breadcrumb';
-import { articles } from './articleData';
+import { articles } from '../../data/articlesData';
 
 const ArticleDetailPage = () => {
   const { id } = useParams();
@@ -182,7 +182,7 @@ const ArticleDetailPage = () => {
             ))}
 
             {/* Blockquote simulation */}
-            <blockquote className="border-l-4 border-primary bg-soft-green/50 p-md rounded-r-xl my-lg italic text-text-secondary text-sm md:text-base">
+            <blockquote className="border-l-4 border-primary bg-soft-blue/50 p-md rounded-r-xl my-lg italic text-text-secondary text-sm md:text-base">
               "Kunci utama dari kesuksesan akademik dan keaktifan berorganisasi bukanlah seberapa banyak waktu yang Anda miliki, melainkan seberapa bijak Anda memilah prioritas dan mengelola energi harian Anda."
             </blockquote>
 

@@ -15,6 +15,9 @@ export const articles = [
     readTime: '5 mnt baca',
     image: 'https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?q=80&w=800&auto=format&fit=crop',
     tags: ['Mahasiswa', 'Organisasi', 'Produktif'],
+    views: 2400,
+    likes: 340,
+    comments: 19,
     author: {
       name: 'Rian Adisukma',
       role: 'Staff Humas HIMA TI',
@@ -38,6 +41,9 @@ export const articles = [
     readTime: '4 mnt baca',
     image: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=800&auto=format&fit=crop',
     tags: ['Prestasi', 'Inovasi', 'Teknologi'],
+    views: 1300,
+    likes: 285,
+    comments: 12,
     author: {
       name: 'Sarah Nabila',
       role: 'Redaktur CampuSphere News',
@@ -61,6 +67,9 @@ export const articles = [
     readTime: '6 mnt baca',
     image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop',
     tags: ['Magang', 'Karier', 'Startup'],
+    views: 1700,
+    likes: 210,
+    comments: 15,
     author: {
       name: 'Budi Darmawan',
       role: 'Koordinator Karir & Alumni',
@@ -84,6 +93,9 @@ export const articles = [
     readTime: '5 mnt baca',
     image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=800&auto=format&fit=crop',
     tags: ['UKM', 'Seni', 'Musik', 'Teater'],
+    views: 1300,
+    likes: 193,
+    comments: 8,
     author: {
       name: 'Rian Adisukma',
       role: 'Staff Humas HIMA TI',
@@ -108,6 +120,9 @@ export const articles = [
     readTime: '4 mnt baca',
     image: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=800&auto=format&fit=crop',
     tags: ['Buku', 'Self-Development', 'Mahasiswa Baru'],
+    views: 1700,
+    likes: 196,
+    comments: 10,
     author: {
       name: 'Sarah Nabila',
       role: 'Redaktur CampuSphere News',
@@ -131,6 +146,191 @@ export const articles = [
     readTime: '5 mnt baca',
     image: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=800&auto=format&fit=crop',
     tags: ['CV', 'Organisasi', 'Tips Karier'],
+    views: 960,
+    likes: 142,
+    comments: 6,
+    author: {
+      name: 'Budi Darmawan',
+      role: 'Koordinator Karir & Alumni',
+      avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop',
+      bio: 'Konsultan karir akademis yang berdedikasi membantu mahasiswa menjembatani teori perkuliahan dengan dunia industri kerja nyata.'
+    }
+  },
+  {
+    id: 7,
+    title: 'Beasiswa Pemerintah 2026 yang Bisa Kamu Daftar Sekarang',
+    excerpt: 'Jangan lewatkan kesempatan emas ini! Berikut daftar beasiswa dari pemerintah yang sedang membuka pendaftaran untuk mahasiswa aktif.',
+    content: [
+      'Setiap tahun pemerintah Indonesia menyediakan berbagai jenis beasiswa untuk mahasiswa berprestasi maupun yang membutuhkan bantuan finansial. Tahun 2026 tidak terkecuali.',
+      'Beasiswa KIP Kuliah tetap menjadi andalan bagi mahasiswa dari keluarga kurang mampu. Selain itu, ada Beasiswa Unggulan Kemendikbud yang menyasar mahasiswa dengan prestasi akademik dan non-akademik luar biasa.',
+      'Untuk mahasiswa yang tertarik melanjutkan studi ke luar negeri, LPDP masih membuka jalur pendaftaran reguler dua kali setahun. Persiapkan IELTS dan esai motivasi Anda dari sekarang.',
+      'Beasiswa Bidik Misi juga masih relevan bagi calon mahasiswa baru yang ingin mendaftar di perguruan tinggi negeri maupun swasta yang bekerja sama dengan pemerintah.',
+      'Pastikan selalu mengecek website resmi masing-masing penyelenggara beasiswa dan ikuti akun media sosial mereka agar tidak ketinggalan informasi pendaftaran terbaru.'
+    ],
+    category: 'Beasiswa',
+    date: '28 Mei 2026',
+    readTime: '4 mnt baca',
+    image: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800&auto=format&fit=crop',
+    tags: ['Beasiswa', 'Pemerintah', 'Finansial'],
+    views: 860,
+    likes: 120,
+    comments: 7,
+    author: {
+      name: 'Dewi Lestari',
+      role: 'HIMA Akuntansi',
+      avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=150&auto=format&fit=crop',
+      bio: 'Mahasiswa akuntansi yang aktif mengurusi informasi beasiswa dan bantuan dana pendidikan di kampus.'
+    }
+  },
+  {
+    id: 8,
+    title: 'Cara Mempersiapkan Diri Sebelum Interview Magang',
+    excerpt: 'Interview magang pertama kali bisa menegangkan. Simak tips persiapan lengkap agar kamu tampil percaya diri dan memukau pewawancara.',
+    content: [
+      'Interview magang adalah momen yang menentukan apakah Anda akan diterima atau tidak di perusahaan impian. Persiapan yang matang adalah kunci utamanya.',
+      'Riset tentang perusahaan secara mendalam. Pahami visi misi, produk utama, dan kultur kerja mereka. Informasi ini bisa ditemukan di website resmi dan LinkedIn.',
+      'Latih menjawab pertanyaan-pertanyaan umum seperti "Ceritakan tentang diri Anda" dan "Mengapa tertarik magang di sini?" dengan metode STAR (Situation, Task, Action, Result).',
+      'Siapkan pertanyaan balik untuk pewawancara. Ini menunjukkan ketertarikan dan inisiatif Anda. Tanyakan tentang project yang akan dikerjakan atau mentorship program.',
+      'Pastikan penampilan rapi dan profesional, serta datang atau join meeting 10-15 menit lebih awal untuk menunjukkan keseriusan Anda.'
+    ],
+    category: 'Karir & Magang',
+    date: '28 Mei 2026',
+    readTime: '4 mnt baca',
+    image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=800&auto=format&fit=crop',
+    tags: ['Interview', 'Magang', 'Karier'],
+    views: 782,
+    likes: 99,
+    comments: 5,
+    author: {
+      name: 'Rian Adisukma',
+      role: 'Staff Humas HIMA TI',
+      avatar: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=150&auto=format&fit=crop',
+      bio: 'Mahasiswa Teknik Informatika angkatan 2024 yang aktif menulis esai dan artikel bertema kemahasiswaan di berbagai media kampus.'
+    }
+  },
+  {
+    id: 9,
+    title: 'Skill Teknologi yang Wajib Dikuasai Mahasiswa 2026',
+    excerpt: 'Dunia kerja terus berevolusi. Ketahui skill teknologi apa saja yang paling dicari perusahaan dan cara mempelajarinya selagi masih kuliah.',
+    content: [
+      'Di era digital saat ini, memiliki kemampuan teknologi menjadi nilai tambah yang sangat besar bagi mahasiswa dari jurusan apapun.',
+      'Python menjadi bahasa pemrograman paling populer karena fleksibilitasnya. Dari data science, web development, hingga AI, Python ada di mana-mana.',
+      'UI/UX Design juga sangat diminati. Tools seperti Figma mempermudah siapa saja untuk belajar mendesain antarmuka aplikasi yang user-friendly.',
+      'Cloud Computing dengan AWS, Azure, atau Google Cloud juga menjadi skill yang sangat dicari. Banyak perusahaan menawarkan sertifikasi gratis untuk mahasiswa.',
+      'Jangan lupakan juga Data Analytics menggunakan tools seperti Excel, SQL, dan Tableau yang menjadi kebutuhan dasar di hampir semua industri modern.'
+    ],
+    category: 'Teknologi',
+    date: '20 Mei 2026',
+    readTime: '4 mnt baca',
+    image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=800&auto=format&fit=crop',
+    tags: ['Teknologi', 'Skill', 'Karier'],
+    views: 665,
+    likes: 88,
+    comments: 4,
+    author: {
+      name: 'Rian Adisukma',
+      role: 'Staff Humas HIMA TI',
+      avatar: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=150&auto=format&fit=crop',
+      bio: 'Mahasiswa Teknik Informatika angkatan 2024 yang aktif menulis esai dan artikel bertema kemahasiswaan di berbagai media kampus.'
+    }
+  },
+  {
+    id: 10,
+    title: 'Cara Lolos Seleksi MBKM Kampus Merdeka 2026',
+    excerpt: 'Program MBKM semakin kompetitif setiap tahunnya. Pelajari strategi agar proposalmu diterima dan raih pengalaman belajar lintas kampus.',
+    content: [
+      'Merdeka Belajar Kampus Merdeka (MBKM) adalah program unggulan Kemendikbud yang memungkinkan mahasiswa belajar di luar kampus selama 1-2 semester.',
+      'Langkah pertama adalah memahami jenis program MBKM yang tersedia: Magang/Praktik Kerja, Pertukaran Mahasiswa, Penelitian/Riset, KKN Tematik, dan lainnya.',
+      'Pastikan IPK Anda minimal 3.0 dan telah menyelesaikan minimal 90 SKS sebelum mendaftar. Persiapkan surat rekomendasi dari dosen pembimbing.',
+      'Tulis proposal yang jelas dan terstruktur, tunjukkan relevansi program MBKM dengan bidang studi dan rencana karir Anda ke depan.',
+      'Manfaatkan jaringan alumni yang sudah pernah mengikuti program MBKM untuk mendapatkan insight dan tips tambahan.'
+    ],
+    category: 'Akademik',
+    date: '15 Mei 2026',
+    readTime: '5 mnt baca',
+    image: 'https://images.unsplash.com/photo-1523050854058-8df90110c476?q=80&w=800&auto=format&fit=crop',
+    tags: ['MBKM', 'Akademik', 'Kampus Merdeka'],
+    views: 2800,
+    likes: 0,
+    comments: 0,
+    author: {
+      name: 'Sarah Nabila',
+      role: 'Redaktur CampuSphere News',
+      avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&auto=format&fit=crop',
+      bio: 'Jurnalis mahasiswa yang bersemangat meliput kisah-kisah inspiratif, inovasi teknologi, dan ajang kompetisi di lingkungan perguruan tinggi.'
+    }
+  },
+  {
+    id: 11,
+    title: 'Tips Persiapan PKKMB untuk Mahasiswa Baru',
+    excerpt: 'PKKMB adalah gerbang pertama kehidupan kampus. Ketahui apa saja yang perlu disiapkan agar kamu siap menghadapi hari-hari pertama di universitas.',
+    content: [
+      'Pengenalan Kehidupan Kampus bagi Mahasiswa Baru (PKKMB) adalah kegiatan wajib yang diselenggarakan setiap awal tahun ajaran.',
+      'Siapkan mental dan fisik yang prima. PKKMB biasanya berlangsung selama beberapa hari penuh dengan rangkaian kegiatan yang padat.',
+      'Pelajari tata tertib dan dress code yang ditetapkan panitia. Biasanya akan ada pengumuman resmi melalui website atau grup komunikasi.',
+      'Manfaatkan momen PKKMB untuk berkenalan dengan teman-teman seangkatan dari berbagai jurusan. Networking awal ini sangat berharga.',
+      'Catat informasi penting yang disampaikan saat sesi orientasi, terutama tentang sistem akademik, fasilitas kampus, dan layanan kemahasiswaan.'
+    ],
+    category: 'Tips Kampus',
+    date: '10 Mei 2026',
+    readTime: '3 mnt baca',
+    image: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=800&auto=format&fit=crop',
+    tags: ['PKKMB', 'Mahasiswa Baru', 'Orientasi'],
+    views: 1800,
+    likes: 0,
+    comments: 0,
+    author: {
+      name: 'Budi Darmawan',
+      role: 'Koordinator Karir & Alumni',
+      avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop',
+      bio: 'Konsultan karir akademis yang berdedikasi membantu mahasiswa menjembatani teori perkuliahan dengan dunia industri kerja nyata.'
+    }
+  },
+  {
+    id: 12,
+    title: 'Beasiswa 2026 yang Wajib Kamu Pertimbangkan dan Cara Mendapatkannya',
+    excerpt: 'Daftar beasiswa lengkap tahun 2026 beserta persyaratan dan tips ampuh meningkatkan peluang keberhasilanmu.',
+    content: [
+      'Beasiswa merupakan salah satu cara terbaik untuk meringankan beban biaya pendidikan sekaligus membuktikan prestasi akademik.',
+      'Tahun 2026 membawa banyak peluang beasiswa baru dari berbagai lembaga pemerintah maupun swasta yang patut dipertimbangkan.',
+      'Selain KIP Kuliah dan LPDP, ada juga beasiswa dari perusahaan besar seperti Djarum, Tanoto Foundation, dan Bank Indonesia.',
+      'Kunci keberhasilan mendapatkan beasiswa adalah persiapan yang matang dan konsistensi dalam membangun portofolio prestasi.',
+      'Mulailah dari sekarang untuk memperkuat CV, mengumpulkan sertifikat kegiatan, dan melatih kemampuan menulis esai motivasi.'
+    ],
+    category: 'Beasiswa',
+    date: '05 Mei 2026',
+    readTime: '5 mnt baca',
+    image: 'https://images.unsplash.com/photo-1606761568499-6d2451b23c66?q=80&w=800&auto=format&fit=crop',
+    tags: ['Beasiswa', 'Pendidikan', 'Finansial'],
+    views: 1600,
+    likes: 0,
+    comments: 0,
+    author: {
+      name: 'Dewi Lestari',
+      role: 'HIMA Akuntansi',
+      avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=150&auto=format&fit=crop',
+      bio: 'Mahasiswa akuntansi yang aktif mengurusi informasi beasiswa dan bantuan dana pendidikan di kampus.'
+    }
+  },
+  {
+    id: 13,
+    title: 'Magang atau Organisasi? Ini Cara Menyeimbangkannya',
+    excerpt: 'Banyak mahasiswa bingung memilih antara magang dan organisasi. Ternyata keduanya bisa berjalan bersamaan dengan strategi yang tepat.',
+    content: [
+      'Dilema antara memilih magang atau fokus berorganisasi sering dihadapi mahasiswa semester atas.',
+      'Kabar baiknya, keduanya tidak harus saling mengorbankan. Dengan manajemen waktu yang baik, keduanya bisa berjalan paralel.',
+      'Pilih magang dengan jadwal fleksibel atau yang memperbolehkan work from home sebagian hari kerja.',
+      'Di sisi organisasi, delegasikan tugas-tugas operasional dan fokus pada peran strategis yang tidak memakan waktu harian.',
+      'Komunikasikan jadwal Anda secara terbuka kepada kedua pihak agar tidak terjadi bentrokan yang merugikan.'
+    ],
+    category: 'Karir & Magang',
+    date: '01 Mei 2026',
+    readTime: '4 mnt baca',
+    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop',
+    tags: ['Magang', 'Organisasi', 'Tips'],
+    views: 1200,
+    likes: 0,
+    comments: 0,
     author: {
       name: 'Budi Darmawan',
       role: 'Koordinator Karir & Alumni',
@@ -140,4 +340,14 @@ export const articles = [
   }
 ];
 
-export const categories = ['Semua Artikel', 'Tips Kampus', 'Prestasi', 'Akademik', 'Kreatif & Seni'];
+export const categories = ['Semua Artikel', 'Akademik', 'Prestasi', 'Karir & Magang', 'Beasiswa', 'Teknologi', 'UKM & Organisasi', 'Kreatif & Seni'];
+
+export const trendingTopics = ['#Semester4', '#PKKMB2026', '#Magang', '#Beasiswa'];
+
+export const articleOrganizations = [
+  { name: 'HIMTI', logoText: 'HI', articleCount: '32 Artikel' },
+  { name: 'BEM FV', logoText: 'BF', articleCount: '26 Artikel' },
+  { name: 'HIMA Akuntansi', logoText: 'HA', articleCount: '34 Artikel' },
+  { name: 'UKM Creative', logoText: 'UC', articleCount: '18 Artikel' },
+  { name: 'HIMA Manajemen', logoText: 'HM', articleCount: '22 Artikel' }
+];

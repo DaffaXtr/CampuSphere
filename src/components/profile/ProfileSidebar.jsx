@@ -36,7 +36,7 @@ const ProfileSidebar = ({ activeTab }) => {
   ];
 
   return (
-    <aside className="w-full md:w-72 bg-surface md:border-r border-border p-md md:p-lg flex flex-col gap-md shrink-0">
+    <aside className="hidden md:flex w-72 bg-surface border-r border-border p-md md:p-lg flex-col gap-md shrink-0">
       
       {/* Student Identity Widget */}
       <div className="px-md py-md bg-white rounded-xl border border-border shadow-sm text-left">
@@ -48,8 +48,8 @@ const ProfileSidebar = ({ activeTab }) => {
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXdMNHYXEridbxzZjCuV8_6AIF4dz-2maZTcytehk3UX-6hevUDytjNVlxuTHuLfDybfLtQkYhHo8qDSiXdK8Z3KHl0tvu3C-zILvkFAil0N4Ru_66xwrmNfaTO9AHGKOVxRIPvnq4REp7jUqL4OORRNo-T-l71qwd92bS0Khgl2sRKBLAgR0lEPZHo4cOnqqpZEc3OcPHca1zbrKo5Nt8skOv1gtzZGdOwQ2rNl4RQHbwh6L17z3U7-AUS9dc0nhoKmDfw-BFVvJu" 
             />
           </div>
-          <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-primary-green/10 text-primary-green font-label-sm text-[10px] border border-primary-green/20">
-            <span className="w-1.5 h-1.5 rounded-full bg-primary-green mr-1"></span>
+          <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-primary-blue/10 text-primary-blue font-label-sm text-[10px] border border-primary-blue/20">
+            <span className="w-1.5 h-1.5 rounded-full bg-primary-blue mr-1"></span>
             Active Student
           </span>
         </div>
@@ -68,7 +68,7 @@ const ProfileSidebar = ({ activeTab }) => {
               to={item.path} 
               className={`flex items-center gap-md p-md rounded-xl transition-all ${
                 isActive 
-                  ? 'bg-primary-green text-white shadow-sm' 
+                  ? 'bg-primary-blue text-white shadow-sm' 
                   : 'text-text-secondary hover:bg-white hover:border-border border border-transparent'
               }`}
             >

@@ -107,8 +107,8 @@ const HistoryPage = () => {
 
   const getCardBgByType = (type) => {
     return type === 'merchandise' 
-      ? 'bg-primary-magenta/10 text-primary-magenta' 
-      : 'bg-primary-green/10 text-primary-green';
+      ? 'bg-soft-yellow text-dark-yellow' 
+      : 'bg-primary-blue/10 text-primary-blue';
   };
 
   return (
@@ -150,7 +150,7 @@ const HistoryPage = () => {
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Cari Order ID / barang..." 
-                  className="pl-10 pr-4 py-2.5 bg-white border border-border rounded-xl focus:ring-1 focus:ring-primary-green focus:border-primary-green outline-none text-sm w-full sm:w-64 transition-all"
+                  className="pl-10 pr-4 py-2.5 bg-white border border-border rounded-xl focus:ring-1 focus:ring-primary-blue focus:border-primary-blue outline-none text-sm w-full sm:w-64 transition-all"
                 />
               </div>
             </div>
@@ -164,7 +164,7 @@ const HistoryPage = () => {
                 onClick={() => setActiveTab(tab)}
                 className={`pb-2 font-label-md transition-colors border-b-2 whitespace-nowrap px-md text-sm ${
                   activeTab === tab 
-                    ? 'text-primary-green border-primary-green font-bold' 
+                    ? 'text-primary-blue border-primary-blue font-bold' 
                     : 'text-text-secondary border-transparent hover:text-text-primary'
                 }`}
               >
@@ -187,15 +187,15 @@ const HistoryPage = () => {
                   key={item.id} 
                   className={`bg-white border border-border rounded-2xl p-md sm:p-lg transition-all duration-300 relative overflow-hidden group shadow-sm ${
                     item.type === 'merchandise' 
-                      ? 'hover:border-primary-magenta/40' 
-                      : 'hover:border-primary-green/40'
+                      ? 'hover:border-primary-yellow/40' 
+                      : 'hover:border-primary-blue/40'
                   }`}
                 >
                   {/* Decorative side accent bar */}
                   <div className={`absolute top-0 left-0 w-1.5 h-full transition-opacity ${
                     item.type === 'merchandise' 
-                      ? 'bg-primary-magenta opacity-30 group-hover:opacity-100' 
-                      : 'bg-primary-green opacity-30 group-hover:opacity-100'
+                      ? 'bg-primary-yellow opacity-30 group-hover:opacity-100' 
+                      : 'bg-primary-blue opacity-30 group-hover:opacity-100'
                   }`}></div>
 
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-md mb-md border-b border-border/40 pb-md pl-2">
@@ -229,7 +229,7 @@ const HistoryPage = () => {
                       <div className="flex flex-row sm:flex-col items-center sm:items-end justify-between sm:justify-start gap-1 w-full sm:w-auto">
                         <span className="text-xs text-text-secondary">Total Belanja</span>
                         <span className={`font-bold text-base md:text-lg ${
-                          item.type === 'merchandise' ? 'text-primary-magenta' : 'text-primary-green'
+                          item.type === 'merchandise' ? 'text-dark-yellow' : 'text-primary-blue'
                         }`}>
                           {item.totalAmount}
                         </span>
@@ -239,7 +239,7 @@ const HistoryPage = () => {
                         {item.status === 'pending' && (
                           <button 
                             onClick={() => navigate(`/merchandise/1/payment`)} 
-                            className="flex-1 sm:flex-none px-md py-2 bg-primary-magenta hover:bg-bright-magenta text-white rounded-xl font-bold text-xs transition-colors shadow-sm whitespace-nowrap"
+                            className="flex-1 sm:flex-none px-md py-2 bg-primary-yellow hover:bg-secondary-yellow text-text-primary rounded-xl font-bold text-xs transition-colors shadow-sm whitespace-nowrap"
                           >
                             Lanjut Bayar
                           </button>

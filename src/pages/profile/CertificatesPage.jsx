@@ -90,26 +90,26 @@ const CertificatesPage = () => {
             {certificates.map((cert) => (
               <div 
                 key={cert.id}
-                className="bg-white border border-border hover:border-primary-green/30 rounded-2xl p-md md:p-lg flex flex-col md:flex-row gap-lg md:items-center justify-between shadow-sm relative overflow-hidden group transition-all duration-300"
+                className="bg-white border border-border hover:border-primary-blue/30 rounded-2xl p-md md:p-lg flex flex-col md:flex-row gap-lg md:items-center justify-between shadow-sm relative overflow-hidden group transition-all duration-300"
               >
                 {/* Decorative Accent Ring/Pills */}
-                <div className="absolute top-0 left-0 w-1.5 h-full bg-primary-green opacity-30 group-hover:opacity-100 transition-opacity"></div>
+                <div className="absolute top-0 left-0 w-1.5 h-full bg-primary-blue opacity-30 group-hover:opacity-100 transition-opacity"></div>
                 
                 <div className="flex-1 space-y-2 pl-2">
                   <div className="flex items-center gap-sm flex-wrap">
-                    <span className="px-2.5 py-0.5 rounded-full bg-primary-green/10 text-primary-green border border-primary-green/20 text-[10px] font-bold uppercase tracking-wider">
+                    <span className="px-2.5 py-0.5 rounded-full bg-primary-blue/10 text-primary-blue border border-primary-blue/20 text-[10px] font-bold uppercase tracking-wider">
                       {cert.category}
                     </span>
-                    <span className="px-2 py-0.5 rounded-full bg-primary-magenta/10 text-primary-magenta border border-primary-magenta/20 text-[10px] font-bold">
+                    <span className="px-2 py-0.5 rounded-full bg-primary-yellow/10 text-dark-yellow border border-primary-yellow/20 text-[10px] font-bold">
                       {cert.points}
                     </span>
-                    <span className="inline-flex items-center text-xs text-success font-semibold gap-1 ml-auto md:ml-0">
+                    <span className="inline-flex items-center text-xs text-primary-blue font-semibold gap-1 ml-auto md:ml-0">
                       <span className="material-symbols-outlined text-base">check_circle</span>
                       Verified
                     </span>
                   </div>
 
-                  <h3 className="font-bold text-base md:text-lg text-text-primary group-hover:text-primary-green transition-colors leading-snug">
+                  <h3 className="font-bold text-base md:text-lg text-text-primary group-hover:text-primary-blue transition-colors leading-snug">
                     {cert.eventName}
                   </h3>
 
@@ -132,7 +132,7 @@ const CertificatesPage = () => {
                 <div className="mt-md md:mt-0 pt-md md:pt-0 border-t border-border/40 md:border-t-0 flex justify-end w-full md:w-auto shrink-0 pl-2">
                   <button 
                     onClick={() => handleDownload(cert.eventName)}
-                    className="w-full md:w-auto bg-primary-green hover:bg-secondary-green text-white text-xs md:text-sm px-md md:px-lg py-2.5 rounded-xl font-label-md transition-all active:scale-95 flex items-center justify-center gap-1.5 shadow-sm"
+                    className="w-full md:w-auto bg-primary-blue hover:bg-secondary-blue text-white text-xs md:text-sm px-md md:px-lg py-2.5 rounded-xl font-label-md transition-all active:scale-95 flex items-center justify-center gap-1.5 shadow-sm"
                   >
                     <span className="material-symbols-outlined text-[18px]">download</span>
                     Unduh Sertifikat (PDF)

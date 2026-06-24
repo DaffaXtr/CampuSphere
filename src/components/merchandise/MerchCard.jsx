@@ -31,18 +31,18 @@ const MerchCard = ({
   const getTagBgColor = (tagText) => {
     const text = tagText.toUpperCase();
     if (text === 'BEST SELLER' || text === 'NEW ARRIVAL' || text === 'NEW') {
-      return 'bg-primary-magenta text-white';
+      return 'bg-primary-yellow text-text-primary font-bold'; // Yellow is bright, so use dark text
     }
     if (text === 'POPULAR') {
       return 'bg-orange-500 text-white';
     }
-    return 'bg-primary-green text-white'; // default
+    return 'bg-primary-blue text-white'; // default
   };
 
   return (
     <Link 
       to={`/merchandise/${id}`} 
-      className="bg-white border border-border rounded-2xl p-md hover:border-primary-green/50 hover:shadow-md transition-all duration-300 flex flex-col gap-sm group relative cursor-pointer text-left"
+      className="bg-white border border-border rounded-2xl p-md hover:border-primary-blue/50 hover:shadow-md transition-all duration-300 flex flex-col gap-sm group relative cursor-pointer text-left"
     >
       {/* Product Image Area */}
       <div className="aspect-square overflow-hidden rounded-xl bg-surface-container-high flex items-center justify-center relative">
@@ -62,9 +62,9 @@ const MerchCard = ({
         {/* Top-Right Favorite Button */}
         <button 
           onClick={handleLikeToggle}
-          className="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-white/85 hover:bg-white text-text-secondary hover:text-primary-magenta shadow-sm flex items-center justify-center transition-all"
+          className="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-white/85 hover:bg-white text-text-secondary hover:text-primary-yellow shadow-sm flex items-center justify-center transition-all"
         >
-          <span className={`material-symbols-outlined text-[18px] ${isLiked ? 'fill-primary-magenta text-primary-magenta' : 'text-text-secondary'}`}>
+          <span className={`material-symbols-outlined text-[18px] ${isLiked ? 'fill-primary-yellow text-primary-yellow' : 'text-text-secondary'}`}>
             favorite
           </span>
         </button>
@@ -73,7 +73,7 @@ const MerchCard = ({
       {/* Product Details */}
       <div className="flex flex-col flex-1 gap-1">
         {/* Title */}
-        <h4 className="font-bold text-sm text-text-primary line-clamp-2 group-hover:text-primary-green transition-colors leading-snug">
+        <h4 className="font-bold text-sm text-text-primary line-clamp-2 group-hover:text-primary-blue transition-colors leading-snug">
           {name}
         </h4>
         
@@ -82,7 +82,7 @@ const MerchCard = ({
           <span className="text-text-secondary font-semibold text-[11px] truncate">
             {storeName}
           </span>
-          <span className="material-symbols-outlined text-[14px] text-success fill-success">
+          <span className="material-symbols-outlined text-[14px] text-primary-blue fill-primary-blue">
             verified
           </span>
         </div>
@@ -100,11 +100,11 @@ const MerchCard = ({
 
         {/* Price & Cart CTA */}
         <div className="flex items-center justify-between mt-auto pt-3 border-t border-border/40">
-          <span className="font-extrabold text-primary-green text-sm md:text-base">{price}</span>
+          <span className="font-extrabold text-primary-blue text-sm md:text-base">{price}</span>
           
           <button 
             onClick={handleAddToCart}
-            className="w-8 h-8 md:w-9 md:h-9 rounded-xl bg-primary-green hover:bg-secondary-green text-white transition-all shadow-sm flex items-center justify-center active:scale-95 group-hover:shadow"
+            className="w-8 h-8 md:w-9 md:h-9 rounded-xl bg-primary-blue hover:bg-secondary-blue text-white transition-all shadow-sm flex items-center justify-center active:scale-95 group-hover:shadow"
             title="Tambah ke Keranjang"
           >
             <span className="material-symbols-outlined text-[18px]">add_shopping_cart</span>

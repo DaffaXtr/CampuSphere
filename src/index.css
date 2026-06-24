@@ -28,7 +28,7 @@
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
   .input-glow:focus {
-    box-shadow: 0 0 0 2px rgba(46, 125, 50, 0.1);
+    box-shadow: 0 0 0 2px rgba(26, 107, 255, 0.15);
   }
 }
 

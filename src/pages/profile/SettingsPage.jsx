@@ -49,8 +49,28 @@ const SettingsPage = () => {
         <ProfileSidebar activeTab="settings" />
 
         {/* Right Side: Content Area */}
-        <main className="flex-1 py-lg md:py-xl px-margin-mobile md:px-margin-desktop flex flex-col gap-xl">
+        <main className="flex-1 py-md md:py-xl px-margin-mobile md:px-margin-desktop flex flex-col gap-sm">
           
+          {/* Mobile Identity Card (Hidden on Desktop) */}
+          <div className="md:hidden bg-white rounded-2xl border border-border shadow-[0_8px_30px_rgb(0,0,0,0.04)] p-4 text-left relative z-20">
+            <div className="flex items-start justify-between mb-sm">
+              <div className="w-12 h-12 rounded-lg overflow-hidden border border-border bg-surface-container-high shrink-0">
+                <img 
+                  alt="Daffa Eka Profile" 
+                  className="w-full h-full object-cover" 
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXdMNHYXEridbxzZjCuV8_6AIF4dz-2maZTcytehk3UX-6hevUDytjNVlxuTHuLfDybfLtQkYhHo8qDSiXdK8Z3KHl0tvu3C-zILvkFAil0N4Ru_66xwrmNfaTO9AHGKOVxRIPvnq4REp7jUqL4OORRNo-T-l71qwd92bS0Khgl2sRKBLAgR0lEPZHo4cOnqqpZEc3OcPHca1zbrKo5Nt8skOv1gtzZGdOwQ2rNl4RQHbwh6L17z3U7-AUS9dc0nhoKmDfw-BFVvJu" 
+                />
+              </div>
+              <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-primary-blue/10 text-primary-blue font-label-sm text-[10px] border border-primary-blue/20">
+                <span className="w-1.5 h-1.5 rounded-full bg-primary-blue mr-1"></span>
+                Active Student
+              </span>
+            </div>
+            <h2 className="font-bold text-base text-text-primary">Daffa Eka</h2>
+            <p className="text-xs text-text-primary font-mono mt-0.5">NIM: 123456789</p>
+            <p className="text-xs text-text-secondary mt-1">S1 Teknik Informatika</p>
+          </div>
+
           {/* Breadcrumb & Header */}
           <div>
             <header className="mb-md hidden md:block">
@@ -76,7 +96,7 @@ const SettingsPage = () => {
             {/* Section 1: Academic Info (Read-only) */}
             <div>
               <h2 className="font-bold text-base md:text-lg text-text-primary mb-md pb-xs border-b border-border/40 flex items-center gap-2">
-                <span className="material-symbols-outlined text-primary-green">school</span>
+                <span className="material-symbols-outlined text-primary-blue">school</span>
                 Informasi Akademik Resmi
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
@@ -117,7 +137,7 @@ const SettingsPage = () => {
             {/* Section 2: Personal Profile Details */}
             <div>
               <h2 className="font-bold text-base md:text-lg text-text-primary mb-md pb-xs border-b border-border/40 flex items-center gap-2">
-                <span className="material-symbols-outlined text-primary-green">person</span>
+                <span className="material-symbols-outlined text-primary-blue">person</span>
                 Detail Profil & Kontak
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-md">
@@ -130,7 +150,7 @@ const SettingsPage = () => {
                     value={formData.fullName} 
                     onChange={handleChange}
                     required
-                    className="w-full px-md py-3 rounded-xl border border-border text-text-primary text-sm focus:border-primary-green focus:ring-1 focus:ring-primary-green outline-none transition-all"
+                    className="w-full px-md py-3 rounded-xl border border-border text-text-primary text-sm focus:border-primary-blue focus:ring-1 focus:ring-primary-blue outline-none transition-all"
                   />
                 </div>
                 <div>
@@ -142,7 +162,7 @@ const SettingsPage = () => {
                     value={formData.email} 
                     onChange={handleChange}
                     required
-                    className="w-full px-md py-3 rounded-xl border border-border text-text-primary text-sm focus:border-primary-green focus:ring-1 focus:ring-primary-green outline-none transition-all"
+                    className="w-full px-md py-3 rounded-xl border border-border text-text-primary text-sm focus:border-primary-blue focus:ring-1 focus:ring-primary-blue outline-none transition-all"
                   />
                 </div>
                 <div>
@@ -154,7 +174,7 @@ const SettingsPage = () => {
                     value={formData.phone} 
                     onChange={handleChange}
                     required
-                    className="w-full px-md py-3 rounded-xl border border-border text-text-primary text-sm focus:border-primary-green focus:ring-1 focus:ring-primary-green outline-none transition-all"
+                    className="w-full px-md py-3 rounded-xl border border-border text-text-primary text-sm focus:border-primary-blue focus:ring-1 focus:ring-primary-blue outline-none transition-all"
                   />
                 </div>
               </div>
@@ -163,7 +183,7 @@ const SettingsPage = () => {
             {/* Section 3: Notification Preferences */}
             <div>
               <h2 className="font-bold text-base md:text-lg text-text-primary mb-md pb-xs border-b border-border/40 flex items-center gap-2">
-                <span className="material-symbols-outlined text-primary-green">notifications</span>
+                <span className="material-symbols-outlined text-primary-blue">notifications</span>
                 Preferensi Notifikasi
               </h2>
               <div className="flex flex-col gap-md">
@@ -173,10 +193,10 @@ const SettingsPage = () => {
                     name="notifyEmail"
                     checked={formData.notifyEmail} 
                     onChange={handleChange}
-                    className="mt-1 w-4 h-4 rounded text-primary-green focus:ring-primary-green border-border cursor-pointer"
+                    className="mt-1 w-4 h-4 rounded text-primary-blue focus:ring-primary-blue border-border cursor-pointer"
                   />
                   <div>
-                    <p className="text-sm font-bold text-text-primary group-hover:text-primary-green transition-colors">Notifikasi Email</p>
+                    <p className="text-sm font-bold text-text-primary group-hover:text-primary-blue transition-colors">Notifikasi Email</p>
                     <p className="text-xs text-text-secondary">Kirimkan salinan e-ticket, kwitansi, dan sertifikat resmi ke email saya.</p>
                   </div>
                 </label>
@@ -187,10 +207,10 @@ const SettingsPage = () => {
                     name="notifyWhatsapp"
                     checked={formData.notifyWhatsapp} 
                     onChange={handleChange}
-                    className="mt-1 w-4 h-4 rounded text-primary-green focus:ring-primary-green border-border cursor-pointer"
+                    className="mt-1 w-4 h-4 rounded text-primary-blue focus:ring-primary-blue border-border cursor-pointer"
                   />
                   <div>
-                    <p className="text-sm font-bold text-text-primary group-hover:text-primary-green transition-colors">Notifikasi WhatsApp</p>
+                    <p className="text-sm font-bold text-text-primary group-hover:text-primary-blue transition-colors">Notifikasi WhatsApp</p>
                     <p className="text-xs text-text-secondary">Kirimkan pengingat absensi seminar dan update event penting langsung via chat WhatsApp.</p>
                   </div>
                 </label>
@@ -201,10 +221,10 @@ const SettingsPage = () => {
                     name="notifyUpcoming"
                     checked={formData.notifyUpcoming} 
                     onChange={handleChange}
-                    className="mt-1 w-4 h-4 rounded text-primary-green focus:ring-primary-green border-border cursor-pointer"
+                    className="mt-1 w-4 h-4 rounded text-primary-blue focus:ring-primary-blue border-border cursor-pointer"
                   />
                   <div>
-                    <p className="text-sm font-bold text-text-primary group-hover:text-primary-green transition-colors">Pengingat Jadwal Kegiatan</p>
+                    <p className="text-sm font-bold text-text-primary group-hover:text-primary-blue transition-colors">Pengingat Jadwal Kegiatan</p>
                     <p className="text-xs text-text-secondary">Kirimkan pengingat 24 jam sebelum kegiatan yang saya ikuti dimulai.</p>
                   </div>
                 </label>
@@ -215,7 +235,7 @@ const SettingsPage = () => {
             <div className="pt-md border-t border-border/40 flex justify-end">
               <button 
                 type="submit" 
-                className="w-full sm:w-auto bg-primary-green hover:bg-secondary-green text-white px-xl py-3.5 rounded-xl font-label-md text-sm transition-all active:scale-95 flex items-center justify-center gap-2 shadow-sm"
+                className="w-full sm:w-auto bg-primary-blue hover:bg-secondary-blue text-white px-xl py-3.5 rounded-xl font-label-md text-sm transition-all active:scale-95 flex items-center justify-center gap-2 shadow-sm"
               >
                 <span className="material-symbols-outlined text-[20px]">save</span>
                 Simpan Perubahan

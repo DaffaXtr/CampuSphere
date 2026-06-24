@@ -104,7 +104,7 @@ const TicketsPage = () => {
                 onClick={() => setActiveSubTab(tab)}
                 className={`pb-2 font-label-md transition-colors border-b-2 whitespace-nowrap px-md text-sm ${
                   activeSubTab === tab 
-                    ? 'text-primary-green border-primary-green font-bold' 
+                    ? 'text-primary-blue border-primary-blue font-bold' 
                     : 'text-text-secondary border-transparent hover:text-text-primary'
                 }`}
               >
@@ -119,19 +119,19 @@ const TicketsPage = () => {
               filteredTickets.map((ticket, index) => (
                 <div 
                   key={index}
-                  className={`bg-white border border-border hover:border-primary-green/30 rounded-2xl p-md md:p-lg flex flex-col md:flex-row gap-lg md:items-center justify-between shadow-sm relative overflow-hidden group transition-all duration-300 ${
+                  className={`bg-white border border-border hover:border-primary-blue/30 rounded-2xl p-md md:p-lg flex flex-col md:flex-row gap-lg md:items-center justify-between shadow-sm relative overflow-hidden group transition-all duration-300 ${
                     ticket.status === 'past' ? 'opacity-70 hover:opacity-100' : ''
                   }`}
                 >
                   {/* Side decorative badge color bar */}
                   <div className={`absolute top-0 left-0 w-1.5 h-full transition-opacity ${
-                    ticket.status === 'past' ? 'bg-text-secondary/30' : 'bg-primary-green opacity-30 group-hover:opacity-100'
+                    ticket.status === 'past' ? 'bg-text-secondary/30' : 'bg-primary-blue opacity-30 group-hover:opacity-100'
                   }`}></div>
                   
                   <div className="flex-1 space-y-2 pl-2">
                     <div className="flex flex-wrap items-center gap-sm">
                       {ticket.status === 'active' ? (
-                        <span className="px-2.5 py-0.5 rounded-full bg-primary-green/10 text-primary-green border border-primary-green/20 text-[10px] font-semibold flex items-center gap-1">
+                        <span className="px-2.5 py-0.5 rounded-full bg-primary-blue/10 text-primary-blue border border-primary-blue/20 text-[10px] font-semibold flex items-center gap-1">
                           <span className="material-symbols-outlined text-xs">check_circle</span>
                           Upcoming Event
                         </span>
@@ -144,20 +144,20 @@ const TicketsPage = () => {
                       <span className="text-[11px] text-text-secondary font-mono">{ticket.id}</span>
                     </div>
 
-                    <h3 className="font-bold text-base md:text-lg text-text-primary group-hover:text-primary-green transition-colors leading-snug">
+                    <h3 className="font-bold text-base md:text-lg text-text-primary group-hover:text-primary-blue transition-colors leading-snug">
                       {ticket.title}
                     </h3>
 
                     <div className="flex flex-wrap gap-x-lg gap-y-1 pt-1">
                       <div className="flex items-center gap-1.5 text-text-secondary">
-                        <span className="material-symbols-outlined text-sm text-primary-green">calendar_today</span>
+                        <span className="material-symbols-outlined text-sm text-primary-blue">calendar_today</span>
                         <div>
                           <p className="text-[9px] uppercase tracking-wider text-text-secondary/60">Date & Time</p>
                           <p className="text-xs md:text-sm font-semibold text-text-primary">{ticket.date}</p>
                         </div>
                       </div>
                       <div className="flex items-center gap-1.5 text-text-secondary">
-                        <span className="material-symbols-outlined text-sm text-primary-green">location_on</span>
+                        <span className="material-symbols-outlined text-sm text-primary-blue">location_on</span>
                         <div>
                           <p className="text-[9px] uppercase tracking-wider text-text-secondary/60">Location</p>
                           <p className="text-xs md:text-sm font-semibold text-text-primary">{ticket.location}</p>
@@ -170,7 +170,7 @@ const TicketsPage = () => {
                   <div className="flex flex-row md:flex-col gap-sm justify-end w-full md:w-auto mt-md md:mt-0 pt-md md:pt-0 border-t border-border/40 md:border-t-0 pl-2">
                     <button 
                       onClick={() => handleOpenTicket(ticket)}
-                      className="flex-1 md:flex-none bg-primary-green hover:bg-secondary-green text-white text-xs md:text-sm px-md md:px-lg py-2.5 rounded-xl font-label-md transition-all active:scale-95 flex items-center justify-center gap-1.5 shadow-sm"
+                      className="flex-1 md:flex-none bg-primary-blue hover:bg-secondary-blue text-white text-xs md:text-sm px-md md:px-lg py-2.5 rounded-xl font-label-md transition-all active:scale-95 flex items-center justify-center gap-1.5 shadow-sm"
                     >
                       <span className="material-symbols-outlined text-[18px]">qr_code_2</span>
                       View Digital Ticket
@@ -211,7 +211,7 @@ const TicketsPage = () => {
 
             <span className={`px-3 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider mb-md border ${
               selectedTicket.status === 'active' 
-                ? 'bg-primary-green/10 text-primary-green border-primary-green/20' 
+                ? 'bg-primary-blue/10 text-primary-blue border-primary-blue/20' 
                 : 'bg-surface-container-high text-text-secondary border-border'
             }`}>
               {selectedTicket.status === 'active' ? 'E-Ticket Aktif' : 'E-Ticket Lampau'}
@@ -232,7 +232,7 @@ const TicketsPage = () => {
                 {/* QR center patterns */}
                 <rect x="15" y="40" width="10" height="10" />
                 <rect x="40" y="15" width="10" height="15" />
-                <rect x="40" y="40" width="20" height="20" fill={selectedTicket.status === 'past' ? '#6B7280' : '#2E7D32'} />
+                <rect x="40" y="40" width="20" height="20" fill={selectedTicket.status === 'past' ? '#6B7280' : '#2563EB'} />
                 <rect x="65" y="40" width="15" height="10" />
                 <rect x="40" y="70" width="10" height="15" />
                 <rect x="70" y="70" width="15" height="15" />
@@ -249,7 +249,7 @@ const TicketsPage = () => {
 
             <button 
               onClick={() => setIsModalOpen(false)}
-              className="w-full bg-primary-green hover:bg-secondary-green text-white py-2.5 rounded-xl font-bold text-xs md:text-sm transition-all"
+              className="w-full bg-primary-blue hover:bg-secondary-blue text-white py-2.5 rounded-xl font-bold text-xs md:text-sm transition-all"
             >
               Selesai
             </button>

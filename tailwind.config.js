@@ -11,87 +11,98 @@ export default {
   theme: {
     extend: {
       colors: {
-        "on-surface-variant": "#374151", // Dark Gray
-        "surface-container-highest": "#E8F5E9", // Soft Green
+        "on-surface-variant": "#424655",
+        "surface-container-highest": "#DBEAFE", // Light Blue
         "on-tertiary-container": "#ffffff",
-        "primary-fixed-dim": "#A5D6A7", // Soft Green Tint
+        "primary-fixed-dim": "#60A5FA", // Soft Blue (mapped to primary-fixed-dim)
         "on-error": "#ffffff",
-        "on-secondary-fixed": "#374151", // Dark Gray
-        "on-secondary-container": "#6B7280", // Medium Gray
-        "text-secondary": "#6B7280", // Medium Gray
-        "primary-fixed": "#C8E6C9", // Soft Green Light
-        "border": "#D1D5DB", // Light Gray
-        "outline-variant": "#D1D5DB", // Light Gray
-        "inverse-on-surface": "#F9FAFB", // Extra Light Gray
-        "on-primary-fixed-variant": "#1B5E20", // Dark Green
+        "on-secondary-fixed": "#131b2e",
+        "on-secondary-container": "#5c647a",
+        "text-secondary": "#64748B", // Gray Text
+        "primary-fixed": "#DBEAFE", // Light Blue (mapped to primary-fixed)
+        "border": "#E2E8F0", // Border Gray
+        "outline-variant": "#c2c6d8",
+        "inverse-on-surface": "#eff0fc",
+        "on-primary-fixed-variant": "#003fa4",
         "on-secondary": "#ffffff",
-        "surface-bright": "#F9FAFB", // Extra Light Gray
-        "surface-container-high": "#E8F5E9", // Soft Green
-        "background": "#F9FAFB", // Extra Light Gray
-        "tertiary-fixed-dim": "#F8BBD0", // Soft Magenta Tint
-        "secondary-container": "#E8F5E9", // Soft Green
-        "secondary": "#4CAF50", // Secondary Green
-        "outline": "#6B7280", // Medium Gray
+        "surface-bright": "#EFF6FF", // Ultra Light
+        "surface-container-high": "#DBEAFE", // Light Blue
+        "background": "#EFF6FF", // Ultra Light
+        "tertiary-fixed-dim": "#ffb599",
+        "secondary-container": "#DBEAFE",
+        "secondary": "#2563EB",
+        "outline": "#64748B",
         "on-error-container": "#93000a",
-        "tertiary": "#D81B60", // Primary Magenta
-        "surface-container": "#F4FAF4", // Light Green
-        "on-surface": "#374151", // Dark Gray
-        "primary-container": "#2E7D32",
-        "inverse-primary": "#A5D6A7", // Soft Green
-        "success": "#2E7D32", // Primary Green
-        "surface-container-low": "#F4FAF4", // Light Green
-        "surface-variant": "#E8F5E9", // Soft Green
-        "on-primary-fixed": "#1B5E20", // Dark Green
-        "tertiary-fixed": "#F8BBD0", // Soft Magenta Tint
-        "primary": "#2E7D32", // Primary Green
+        "tertiary": "#FBBF24", // Primary Yellow
+        "surface-container": "#EFF6FF",
+        "on-surface": "#1E293B", // Dark Navy
+        "primary-container": "#2563EB",
+        "inverse-primary": "#60A5FA", // Soft Blue
+        "success": "#10B981",
+        "surface-container-low": "#EFF6FF",
+        "surface-variant": "#DBEAFE",
+        "on-primary-fixed": "#001849",
+        "tertiary-fixed": "#FDE68A", // Soft Yellow
+        "primary": "#2563EB", // Bright Blue
         "surface-container-lowest": "#ffffff",
-        "primary-hover": "#4CAF50", // Secondary Green
+        "primary-hover": "#1D4ED8", // Deep Blue (Hover)
         "error-container": "#ffdad6",
-        "surface-dim": "#D1D5DB", // Light Gray
+        "surface-dim": "#d8d9e5",
         "on-tertiary": "#ffffff",
-        "text-primary": "#374151", // Dark Gray
-        "inverse-surface": "#374151", // Dark Gray
-        "on-secondary-fixed-variant": "#6B7280", // Medium Gray
+        "text-primary": "#1E293B", // Dark Navy
+        "inverse-surface": "#2e3039",
+        "on-secondary-fixed-variant": "#3f465c",
         "on-primary-container": "#ffffff",
-        "on-tertiary-fixed": "#AD1457", // Dark Magenta
+        "on-tertiary-fixed": "#370e00",
         "error": "#EF4444",
-        "surface-tint": "#2E7D32", // Primary Green
-        "tertiary-container": "#E91E63", // Bright Magenta
-        "secondary-fixed": "#C8E6C9", // Soft Green
-        "on-background": "#374151", // Dark Gray
+        "surface-tint": "#2563EB",
+        "tertiary-container": "#FDE68A",
+        "secondary-fixed": "#DBEAFE",
+        "on-background": "#1E293B",
         "warning": "#F59E0B",
-        "surface": "#F9FAFB", // Extra Light Gray
-        "secondary-fixed-dim": "#A5D6A7", // Soft Green
-        "on-tertiary-fixed-variant": "#AD1457", // Dark Magenta
+        "surface": "#FFFFFF", // Background White
+        "secondary-fixed-dim": "#bec6e0",
+        "on-tertiary-fixed-variant": "#7f2b00",
         "on-primary": "#ffffff",
-        // Brand Style Guide Specific Palette
-        "primary-green": "#2E7D32",
-        "secondary-green": "#4CAF50",
-        "soft-green": "#E8F5E9",
-        "light-green": "#F4FAF4",
-        "primary-magenta": "#D81B60",
-        "bright-magenta": "#E91E63",
-        "soft-magenta": "#FCE4EC",
-        "dark-magenta": "#AD1457"
+        // Brand Style Guide Specific Palette - Blue & Yellow
+        "primary-blue": "#2563EB", // Bright Blue
+        "secondary-blue": "#1D4ED8", // Deep Blue
+        "soft-blue": "#60A5FA", // Soft Blue
+        "light-blue": "#DBEAFE", // Light Blue
+        "ultra-light-blue": "#EFF6FF", // Ultra Light
+        "primary-yellow": "#FBBF24", // Primary Yellow
+        "secondary-yellow": "#F59E0B", // Golden Yellow
+        "soft-yellow": "#FDE68A", // Soft Yellow
+        "pale-yellow": "#FEF3C7", // Pale Yellow
+        "dark-yellow": "#D97706" // Dark Yellow text for readability
       },
       borderRadius: {
         "DEFAULT": "0.25rem",
-        "lg": "8px",
-        "xl": "12px",
-        "2xl": "16px",
+        "lg": "12px",
+        "xl": "16px",
+        "2xl": "24px",
+        "3xl": "32px",
         "full": "9999px"
       },
       spacing: {
-        "3xl": "80px",
-        "2xl": "48px",
-        "lg": "24px",
         "xs": "4px",
         "sm": "8px",
-        "gutter": "24px",
         "md": "16px",
-        "margin-mobile": "16px",
+        "lg": "24px",
         "xl": "32px",
-        "margin-desktop": "80px"
+        "2xl": "48px",
+        "3xl": "80px",
+        "4xl": "96px",
+        "5xl": "128px",
+        "gutter": "24px",
+        "margin-mobile": "16px",
+        "margin-desktop": "40px",
+        "margin-lg-desktop": "64px"
+      },
+      boxShadow: {
+        "cs-sm": "0 4px 12px rgba(37, 99, 235, 0.08)",
+        "cs-md": "0 8px 24px rgba(37, 99, 235, 0.12)",
+        "cs-hero": "0 20px 60px rgba(37, 99, 235, 0.15)"
       },
       fontFamily: {
         "body-lg": ["Inter", "sans-serif"],
