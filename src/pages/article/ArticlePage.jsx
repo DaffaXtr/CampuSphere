@@ -577,13 +577,13 @@ const ArticlePage = () => {
             {/* Scroll buttons */}
             <button 
               onClick={() => orgScrollRef.current?.scrollBy({ left: -300, behavior: 'smooth' })}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 w-10 h-10 bg-white border border-border/50 rounded-full flex items-center justify-center shadow-md text-primary-blue hover:bg-surface-container-low hover:scale-105 transition-all opacity-0 group-hover:opacity-100 z-10 hidden md:flex"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 w-10 h-10 bg-white border border-border/50 rounded-full hidden items-center justify-center shadow-md text-primary-blue hover:bg-surface-container-low hover:scale-105 transition-all opacity-0 group-hover:opacity-100 z-10 md:flex"
             >
               <span className="material-symbols-outlined">chevron_left</span>
             </button>
             <button 
               onClick={() => orgScrollRef.current?.scrollBy({ left: 300, behavior: 'smooth' })}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 w-10 h-10 bg-white border border-border/50 rounded-full flex items-center justify-center shadow-md text-primary-blue hover:bg-surface-container-low hover:scale-105 transition-all opacity-0 group-hover:opacity-100 z-10 hidden md:flex"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 w-10 h-10 bg-white border border-border/50 rounded-full hidden items-center justify-center shadow-md text-primary-blue hover:bg-surface-container-low hover:scale-105 transition-all opacity-0 group-hover:opacity-100 z-10 md:flex"
             >
               <span className="material-symbols-outlined">chevron_right</span>
             </button>

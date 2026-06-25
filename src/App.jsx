@@ -27,6 +27,14 @@ import ProfilePage from './pages/profile/ProfilePage';
 import TicketsPage from './pages/profile/TicketsPage';
 import CertificatesPage from './pages/profile/CertificatesPage';
 import SettingsPage from './pages/profile/SettingsPage';
+import AdminDashboard from './pages/admin/AdminDashboard';
+import AdminArticlesPage from './pages/admin/AdminArticlesPage';
+import AdminEventsPage from './pages/admin/AdminEventsPage';
+import AdminMerchandisePage from './pages/admin/AdminMerchandisePage';
+import AdminTransactionsPage from './pages/admin/AdminTransactionsPage';
+import AdminFinancialReportPage from './pages/admin/AdminFinancialReportPage';
+import AdminUsersPage from './pages/admin/AdminUsersPage';
+import AdminOrganizationsPage from './pages/admin/AdminOrganizationsPage';
 
 function App() {
   return (
@@ -60,6 +68,14 @@ function App() {
           <Route path="/article" element={<ArticlePage />} />
           <Route path="/article/:id" element={<ArticleDetailPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/admin/articles" element={<AdminArticlesPage />} />
+          <Route path="/admin/events" element={<AdminEventsPage />} />
+          <Route path="/admin/merchandise" element={<AdminMerchandisePage />} />
+          <Route path="/admin/transactions" element={<AdminTransactionsPage />} />
+          <Route path="/admin/financial-report" element={<AdminFinancialReportPage />} />
+          <Route path="/admin/users" element={<AdminUsersPage />} />
+          <Route path="/admin/organizations" element={<AdminOrganizationsPage />} />
         </Routes>
       </Layout>
     </Router>
