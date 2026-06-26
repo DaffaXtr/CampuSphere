@@ -22,46 +22,46 @@ const AdminUserForm = ({ user, onSave, onCancel }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white border border-border rounded-2xl p-lg md:p-xl shadow-sm">
-      <h2 className="font-headline-lg text-xl text-text-primary mb-lg">{user ? 'Edit Pengguna' : 'Tambah Pengguna Baru'}</h2>
+    <form onSubmit={handleSubmit} className="bg-white border border-border rounded-2xl p-5 md:p-6 shadow-sm">
+      <h2 className="font-bold text-sm text-text-primary uppercase tracking-wider mb-6">{user ? 'Edit Pengguna' : 'Tambah Pengguna Baru'}</h2>
 
-      <div className="space-y-lg">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-lg">
+      <div className="space-y-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
-            <label className="block text-sm font-semibold text-text-primary mb-xs">Nama Lengkap</label>
+            <label className="block text-xs font-bold text-text-secondary uppercase tracking-wider mb-2">Nama Lengkap</label>
             <input
               type="text"
               name="name"
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full bg-surface border border-border rounded-xl px-md py-3 text-sm text-text-primary focus:border-primary-blue focus:ring-1 focus:ring-primary-blue outline-none"
+              className="w-full bg-[#F9FAFB] border border-border rounded-xl px-4 py-2.5 text-xs text-text-primary focus:border-[#1E5EF3] focus:bg-white focus:ring-1 focus:ring-[#1E5EF3]/20 outline-none"
               placeholder="Masukkan nama"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-text-primary mb-xs">Email</label>
+            <label className="block text-xs font-bold text-text-secondary uppercase tracking-wider mb-2">Email</label>
             <input
               type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full bg-surface border border-border rounded-xl px-md py-3 text-sm text-text-primary focus:border-primary-blue focus:ring-1 focus:ring-primary-blue outline-none"
+              className="w-full bg-[#F9FAFB] border border-border rounded-xl px-4 py-2.5 text-xs text-text-primary focus:border-[#1E5EF3] focus:bg-white focus:ring-1 focus:ring-[#1E5EF3]/20 outline-none"
               placeholder="nama@campusphere.id"
             />
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-lg">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           <div>
-            <label className="block text-sm font-semibold text-text-primary mb-xs">Role</label>
+            <label className="block text-xs font-bold text-text-secondary uppercase tracking-wider mb-2">Role</label>
             <select
               name="role"
               value={formData.role}
               onChange={handleChange}
-              className="w-full bg-surface border border-border rounded-xl px-md py-3 text-sm text-text-primary focus:border-primary-blue outline-none"
+              className="w-full bg-[#F9FAFB] border border-border rounded-xl px-4 py-2.5 text-xs text-text-primary focus:border-[#1E5EF3] focus:bg-white outline-none cursor-pointer font-bold"
             >
               <option value="Super Admin">Super Admin</option>
               <option value="Admin Event">Admin Event</option>
@@ -72,12 +72,12 @@ const AdminUserForm = ({ user, onSave, onCancel }) => {
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-text-primary mb-xs">Status</label>
+            <label className="block text-xs font-bold text-text-secondary uppercase tracking-wider mb-2">Status</label>
             <select
               name="status"
               value={formData.status}
               onChange={handleChange}
-              className="w-full bg-surface border border-border rounded-xl px-md py-3 text-sm text-text-primary focus:border-primary-blue outline-none"
+              className="w-full bg-[#F9FAFB] border border-border rounded-xl px-4 py-2.5 text-xs text-text-primary focus:border-[#1E5EF3] focus:bg-white outline-none cursor-pointer font-bold"
             >
               <option value="Aktif">Aktif</option>
               <option value="Nonaktif">Nonaktif</option>
@@ -85,41 +85,41 @@ const AdminUserForm = ({ user, onSave, onCancel }) => {
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-text-primary mb-xs">Tanggal Bergabung</label>
+            <label className="block text-xs font-bold text-text-secondary uppercase tracking-wider mb-2">Tanggal Bergabung</label>
             <input
               type="date"
               name="joinedAt"
               value={formData.joinedAt}
               onChange={handleChange}
               required
-              className="w-full bg-surface border border-border rounded-xl px-md py-3 text-sm text-text-primary focus:border-primary-blue outline-none"
+              className="w-full bg-[#F9FAFB] border border-border rounded-xl px-4 py-2.5 text-xs text-text-primary focus:border-[#1E5EF3] focus:bg-white outline-none cursor-pointer font-bold"
             />
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-lg">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
-            <label className="block text-sm font-semibold text-text-primary mb-xs">Organisasi</label>
+            <label className="block text-xs font-bold text-text-secondary uppercase tracking-wider mb-2">Organisasi</label>
             <input
               type="text"
               name="organization"
               value={formData.organization}
               onChange={handleChange}
               required
-              className="w-full bg-surface border border-border rounded-xl px-md py-3 text-sm text-text-primary focus:border-primary-blue focus:ring-1 focus:ring-primary-blue outline-none"
+              className="w-full bg-[#F9FAFB] border border-border rounded-xl px-4 py-2.5 text-xs text-text-primary focus:border-[#1E5EF3] focus:bg-white focus:ring-1 focus:ring-[#1E5EF3]/20 outline-none"
               placeholder="Contoh: HIMA Teknik Informatika"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-text-primary mb-xs">URL Avatar</label>
+            <label className="block text-xs font-bold text-text-secondary uppercase tracking-wider mb-2">URL Avatar</label>
             <input
               type="url"
               name="avatarSrc"
               value={formData.avatarSrc}
               onChange={handleChange}
               required
-              className="w-full bg-surface border border-border rounded-xl px-md py-3 text-sm text-text-primary focus:border-primary-blue focus:ring-1 focus:ring-primary-blue outline-none"
+              className="w-full bg-[#F9FAFB] border border-border rounded-xl px-4 py-2.5 text-xs text-text-primary focus:border-[#1E5EF3] focus:bg-white focus:ring-1 focus:ring-[#1E5EF3]/20 outline-none"
               placeholder="https://..."
             />
           </div>
@@ -127,11 +127,11 @@ const AdminUserForm = ({ user, onSave, onCancel }) => {
 
         {formData.avatarSrc && (
           <div>
-            <label className="block text-sm font-semibold text-text-primary mb-xs">Preview Avatar</label>
+            <label className="block text-xs font-bold text-text-secondary uppercase tracking-wider mb-2">Preview Avatar</label>
             <img
               src={formData.avatarSrc}
               alt="Preview avatar"
-              className="w-20 h-20 rounded-full border border-border object-cover"
+              className="w-16 h-16 rounded-full border border-border object-cover bg-white"
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
               }}
@@ -140,17 +140,17 @@ const AdminUserForm = ({ user, onSave, onCancel }) => {
         )}
       </div>
 
-      <div className="flex items-center justify-end gap-sm mt-lg pt-lg border-t border-border">
+      <div className="flex items-center justify-end gap-2 mt-6 pt-5 border-t border-border text-xs font-bold">
         <button
           type="button"
           onClick={onCancel}
-          className="px-lg py-2.5 rounded-xl border border-border text-text-primary text-sm font-semibold hover:bg-surface transition-colors"
+          className="px-5 py-2.5 rounded-xl border border-border text-text-secondary hover:bg-slate-50 transition-colors"
         >
           Batal
         </button>
         <button
           type="submit"
-          className="px-lg py-2.5 rounded-xl bg-primary-blue hover:bg-secondary-blue text-white text-sm font-semibold transition-colors"
+          className="px-5 py-2.5 rounded-xl bg-[#1E5EF3] hover:bg-[#1E40AF] text-white transition-colors"
         >
           {user ? 'Simpan Perubahan' : 'Simpan Pengguna'}
         </button>

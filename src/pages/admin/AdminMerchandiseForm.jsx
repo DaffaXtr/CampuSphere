@@ -55,33 +55,33 @@ const AdminMerchandiseForm = ({ item, onSave, onCancel }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white border border-border rounded-2xl p-lg md:p-xl shadow-sm">
-      <h2 className="font-headline-lg text-xl text-text-primary mb-lg">
+    <form onSubmit={handleSubmit} className="bg-white border border-border rounded-2xl p-5 md:p-6 shadow-sm">
+      <h2 className="font-bold text-sm text-text-primary uppercase tracking-wider mb-6">
         {item ? 'Edit Merchandise' : 'Buat Merchandise Baru'}
       </h2>
 
-      <div className="space-y-lg">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-lg">
+      <div className="space-y-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
-            <label className="block text-sm font-semibold text-text-primary mb-xs">Nama Produk</label>
+            <label className="block text-xs font-bold text-text-secondary uppercase tracking-wider mb-2">Nama Produk</label>
             <input
               type="text"
               name="name"
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full bg-surface border border-border rounded-xl px-md py-3 text-sm text-text-primary focus:border-primary-blue focus:ring-1 focus:ring-primary-blue outline-none"
+              className="w-full bg-[#F9FAFB] border border-border rounded-xl px-4 py-2.5 text-xs text-text-primary focus:border-[#1E5EF3] focus:bg-white focus:ring-1 focus:ring-[#1E5EF3]/20 outline-none"
               placeholder="Masukkan nama produk"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-text-primary mb-xs">Kategori</label>
+            <label className="block text-xs font-bold text-text-secondary uppercase tracking-wider mb-2">Kategori</label>
             <select
               name="category"
               value={formData.category}
               onChange={handleChange}
-              className="w-full bg-surface border border-border rounded-xl px-md py-3 text-sm text-text-primary focus:border-primary-blue outline-none"
+              className="w-full bg-[#F9FAFB] border border-border rounded-xl px-4 py-2.5 text-xs text-text-primary focus:border-[#1E5EF3] focus:bg-white outline-none cursor-pointer font-bold"
             >
               <option value="Apparel">Apparel</option>
               <option value="Accessories">Accessories</option>
@@ -91,9 +91,9 @@ const AdminMerchandiseForm = ({ item, onSave, onCancel }) => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-lg">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
-            <label className="block text-sm font-semibold text-text-primary mb-xs">Harga Numerik</label>
+            <label className="block text-xs font-bold text-text-secondary uppercase tracking-wider mb-2">Harga Numerik</label>
             <input
               type="number"
               name="numericPrice"
@@ -102,25 +102,25 @@ const AdminMerchandiseForm = ({ item, onSave, onCancel }) => {
               value={formData.numericPrice}
               onChange={handleChange}
               required
-              className="w-full bg-surface border border-border rounded-xl px-md py-3 text-sm text-text-primary focus:border-primary-blue focus:ring-1 focus:ring-primary-blue outline-none"
+              className="w-full bg-[#F9FAFB] border border-border rounded-xl px-4 py-2.5 text-xs text-text-primary focus:border-[#1E5EF3] focus:bg-white focus:ring-1 focus:ring-[#1E5EF3]/20 outline-none"
               placeholder="45000"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-text-primary mb-xs">Label Harga</label>
+            <label className="block text-xs font-bold text-text-secondary uppercase tracking-wider mb-2">Label Harga</label>
             <input
               type="text"
               value={formatRupiah(formData.numericPrice)}
               readOnly
-              className="w-full bg-surface border border-border rounded-xl px-md py-3 text-sm text-text-primary outline-none"
+              className="w-full bg-[#F1F5F9] border border-border rounded-xl px-4 py-2.5 text-xs text-text-secondary outline-none select-none font-bold"
             />
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-lg">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
-            <label className="block text-sm font-semibold text-text-primary mb-xs">Rating</label>
+            <label className="block text-xs font-bold text-text-secondary uppercase tracking-wider mb-2">Rating</label>
             <input
               type="number"
               name="ratingValue"
@@ -130,13 +130,13 @@ const AdminMerchandiseForm = ({ item, onSave, onCancel }) => {
               value={formData.ratingValue}
               onChange={handleChange}
               required
-              className="w-full bg-surface border border-border rounded-xl px-md py-3 text-sm text-text-primary focus:border-primary-blue focus:ring-1 focus:ring-primary-blue outline-none"
+              className="w-full bg-[#F9FAFB] border border-border rounded-xl px-4 py-2.5 text-xs text-text-primary focus:border-[#1E5EF3] focus:bg-white focus:ring-1 focus:ring-[#1E5EF3]/20 outline-none"
               placeholder="4.8"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-text-primary mb-xs">Jumlah Review</label>
+            <label className="block text-xs font-bold text-text-secondary uppercase tracking-wider mb-2">Jumlah Review</label>
             <input
               type="number"
               name="reviewsCount"
@@ -145,15 +145,15 @@ const AdminMerchandiseForm = ({ item, onSave, onCancel }) => {
               value={formData.reviewsCount}
               onChange={handleChange}
               required
-              className="w-full bg-surface border border-border rounded-xl px-md py-3 text-sm text-text-primary focus:border-primary-blue focus:ring-1 focus:ring-primary-blue outline-none"
+              className="w-full bg-[#F9FAFB] border border-border rounded-xl px-4 py-2.5 text-xs text-text-primary focus:border-[#1E5EF3] focus:bg-white focus:ring-1 focus:ring-[#1E5EF3]/20 outline-none"
               placeholder="120"
             />
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-lg">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
-            <label className="block text-sm font-semibold text-text-primary mb-xs">Jumlah Terjual</label>
+            <label className="block text-xs font-bold text-text-secondary uppercase tracking-wider mb-2">Jumlah Terjual</label>
             <input
               type="number"
               name="soldCount"
@@ -162,47 +162,47 @@ const AdminMerchandiseForm = ({ item, onSave, onCancel }) => {
               value={formData.soldCount}
               onChange={handleChange}
               required
-              className="w-full bg-surface border border-border rounded-xl px-md py-3 text-sm text-text-primary focus:border-primary-blue focus:ring-1 focus:ring-primary-blue outline-none"
+              className="w-full bg-[#F9FAFB] border border-border rounded-xl px-4 py-2.5 text-xs text-text-primary focus:border-[#1E5EF3] focus:bg-white focus:ring-1 focus:ring-[#1E5EF3]/20 outline-none"
               placeholder="154"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-text-primary mb-xs">Store</label>
+            <label className="block text-xs font-bold text-text-secondary uppercase tracking-wider mb-2">Store</label>
             <input
               type="text"
               name="storeName"
               value={formData.storeName}
               onChange={handleChange}
               required
-              className="w-full bg-surface border border-border rounded-xl px-md py-3 text-sm text-text-primary focus:border-primary-blue focus:ring-1 focus:ring-primary-blue outline-none"
+              className="w-full bg-[#F9FAFB] border border-border rounded-xl px-4 py-2.5 text-xs text-text-primary focus:border-[#1E5EF3] focus:bg-white focus:ring-1 focus:ring-[#1E5EF3]/20 outline-none"
               placeholder="HIMTI Official Store"
             />
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-lg">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
-            <label className="block text-sm font-semibold text-text-primary mb-xs">Tag</label>
+            <label className="block text-xs font-bold text-text-secondary uppercase tracking-wider mb-2">Tag</label>
             <input
               type="text"
               name="tag"
               value={formData.tag || ''}
               onChange={handleChange}
-              className="w-full bg-surface border border-border rounded-xl px-md py-3 text-sm text-text-primary focus:border-primary-blue focus:ring-1 focus:ring-primary-blue outline-none"
+              className="w-full bg-[#F9FAFB] border border-border rounded-xl px-4 py-2.5 text-xs text-text-primary focus:border-[#1E5EF3] focus:bg-white focus:ring-1 focus:ring-[#1E5EF3]/20 outline-none"
               placeholder="Best Seller, New Arrival, Limited"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-text-primary mb-xs">URL Gambar</label>
+            <label className="block text-xs font-bold text-text-secondary uppercase tracking-wider mb-2">URL Gambar</label>
             <input
               type="url"
               name="imageSrc"
               value={formData.imageSrc}
               onChange={handleChange}
               required
-              className="w-full bg-surface border border-border rounded-xl px-md py-3 text-sm text-text-primary focus:border-primary-blue focus:ring-1 focus:ring-primary-blue outline-none"
+              className="w-full bg-[#F9FAFB] border border-border rounded-xl px-4 py-2.5 text-xs text-text-primary focus:border-[#1E5EF3] focus:bg-white focus:ring-1 focus:ring-[#1E5EF3]/20 outline-none"
               placeholder="https://..."
             />
           </div>
@@ -210,7 +210,7 @@ const AdminMerchandiseForm = ({ item, onSave, onCancel }) => {
 
         {formData.imageSrc && (
           <div>
-            <label className="block text-sm font-semibold text-text-primary mb-xs">Preview Gambar</label>
+            <label className="block text-xs font-bold text-text-secondary uppercase tracking-wider mb-2">Preview Gambar</label>
             <img
               src={formData.imageSrc}
               alt="Preview"
@@ -223,17 +223,17 @@ const AdminMerchandiseForm = ({ item, onSave, onCancel }) => {
         )}
       </div>
 
-      <div className="flex items-center justify-end gap-sm mt-lg pt-lg border-t border-border">
+      <div className="flex items-center justify-end gap-2 mt-6 pt-5 border-t border-border text-xs font-bold">
         <button
           type="button"
           onClick={onCancel}
-          className="px-lg py-2.5 rounded-xl border border-border text-text-primary text-sm font-semibold hover:bg-surface transition-colors"
+          className="px-5 py-2.5 rounded-xl border border-border text-text-secondary hover:bg-slate-50 transition-colors"
         >
           Batal
         </button>
         <button
           type="submit"
-          className="px-lg py-2.5 rounded-xl bg-primary-blue hover:bg-secondary-blue text-white text-sm font-semibold transition-colors"
+          className="px-5 py-2.5 rounded-xl bg-[#1E5EF3] hover:bg-[#1E40AF] text-white transition-colors"
         >
           {item ? 'Simpan Perubahan' : 'Simpan Produk'}
         </button>

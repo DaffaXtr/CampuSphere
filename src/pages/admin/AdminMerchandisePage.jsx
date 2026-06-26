@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import AdminSidebar from './AdminSidebar';
+import AdminTopbar from '../../components/layout/AdminTopbar';
 import AdminMerchandiseForm from './AdminMerchandiseForm';
 import { allMerch as initialMerch, merchCategories, merchPriceRanges, merchStores } from '../../data/merchandiseData';
 
@@ -51,202 +52,233 @@ const AdminMerchandisePage = () => {
     setDeleteConfirm(null);
   };
 
-  if (showForm) {
-    return (
-      <div className="min-h-screen bg-background py-md px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto">
-        <div className="flex flex-col xl:flex-row gap-lg items-start">
-          <AdminSidebar />
-
-          <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-sm mb-lg">
-              <button onClick={() => { setShowForm(false); setEditingItem(null); }} className="text-text-secondary hover:text-primary-blue flex items-center gap-1 text-sm font-semibold">
-                <span className="material-symbols-outlined text-[18px]">arrow_back</span>
-                Kembali
-              </button>
-            </div>
-
-            <AdminMerchandiseForm
-              key={editingItem ? `merch-${editingItem.id}` : 'merch-new'}
-              item={editingItem}
-              onSave={handleSaveItem}
-              onCancel={() => { setShowForm(false); setEditingItem(null); }}
-            />
-          </div>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <div className="min-h-screen bg-background py-md px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto">
-      <div className="flex flex-col xl:flex-row gap-lg items-start">
-        <AdminSidebar />
-
-        <div className="flex-1 min-w-0">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-md mb-lg">
+    <div className="min-h-screen bg-background flex flex-col xl:flex-row w-full">
+      <AdminSidebar />
+      <div className="flex-1 flex flex-col min-w-0 bg-[#F9FAFB]">
+        <AdminTopbar />
+        <div className="flex-grow p-6 md:p-8 overflow-y-auto">
+          {showForm ? (
             <div>
-              <h1 className="font-headline-lg text-2xl md:text-[32px] text-text-primary">Manajemen Merchandise</h1>
-              <p className="text-text-secondary text-sm mt-1">Kelola data dari merchandiseData.js</p>
-            </div>
-            <button
-              onClick={() => { setEditingItem(null); setShowForm(true); }}
-              className="bg-primary-blue hover:bg-secondary-blue text-white font-bold text-sm px-lg py-3 rounded-xl transition-all inline-flex items-center gap-2 whitespace-nowrap"
-            >
-              <span className="material-symbols-outlined text-[18px]">add</span>
-              Buat Produk Baru
-            </button>
-          </div>
+              <div className="flex items-center gap-2 mb-6">
+                <button onClick={() => { setShowForm(false); setEditingItem(null); }} className="text-text-secondary hover:text-[#1E5EF3] flex items-center gap-1.5 text-xs font-bold transition-colors">
+                  <span className="material-symbols-outlined text-[16px]">arrow_back</span>
+                  Kembali ke Manajemen Merchandise
+                </button>
+              </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-md mb-lg">
-            <div className="rounded-2xl border border-border bg-white p-md shadow-sm">
-              <p className="text-xs uppercase tracking-wider text-text-secondary font-semibold">Total Produk</p>
-              <p className="mt-2 text-3xl font-black text-text-primary">{merchandise.length}</p>
+              <AdminMerchandiseForm
+                key={editingItem ? `merch-${editingItem.id}` : 'merch-new'}
+                item={editingItem}
+                onSave={handleSaveItem}
+                onCancel={() => { setShowForm(false); setEditingItem(null); }}
+              />
             </div>
-            <div className="rounded-2xl border border-border bg-white p-md shadow-sm">
-              <p className="text-xs uppercase tracking-wider text-text-secondary font-semibold">Kategori</p>
-              <p className="mt-2 text-3xl font-black text-primary-blue">{merchCategories.length - 1}</p>
-            </div>
-            <div className="rounded-2xl border border-border bg-white p-md shadow-sm">
-              <p className="text-xs uppercase tracking-wider text-text-secondary font-semibold">Store</p>
-              <p className="mt-2 text-3xl font-black text-secondary-yellow">{merchStores.length - 1}</p>
-            </div>
-            <div className="rounded-2xl border border-border bg-white p-md shadow-sm">
-              <p className="text-xs uppercase tracking-wider text-text-secondary font-semibold">Rata-rata Rating</p>
-              <p className="mt-2 text-3xl font-black text-success">{(merchandise.reduce((sum, item) => sum + Number(item.ratingValue || 0), 0) / merchandise.length || 0).toFixed(1)}</p>
-            </div>
-          </div>
+          ) : (
+            <>
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                <div>
+                  <h1 className="font-bold text-2xl text-text-primary flex items-center gap-2">
+                    Manajemen Merchandise
+                  </h1>
+                  <p className="text-text-secondary text-xs mt-1">Kelola katalog merchandise, ketersediaan produk, dan rating toko</p>
+                </div>
+                <button
+                  onClick={() => { setEditingItem(null); setShowForm(true); }}
+                  className="bg-[#1E5EF3] hover:bg-[#1E40AF] text-white font-bold text-[11px] px-4 py-2.5 rounded-xl transition-all inline-flex items-center gap-2 whitespace-nowrap shadow-sm"
+                >
+                  <span className="material-symbols-outlined text-[16px]">add</span>
+                  Buat Produk Baru
+                </button>
+              </div>
 
-          <div className="bg-white border border-border rounded-2xl overflow-hidden shadow-sm">
-            <div className="p-md md:p-lg border-b border-border flex flex-col gap-md">
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-md">
-                <div className="relative md:col-span-2 xl:col-span-2">
-                  <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary text-[18px] pointer-events-none">search</span>
-                  <input
-                    type="text"
-                    placeholder="Cari produk atau store..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full bg-surface border border-border rounded-lg pl-10 pr-4 py-2.5 text-sm text-text-primary focus:border-primary-blue focus:ring-1 focus:ring-primary-blue outline-none"
-                  />
+              {/* 4-Column Stats Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                <div className="rounded-2xl border border-border bg-white p-4 shadow-sm flex items-center gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border text-[#1E5EF3] bg-[#EBF3FF] border-[#D0E2FF] shadow-sm">
+                    <span className="material-symbols-outlined text-[24px]">inventory_2</span>
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-[11px] font-bold text-text-secondary uppercase tracking-wider">Total Produk</p>
+                    <p className="text-2xl font-black text-[#1F2937] mt-1 leading-none">{merchandise.length}</p>
+                  </div>
                 </div>
 
-                <select value={filterCategory} onChange={(e) => setFilterCategory(e.target.value)} className="bg-surface border border-border rounded-lg px-md py-2.5 text-sm text-text-primary focus:border-primary-blue outline-none">
-                  <option value="Semua">Semua Kategori</option>
-                  {merchCategories
-                    .filter((category) => category !== 'All Products')
-                    .map((category) => (
-                      <option key={category} value={category}>{category}</option>
-                    ))}
-                </select>
+                <div className="rounded-2xl border border-border bg-white p-4 shadow-sm flex items-center gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border text-[#8B5CF6] bg-[#F5F3FF] border-[#E9D5FF] shadow-sm">
+                    <span className="material-symbols-outlined text-[24px]">category</span>
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-[11px] font-bold text-text-secondary uppercase tracking-wider">Kategori</p>
+                    <p className="text-2xl font-black text-[#8B5CF6] mt-1 leading-none">{merchCategories.length - 1}</p>
+                  </div>
+                </div>
 
-                <select value={filterStore} onChange={(e) => setFilterStore(e.target.value)} className="bg-surface border border-border rounded-lg px-md py-2.5 text-sm text-text-primary focus:border-primary-blue outline-none">
-                  {merchStores.map((store) => (
-                    <option key={store.name} value={store.name}>{store.name}</option>
-                  ))}
-                </select>
+                <div className="rounded-2xl border border-border bg-white p-4 shadow-sm flex items-center gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border text-[#F59E0B] bg-[#FFFBEB] border-[#FEF3C7] shadow-sm">
+                    <span className="material-symbols-outlined text-[24px]">storefront</span>
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-[11px] font-bold text-text-secondary uppercase tracking-wider">Store</p>
+                    <p className="text-2xl font-black text-[#F59E0B] mt-1 leading-none">{merchStores.length - 1}</p>
+                  </div>
+                </div>
 
-                <select value={filterPriceRange} onChange={(e) => setFilterPriceRange(e.target.value)} className="bg-surface border border-border rounded-lg px-md py-2.5 text-sm text-text-primary focus:border-primary-blue outline-none">
-                  {merchPriceRanges.map((range) => (
-                    <option key={range} value={range}>{range}</option>
-                  ))}
-                </select>
+                <div className="rounded-2xl border border-border bg-white p-4 shadow-sm flex items-center gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border text-[#10B981] bg-[#E6F4EA] border-[#D1FAE5] shadow-sm">
+                    <span className="material-symbols-outlined text-[24px]">star</span>
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-[11px] font-bold text-text-secondary uppercase tracking-wider">Rata-rata Rating</p>
+                    <p className="text-2xl font-black text-[#10B981] mt-1 leading-none">{(merchandise.reduce((sum, item) => sum + Number(item.ratingValue || 0), 0) / merchandise.length || 0).toFixed(1)}</p>
+                  </div>
+                </div>
               </div>
-            </div>
 
-            <div className="overflow-x-auto">
-              <table className="w-full text-left text-sm">
-                <thead>
-                  <tr className="bg-surface text-text-secondary text-xs uppercase tracking-wider">
-                    <th className="px-md md:px-lg py-3 font-semibold">Produk</th>
-                    <th className="px-md md:px-lg py-3 font-semibold hidden md:table-cell">Kategori</th>
-                    <th className="px-md md:px-lg py-3 font-semibold hidden lg:table-cell">Store</th>
-                    <th className="px-md md:px-lg py-3 font-semibold text-center hidden sm:table-cell">Harga</th>
-                    <th className="px-md md:px-lg py-3 font-semibold text-center hidden lg:table-cell">Rating</th>
-                    <th className="px-md md:px-lg py-3 font-semibold text-center hidden lg:table-cell">Terjual</th>
-                    <th className="px-md md:px-lg py-3 font-semibold text-right">Aksi</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-border">
-                  {filteredMerchandise.length === 0 ? (
-                    <tr>
-                      <td colSpan="7" className="px-lg py-3xl text-center text-text-secondary">
-                        <span className="material-symbols-outlined text-4xl mb-2 block">search_off</span>
-                        Tidak ada produk ditemukan
-                      </td>
-                    </tr>
-                  ) : (
-                    filteredMerchandise.map((item) => (
-                      <tr key={item.id} className="hover:bg-surface/60 transition-colors">
-                        <td className="px-md md:px-lg py-3">
-                          <div className="flex items-center gap-sm">
-                            <img src={item.imageSrc} alt="" className="w-12 h-12 rounded-lg object-cover border border-border/50 flex-shrink-0" />
-                            <div className="min-w-0">
-                              <p className="font-semibold text-text-primary truncate max-w-[220px] md:max-w-[320px]">{item.name}</p>
-                              <p className="text-text-secondary text-xs md:hidden">{item.category}</p>
-                            </div>
-                          </div>
-                        </td>
-                        <td className="px-md md:px-lg py-3 hidden md:table-cell">
-                          <span className="bg-ultra-light-blue text-primary-blue text-xs font-semibold px-2.5 py-1 rounded-full border border-primary-blue/15">{item.category}</span>
-                        </td>
-                        <td className="px-md md:px-lg py-3 hidden lg:table-cell text-text-secondary">{item.storeName}</td>
-                        <td className="px-md md:px-lg py-3 text-center hidden sm:table-cell text-text-primary font-semibold">{item.price}</td>
-                        <td className="px-md md:px-lg py-3 text-center hidden lg:table-cell text-text-secondary">{item.ratingValue.toFixed(1)}</td>
-                        <td className="px-md md:px-lg py-3 text-center hidden lg:table-cell text-text-secondary">{item.soldCount}</td>
-                        <td className="px-md md:px-lg py-3">
-                          <div className="flex items-center justify-end gap-1">
-                            <button
-                              onClick={() => { setEditingItem(item); setShowForm(true); }}
-                              className="p-2 rounded-lg text-text-secondary hover:text-primary-blue hover:bg-ultra-light-blue transition-colors"
-                              title="Edit"
-                            >
-                              <span className="material-symbols-outlined text-[18px]">edit</span>
-                            </button>
-                            <button
-                              onClick={() => setDeleteConfirm(item.id)}
-                              className="p-2 rounded-lg text-text-secondary hover:text-error hover:bg-error-container transition-colors"
-                              title="Hapus"
-                            >
-                              <span className="material-symbols-outlined text-[18px]">delete</span>
-                            </button>
-                          </div>
-                        </td>
+              <div className="bg-white border border-border rounded-2xl overflow-hidden shadow-sm">
+                <div className="p-4 md:p-5 border-b border-border flex flex-col gap-3">
+                  <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3">
+                    <div className="relative md:col-span-2 xl:col-span-2">
+                      <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary text-[16px] pointer-events-none">search</span>
+                      <input
+                        type="text"
+                        placeholder="Cari produk atau store..."
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        className="w-full bg-[#F9FAFB] border border-border rounded-xl pl-9 pr-4 py-2 text-xs text-text-primary focus:border-[#1E5EF3] focus:bg-white focus:ring-1 focus:ring-[#1E5EF3]/20 outline-none"
+                      />
+                    </div>
+
+                    <select value={filterCategory} onChange={(e) => setFilterCategory(e.target.value)} className="bg-[#F9FAFB] border border-border rounded-xl px-3 py-2 text-xs text-text-primary focus:border-[#1E5EF3] focus:bg-white outline-none cursor-pointer font-bold">
+                      <option value="Semua">Semua Kategori</option>
+                      {merchCategories
+                        .filter((category) => category !== 'All Products')
+                        .map((category) => (
+                          <option key={category} value={category}>{category}</option>
+                        ))}
+                    </select>
+
+                    <select value={filterStore} onChange={(e) => setFilterStore(e.target.value)} className="bg-[#F9FAFB] border border-border rounded-xl px-3 py-2 text-xs text-text-primary focus:border-[#1E5EF3] focus:bg-white outline-none cursor-pointer font-bold">
+                      {merchStores.map((store) => (
+                        <option key={store.name} value={store.name}>{store.name}</option>
+                      ))}
+                    </select>
+
+                    <select value={filterPriceRange} onChange={(e) => setFilterPriceRange(e.target.value)} className="bg-[#F9FAFB] border border-border rounded-xl px-3 py-2 text-xs text-text-primary focus:border-[#1E5EF3] focus:bg-white outline-none cursor-pointer font-bold">
+                      {merchPriceRanges.map((range) => (
+                        <option key={range} value={range}>{range}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left border-collapse">
+                    <thead>
+                      <tr className="border-b border-border text-[10px] font-bold text-text-secondary uppercase">
+                        <th className="px-4 md:px-5 pb-3 pt-4">Produk</th>
+                        <th className="px-4 md:px-5 pb-3 pt-4 hidden md:table-cell">Kategori</th>
+                        <th className="px-4 md:px-5 pb-3 pt-4 hidden lg:table-cell">Store</th>
+                        <th className="px-4 md:px-5 pb-3 pt-4 text-center hidden sm:table-cell">Harga</th>
+                        <th className="px-4 md:px-5 pb-3 pt-4 text-center hidden lg:table-cell">Rating</th>
+                        <th className="px-4 md:px-5 pb-3 pt-4 text-center hidden lg:table-cell">Terjual</th>
+                        <th className="px-4 md:px-5 pb-3 pt-4 text-right">Aksi</th>
                       </tr>
-                    ))
-                  )}
-                </tbody>
-              </table>
-            </div>
+                    </thead>
+                    <tbody className="divide-y divide-slate-50 text-[11px]">
+                      {filteredMerchandise.length === 0 ? (
+                        <tr>
+                          <td colSpan="7" className="px-5 py-12 text-center text-text-secondary">
+                            <span className="material-symbols-outlined text-3xl mb-1 block">search_off</span>
+                            Tidak ada produk ditemukan
+                          </td>
+                        </tr>
+                      ) : (
+                        filteredMerchandise.map((item) => (
+                          <tr key={item.id} className="hover:bg-slate-50/50 transition-colors">
+                            <td className="px-4 md:px-5 py-2.5">
+                              <div className="flex items-center gap-3">
+                                <img src={item.imageSrc} alt="" className="w-12 h-12 rounded-xl object-cover border border-border/50 flex-shrink-0" />
+                                <div className="min-w-0">
+                                  <p className="font-semibold text-text-primary truncate max-w-[220px] md:max-w-[320px]">{item.name}</p>
+                                  <p className="text-text-secondary text-[10px] md:hidden mt-0.5">{item.category}</p>
+                                </div>
+                              </div>
+                            </td>
+                            <td className="px-4 md:px-5 py-2.5 hidden md:table-cell">
+                              <span className="bg-[#EBF3FF] text-[#1E5EF3] border border-[#D0E2FF] text-[9px] font-bold px-2.5 py-0.5 rounded-full">{item.category}</span>
+                            </td>
+                            <td className="px-4 md:px-5 py-2.5 hidden lg:table-cell text-text-secondary font-medium">{item.storeName}</td>
+                            <td className="px-4 md:px-5 py-2.5 text-center hidden sm:table-cell text-text-primary font-bold">{item.price}</td>
+                            <td className="px-4 md:px-5 py-2.5 text-center hidden lg:table-cell">
+                              <span className="inline-flex items-center gap-1 text-text-primary font-bold">
+                                <span className="material-symbols-outlined text-[13px] text-amber-500 fill-amber-500" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                                {item.ratingValue.toFixed(1)}
+                              </span>
+                            </td>
+                            <td className="px-4 md:px-5 py-2.5 text-center hidden lg:table-cell text-text-secondary font-medium">{item.soldCount}</td>
+                            <td className="px-4 md:px-5 py-2.5">
+                              <div className="flex items-center justify-end gap-1">
+                                <button
+                                  onClick={() => { setEditingItem(item); setShowForm(true); }}
+                                  className="p-1.5 rounded-lg text-text-secondary hover:text-[#1E5EF3] hover:bg-[#EBF3FF] transition-colors"
+                                  title="Edit"
+                                >
+                                  <span className="material-symbols-outlined text-[16px]">edit</span>
+                                </button>
+                                <button
+                                  onClick={() => setDeleteConfirm(item.id)}
+                                  className="p-1.5 rounded-lg text-text-secondary hover:text-rose-500 hover:bg-rose-50 transition-colors"
+                                  title="Hapus"
+                                >
+                                  <span className="material-symbols-outlined text-[16px]">delete</span>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                        ))
+                      )}
+                    </tbody>
+                  </table>
+                </div>
 
-            <div className="p-md md:p-lg border-t border-border flex items-center justify-between gap-md">
-              <p className="text-text-secondary text-xs">
-                Menampilkan <span className="font-bold text-text-primary">{filteredMerchandise.length}</span> dari <span className="font-bold text-text-primary">{merchandise.length}</span> produk
-              </p>
-              {searchQuery && (
-                <button onClick={() => setSearchQuery('')} className="text-primary-blue text-xs font-semibold hover:underline">
-                  Reset Pencarian
-                </button>
-              )}
-            </div>
+                <div className="p-4 border-t border-border flex items-center justify-between">
+                  <p className="text-text-secondary text-[10px] font-bold">
+                    Menampilkan <span className="text-text-primary font-black">{filteredMerchandise.length}</span> dari <span className="text-text-primary font-black">{merchandise.length}</span> produk
+                  </p>
+                  {searchQuery && (
+                    <button onClick={() => setSearchQuery('')} className="text-[#1E5EF3] text-[10px] font-bold hover:underline">
+                      Reset Pencarian
+                    </button>
+                  )}
+                </div>
+              </div>
+            </>
+          )}
+
+          {/* Footer Section */}
+          <div className="mt-8 pt-4 border-t border-border flex justify-between items-center text-[10px] font-bold text-text-secondary">
+            <p>© 2025 CampuSphere • Fakultas Universitas Airlangga</p>
+            <p>v1.0.0</p>
           </div>
         </div>
       </div>
 
       {deleteConfirm !== null && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-md">
-          <div className="bg-white rounded-2xl p-lg md:p-xl max-w-md w-full shadow-lg">
-            <h3 className="font-headline-lg text-lg text-text-primary mb-sm">Hapus Produk?</h3>
-            <p className="text-text-secondary text-sm mb-lg">Produk yang dihapus tidak dapat dikembalikan. Apakah Anda yakin ingin melanjutkan?</p>
-            <div className="flex items-center justify-end gap-sm">
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-2xl p-5 md:p-6 max-w-sm w-full shadow-lg border border-border">
+            <h3 className="font-bold text-text-primary text-sm mb-2">Hapus Produk?</h3>
+            <p className="text-text-secondary text-xs mb-4">Produk yang dihapus tidak dapat dikembalikan. Apakah Anda yakin ingin melanjutkan?</p>
+            <div className="flex items-center justify-end gap-2 text-xs font-bold">
               <button
                 onClick={() => setDeleteConfirm(null)}
-                className="px-lg py-2.5 rounded-xl border border-border text-text-primary text-sm font-semibold hover:bg-surface transition-colors"
+                className="px-4 py-2 rounded-xl border border-border text-text-secondary hover:bg-slate-50 transition-colors"
               >
                 Batal
               </button>
               <button
                 onClick={() => handleDeleteItem(deleteConfirm)}
-                className="px-lg py-2.5 rounded-xl bg-error hover:bg-error/90 text-white text-sm font-semibold transition-colors"
+                className="px-4 py-2 rounded-xl bg-rose-500 hover:bg-rose-600 text-white transition-colors"
               >
                 Hapus
               </button>

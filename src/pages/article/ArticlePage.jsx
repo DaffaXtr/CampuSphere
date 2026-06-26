@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Breadcrumb from '../../components/common/Breadcrumb';
 import { articles, categories, trendingTopics, articleOrganizations } from '../../data/articlesData';
@@ -37,11 +37,6 @@ const ArticlePage = () => {
       heroRef.current.scrollTo({ left: heroSlide * width, behavior: 'smooth' });
     }
   }, [heroSlide]);
-
-  // Reset page on filter change
-  useEffect(() => {
-    setCurrentPage(1);
-  }, [activeCategory, searchQuery]);
 
   // Filtered articles logic
   const filteredArticles = articles.filter(article => {
@@ -265,11 +260,11 @@ const ArticlePage = () => {
             type="text"
             placeholder="Cari artikel, topik, organisasi, atau penulis..."
             value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            onChange={(e) => { setSearchQuery(e.target.value); setCurrentPage(1); }}
             className="w-full bg-white border border-border rounded-xl pl-12 pr-10 py-3 text-sm text-text-primary focus:border-primary-blue focus:ring-1 focus:ring-primary-blue outline-none shadow-sm"
           />
           {searchQuery && (
-            <button onClick={() => setSearchQuery('')} className="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-text-secondary text-[18px] hover:text-text-primary">close</button>
+            <button onClick={() => { setSearchQuery(''); setCurrentPage(1); }} className="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-text-secondary text-[18px] hover:text-text-primary">close</button>
           )}
         </div>
 
@@ -279,7 +274,7 @@ const ArticlePage = () => {
             {categories.map(cat => (
               <button
                 key={cat}
-                onClick={() => setActiveCategory(cat)}
+                onClick={() => { setActiveCategory(cat); setCurrentPage(1); }}
                 className={`px-md py-2 rounded-full font-label-md text-label-sm md:text-label-md transition-all border flex items-center gap-1.5 ${
                   activeCategory === cat 
                     ? 'bg-primary-blue text-white border-primary-blue shadow-sm font-bold' 
@@ -296,7 +291,7 @@ const ArticlePage = () => {
             {categories.map(cat => (
               <button
                 key={cat}
-                onClick={() => setActiveCategory(cat)}
+                onClick={() => { setActiveCategory(cat); setCurrentPage(1); }}
                 className={`px-3 py-2 rounded-full text-xs font-semibold border transition-all whitespace-nowrap flex items-center gap-1 ${
                   activeCategory === cat 
                     ? 'bg-primary-blue text-white border-primary-blue' 
@@ -488,7 +483,7 @@ const ArticlePage = () => {
             <h3 className="font-bold text-lg text-text-primary mb-xs">Artikel tidak ditemukan</h3>
             <p className="text-text-secondary text-sm max-w-sm">Kami tidak menemukan artikel yang cocok dengan filter atau kata kunci pencarian Anda.</p>
             <button 
-              onClick={() => { setActiveCategory('Semua Artikel'); setSearchQuery(''); }}
+              onClick={() => { setActiveCategory('Semua Artikel'); setSearchQuery(''); setCurrentPage(1); }}
               className="mt-lg px-xl py-2.5 bg-primary-blue hover:bg-secondary-blue text-white font-bold text-sm rounded-xl transition-all shadow-sm"
             >
               Bersihkan Filter

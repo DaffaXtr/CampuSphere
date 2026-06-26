@@ -40,47 +40,47 @@ const AdminTransactionForm = ({ transaction, onSave, onCancel }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white border border-border rounded-2xl p-lg md:p-xl shadow-sm">
-      <h2 className="font-headline-lg text-xl text-text-primary mb-lg">
+    <form onSubmit={handleSubmit} className="bg-white border border-border rounded-2xl p-5 md:p-6 shadow-sm">
+      <h2 className="font-bold text-sm text-text-primary uppercase tracking-wider mb-6">
         {transaction ? 'Edit Transaksi' : 'Tambah Transaksi Baru'}
       </h2>
 
-      <div className="space-y-lg">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-lg">
+      <div className="space-y-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
-            <label className="block text-sm font-semibold text-text-primary mb-xs">Nama Pembeli</label>
+            <label className="block text-xs font-bold text-text-secondary uppercase tracking-wider mb-2">Nama Pembeli</label>
             <input
               type="text"
               name="buyerName"
               value={formData.buyerName}
               onChange={handleChange}
               required
-              className="w-full bg-surface border border-border rounded-xl px-md py-3 text-sm text-text-primary focus:border-primary-blue focus:ring-1 focus:ring-primary-blue outline-none"
+              className="w-full bg-[#F9FAFB] border border-border rounded-xl px-4 py-2.5 text-xs text-text-primary focus:border-[#1E5EF3] focus:bg-white focus:ring-1 focus:ring-[#1E5EF3]/20 outline-none"
               placeholder="Masukkan nama pembeli"
             />
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-text-primary mb-xs">Tanggal Transaksi</label>
+            <label className="block text-xs font-bold text-text-secondary uppercase tracking-wider mb-2">Tanggal Transaksi</label>
             <input
               type="date"
               name="createdAt"
               value={formData.createdAt}
               onChange={handleChange}
               required
-              className="w-full bg-surface border border-border rounded-xl px-md py-3 text-sm text-text-primary focus:border-primary-blue outline-none"
+              className="w-full bg-[#F9FAFB] border border-border rounded-xl px-4 py-2.5 text-xs text-text-primary focus:border-[#1E5EF3] focus:bg-white outline-none cursor-pointer"
             />
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-lg">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
-            <label className="block text-sm font-semibold text-text-primary mb-xs">Barang</label>
+            <label className="block text-xs font-bold text-text-secondary uppercase tracking-wider mb-2">Barang</label>
             <select
               name="merchandiseId"
               value={formData.merchandiseId}
               onChange={handleChange}
-              className="w-full bg-surface border border-border rounded-xl px-md py-3 text-sm text-text-primary focus:border-primary-blue outline-none"
+              className="w-full bg-[#F9FAFB] border border-border rounded-xl px-4 py-2.5 text-xs text-text-primary focus:border-[#1E5EF3] focus:bg-white outline-none cursor-pointer font-bold"
             >
               {allMerch.map((item) => (
                 <option key={item.id} value={item.id}>
@@ -91,7 +91,7 @@ const AdminTransactionForm = ({ transaction, onSave, onCancel }) => {
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-text-primary mb-xs">Jumlah</label>
+            <label className="block text-xs font-bold text-text-secondary uppercase tracking-wider mb-2">Jumlah</label>
             <input
               type="number"
               min="1"
@@ -99,19 +99,19 @@ const AdminTransactionForm = ({ transaction, onSave, onCancel }) => {
               value={formData.quantity}
               onChange={handleChange}
               required
-              className="w-full bg-surface border border-border rounded-xl px-md py-3 text-sm text-text-primary focus:border-primary-blue outline-none"
+              className="w-full bg-[#F9FAFB] border border-border rounded-xl px-4 py-2.5 text-xs text-text-primary focus:border-[#1E5EF3] focus:bg-white outline-none"
             />
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-lg">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
-            <label className="block text-sm font-semibold text-text-primary mb-xs">Metode Pembayaran</label>
+            <label className="block text-xs font-bold text-text-secondary uppercase tracking-wider mb-2">Metode Pembayaran</label>
             <select
               name="paymentMethod"
               value={formData.paymentMethod}
               onChange={handleChange}
-              className="w-full bg-surface border border-border rounded-xl px-md py-3 text-sm text-text-primary focus:border-primary-blue outline-none"
+              className="w-full bg-[#F9FAFB] border border-border rounded-xl px-4 py-2.5 text-xs text-text-primary focus:border-[#1E5EF3] focus:bg-white outline-none cursor-pointer font-bold"
             >
               <option value="Transfer Bank">Transfer Bank</option>
               <option value="E-Wallet">E-Wallet</option>
@@ -120,12 +120,12 @@ const AdminTransactionForm = ({ transaction, onSave, onCancel }) => {
           </div>
 
           <div>
-            <label className="block text-sm font-semibold text-text-primary mb-xs">Status</label>
+            <label className="block text-xs font-bold text-text-secondary uppercase tracking-wider mb-2">Status</label>
             <select
               name="status"
               value={formData.status}
               onChange={handleChange}
-              className="w-full bg-surface border border-border rounded-xl px-md py-3 text-sm text-text-primary focus:border-primary-blue outline-none"
+              className="w-full bg-[#F9FAFB] border border-border rounded-xl px-4 py-2.5 text-xs text-text-primary focus:border-[#1E5EF3] focus:bg-white outline-none cursor-pointer font-bold"
             >
               <option value="Pending">Pending</option>
               <option value="Berhasil">Berhasil</option>
@@ -135,31 +135,31 @@ const AdminTransactionForm = ({ transaction, onSave, onCancel }) => {
         </div>
 
         {selectedMerch && (
-          <div className="rounded-xl border border-border bg-surface p-md">
-            <p className="text-xs uppercase tracking-wider text-text-secondary font-semibold">Ringkasan Barang</p>
-            <div className="mt-sm flex items-center gap-sm">
-              <img src={selectedMerch.imageSrc} alt="" className="w-12 h-12 rounded-lg object-cover border border-border" />
+          <div className="rounded-xl border border-border bg-[#F9FAFB] p-4 text-xs">
+            <p className="block text-[10px] font-bold text-text-secondary uppercase tracking-wider mb-3">Ringkasan Barang</p>
+            <div className="flex items-center gap-3">
+              <img src={selectedMerch.imageSrc} alt="" className="w-12 h-12 rounded-xl object-cover border border-border bg-white" />
               <div className="min-w-0">
-                <p className="text-sm font-semibold text-text-primary truncate">{selectedMerch.name}</p>
-                <p className="text-xs text-text-secondary">{selectedMerch.storeName}</p>
+                <p className="font-bold text-text-primary truncate">{selectedMerch.name}</p>
+                <p className="text-[10px] font-semibold text-text-secondary mt-0.5">{selectedMerch.storeName}</p>
               </div>
             </div>
-            <p className="mt-sm text-sm text-text-secondary">Total: <span className="font-bold text-text-primary">{formatRupiah(numericTotal)}</span></p>
+            <p className="mt-3 font-bold text-text-secondary text-[11px]">Total: <span className="font-black text-[#1F2937] text-sm ml-1">{formatRupiah(numericTotal)}</span></p>
           </div>
         )}
       </div>
 
-      <div className="flex items-center justify-end gap-sm mt-lg pt-lg border-t border-border">
+      <div className="flex items-center justify-end gap-2 mt-6 pt-5 border-t border-border text-xs font-bold">
         <button
           type="button"
           onClick={onCancel}
-          className="px-lg py-2.5 rounded-xl border border-border text-text-primary text-sm font-semibold hover:bg-surface transition-colors"
+          className="px-5 py-2.5 rounded-xl border border-border text-text-secondary hover:bg-slate-50 transition-colors"
         >
           Batal
         </button>
         <button
           type="submit"
-          className="px-lg py-2.5 rounded-xl bg-primary-blue hover:bg-secondary-blue text-white text-sm font-semibold transition-colors"
+          className="px-5 py-2.5 rounded-xl bg-[#1E5EF3] hover:bg-[#1E40AF] text-white transition-colors"
         >
           {transaction ? 'Simpan Perubahan' : 'Simpan Transaksi'}
         </button>

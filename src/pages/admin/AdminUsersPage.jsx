@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import AdminSidebar from './AdminSidebar';
+import AdminTopbar from '../../components/layout/AdminTopbar';
 import AdminUserForm from './AdminUserForm';
 import { usersData as initialUsers } from '../../data/usersData';
 
@@ -45,187 +46,218 @@ const AdminUsersPage = () => {
     setDeleteConfirm(null);
   };
 
-  if (showForm) {
-    return (
-      <div className="min-h-screen bg-background py-md px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto">
-        <div className="flex flex-col xl:flex-row gap-lg items-start">
-          <AdminSidebar />
-
-          <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-sm mb-lg">
-              <button onClick={() => { setShowForm(false); setEditingUser(null); }} className="text-text-secondary hover:text-primary-blue flex items-center gap-1 text-sm font-semibold">
-                <span className="material-symbols-outlined text-[18px]">arrow_back</span>
-                Kembali
-              </button>
-            </div>
-
-            <AdminUserForm
-              key={editingUser ? `user-${editingUser.id}` : 'user-new'}
-              user={editingUser}
-              onSave={handleSaveUser}
-              onCancel={() => { setShowForm(false); setEditingUser(null); }}
-            />
-          </div>
-        </div>
-      </div>
-    );
-  }
+  const getRoleBadge = (role) => {
+    switch (role) {
+      case 'Super Admin':
+        return <span className="bg-[#FEE2E2] text-[#EF4444] border border-[#FECACA] text-[9px] font-bold px-2.5 py-0.5 rounded-full">Super Admin</span>;
+      case 'Organisasi':
+        return <span className="bg-[#EBF3FF] text-[#1E5EF3] border border-[#D0E2FF] text-[9px] font-bold px-2.5 py-0.5 rounded-full">Organisasi</span>;
+      default:
+        return <span className="bg-[#F1F5F9] text-[#64748B] border border-[#E2E8F0] text-[9px] font-bold px-2.5 py-0.5 rounded-full">{role}</span>;
+    }
+  };
 
   return (
-    <div className="min-h-screen bg-background py-md px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto">
-      <div className="flex flex-col xl:flex-row gap-lg items-start">
-        <AdminSidebar />
-
-        <div className="flex-1 min-w-0">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-md mb-lg">
+    <div className="min-h-screen bg-background flex flex-col xl:flex-row w-full">
+      <AdminSidebar />
+      <div className="flex-1 flex flex-col min-w-0 bg-[#F9FAFB]">
+        <AdminTopbar />
+        <div className="flex-grow p-6 md:p-8 overflow-y-auto">
+          {showForm ? (
             <div>
-              <h1 className="font-headline-lg text-2xl md:text-[32px] text-text-primary">Manajemen Pengguna</h1>
-              <p className="text-text-secondary text-sm mt-1">Kelola data pengguna dari usersData.js</p>
-            </div>
-            <button
-              onClick={() => { setEditingUser(null); setShowForm(true); }}
-              className="bg-primary-blue hover:bg-secondary-blue text-white font-bold text-sm px-lg py-3 rounded-xl transition-all inline-flex items-center gap-2 whitespace-nowrap"
-            >
-              <span className="material-symbols-outlined text-[18px]">person_add</span>
-              Tambah Pengguna
-            </button>
-          </div>
+              <div className="flex items-center gap-2 mb-6">
+                <button onClick={() => { setShowForm(false); setEditingUser(null); }} className="text-text-secondary hover:text-[#1E5EF3] flex items-center gap-1.5 text-xs font-bold transition-colors">
+                  <span className="material-symbols-outlined text-[16px]">arrow_back</span>
+                  Kembali ke Manajemen Pengguna
+                </button>
+              </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-md mb-lg">
-            <div className="rounded-2xl border border-border bg-white p-md shadow-sm">
-              <p className="text-xs uppercase tracking-wider text-text-secondary font-semibold">Total Pengguna</p>
-              <p className="mt-2 text-3xl font-black text-text-primary">{users.length}</p>
+              <AdminUserForm
+                key={editingUser ? `user-${editingUser.id}` : 'user-new'}
+                user={editingUser}
+                onSave={handleSaveUser}
+                onCancel={() => { setShowForm(false); setEditingUser(null); }}
+              />
             </div>
-            <div className="rounded-2xl border border-border bg-white p-md shadow-sm">
-              <p className="text-xs uppercase tracking-wider text-text-secondary font-semibold">Pengguna Aktif</p>
-              <p className="mt-2 text-3xl font-black text-primary-blue">{users.filter((user) => user.status === 'Aktif').length}</p>
-            </div>
-            <div className="rounded-2xl border border-border bg-white p-md shadow-sm">
-              <p className="text-xs uppercase tracking-wider text-text-secondary font-semibold">Super Admin</p>
-              <p className="mt-2 text-3xl font-black text-secondary-yellow">{users.filter((user) => user.role === 'Super Admin').length}</p>
-            </div>
-          </div>
+          ) : (
+            <>
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                <div>
+                  <h1 className="font-bold text-2xl text-text-primary flex items-center gap-2">
+                    Manajemen Pengguna
+                  </h1>
+                  <p className="text-text-secondary text-xs mt-1">Kelola data pengguna, peranan (role), dan status aktif akun</p>
+                </div>
+                <button
+                  onClick={() => { setEditingUser(null); setShowForm(true); }}
+                  className="bg-[#1E5EF3] hover:bg-[#1E40AF] text-white font-bold text-[11px] px-4 py-2.5 rounded-xl transition-all inline-flex items-center gap-2 whitespace-nowrap shadow-sm"
+                >
+                  <span className="material-symbols-outlined text-[16px]">person_add</span>
+                  Tambah Pengguna
+                </button>
+              </div>
 
-          <div className="bg-white border border-border rounded-2xl overflow-hidden shadow-sm">
-            <div className="p-md md:p-lg border-b border-border flex flex-col gap-md">
-              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-md">
-                <div className="relative md:col-span-2 xl:col-span-2">
-                  <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary text-[18px] pointer-events-none">search</span>
-                  <input
-                    type="text"
-                    placeholder="Cari nama, email, atau organisasi..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full bg-surface border border-border rounded-lg pl-10 pr-4 py-2.5 text-sm text-text-primary focus:border-primary-blue focus:ring-1 focus:ring-primary-blue outline-none"
-                  />
+              {/* 3-Column Stats Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+                <div className="rounded-2xl border border-border bg-white p-4 shadow-sm flex items-center gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border text-[#1E5EF3] bg-[#EBF3FF] border-[#D0E2FF] shadow-sm">
+                    <span className="material-symbols-outlined text-[24px]">groups</span>
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-[11px] font-bold text-text-secondary uppercase tracking-wider">Total Pengguna</p>
+                    <p className="text-2xl font-black text-[#1F2937] mt-1 leading-none">{users.length}</p>
+                  </div>
                 </div>
 
-                <select value={filterRole} onChange={(e) => setFilterRole(e.target.value)} className="bg-surface border border-border rounded-lg px-md py-2.5 text-sm text-text-primary focus:border-primary-blue outline-none">
-                  {roles.map((role) => (
-                    <option key={role} value={role}>{role}</option>
-                  ))}
-                </select>
+                <div className="rounded-2xl border border-border bg-white p-4 shadow-sm flex items-center gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border text-[#10B981] bg-[#E6F4EA] border-[#D1FAE5] shadow-sm">
+                    <span className="material-symbols-outlined text-[24px]">how_to_reg</span>
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-[11px] font-bold text-text-secondary uppercase tracking-wider">Pengguna Aktif</p>
+                    <p className="text-2xl font-black text-[#10B981] mt-1 leading-none">{users.filter((user) => user.status === 'Aktif').length}</p>
+                  </div>
+                </div>
 
-                <select value={filterStatus} onChange={(e) => setFilterStatus(e.target.value)} className="bg-surface border border-border rounded-lg px-md py-2.5 text-sm text-text-primary focus:border-primary-blue outline-none">
-                  {statuses.map((status) => (
-                    <option key={status} value={status}>{status}</option>
-                  ))}
-                </select>
+                <div className="rounded-2xl border border-border bg-white p-4 shadow-sm flex items-center gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl border text-[#F59E0B] bg-[#FFFBEB] border-[#FEF3C7] shadow-sm">
+                    <span className="material-symbols-outlined text-[24px]">admin_panel_settings</span>
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <p className="text-[11px] font-bold text-text-secondary uppercase tracking-wider">Super Admin</p>
+                    <p className="text-2xl font-black text-[#F59E0B] mt-1 leading-none">{users.filter((user) => user.role === 'Super Admin').length}</p>
+                  </div>
+                </div>
               </div>
-            </div>
 
-            <div className="overflow-x-auto">
-              <table className="w-full text-left text-sm">
-                <thead>
-                  <tr className="bg-surface text-text-secondary text-xs uppercase tracking-wider">
-                    <th className="px-md md:px-lg py-3 font-semibold">Pengguna</th>
-                    <th className="px-md md:px-lg py-3 font-semibold hidden md:table-cell">Role</th>
-                    <th className="px-md md:px-lg py-3 font-semibold hidden lg:table-cell">Organisasi</th>
-                    <th className="px-md md:px-lg py-3 font-semibold text-center hidden sm:table-cell">Status</th>
-                    <th className="px-md md:px-lg py-3 font-semibold text-right">Aksi</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-border">
-                  {filteredUsers.length === 0 ? (
-                    <tr>
-                      <td colSpan="5" className="px-lg py-3xl text-center text-text-secondary">
-                        <span className="material-symbols-outlined text-4xl mb-2 block">search_off</span>
-                        Tidak ada pengguna ditemukan
-                      </td>
-                    </tr>
-                  ) : (
-                    filteredUsers.map((user) => (
-                      <tr key={user.id} className="hover:bg-surface/60 transition-colors">
-                        <td className="px-md md:px-lg py-3">
-                          <div className="flex items-center gap-sm">
-                            <img src={user.avatarSrc} alt="" className="w-12 h-12 rounded-full object-cover border border-border/50 flex-shrink-0" />
-                            <div className="min-w-0">
-                              <p className="font-semibold text-text-primary truncate max-w-[220px] md:max-w-[320px]">{user.name}</p>
-                              <p className="text-text-secondary text-xs truncate">{user.email}</p>
-                            </div>
-                          </div>
-                        </td>
-                        <td className="px-md md:px-lg py-3 hidden md:table-cell text-text-secondary">{user.role}</td>
-                        <td className="px-md md:px-lg py-3 hidden lg:table-cell text-text-secondary">{user.organization}</td>
-                        <td className="px-md md:px-lg py-3 text-center hidden sm:table-cell">
-                          <span className={`inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold border ${user.status === 'Aktif' ? 'bg-success/10 text-success border-success/20' : 'bg-error/10 text-error border-error/20'}`}>
-                            {user.status}
-                          </span>
-                        </td>
-                        <td className="px-md md:px-lg py-3">
-                          <div className="flex items-center justify-end gap-1">
-                            <button
-                              onClick={() => { setEditingUser(user); setShowForm(true); }}
-                              className="p-2 rounded-lg text-text-secondary hover:text-primary-blue hover:bg-ultra-light-blue transition-colors"
-                              title="Edit"
-                            >
-                              <span className="material-symbols-outlined text-[18px]">edit</span>
-                            </button>
-                            <button
-                              onClick={() => setDeleteConfirm(user.id)}
-                              className="p-2 rounded-lg text-text-secondary hover:text-error hover:bg-error-container transition-colors"
-                              title="Hapus"
-                            >
-                              <span className="material-symbols-outlined text-[18px]">delete</span>
-                            </button>
-                          </div>
-                        </td>
+              <div className="bg-white border border-border rounded-2xl overflow-hidden shadow-sm">
+                <div className="p-4 md:p-5 border-b border-border flex flex-col gap-3">
+                  <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-3">
+                    <div className="relative md:col-span-2 xl:col-span-2">
+                      <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary text-[16px] pointer-events-none">search</span>
+                      <input
+                        type="text"
+                        placeholder="Cari nama, email, atau organisasi..."
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                        className="w-full bg-[#F9FAFB] border border-border rounded-xl pl-9 pr-4 py-2 text-xs text-text-primary focus:border-[#1E5EF3] focus:bg-white focus:ring-1 focus:ring-[#1E5EF3]/20 outline-none"
+                      />
+                    </div>
+
+                    <select value={filterRole} onChange={(e) => setFilterRole(e.target.value)} className="bg-[#F9FAFB] border border-border rounded-xl px-3 py-2 text-xs text-text-primary focus:border-[#1E5EF3] focus:bg-white outline-none cursor-pointer font-bold">
+                      {roles.map((role) => (
+                        <option key={role} value={role}>{role}</option>
+                      ))}
+                    </select>
+
+                    <select value={filterStatus} onChange={(e) => setFilterStatus(e.target.value)} className="bg-[#F9FAFB] border border-border rounded-xl px-3 py-2 text-xs text-text-primary focus:border-[#1E5EF3] focus:bg-white outline-none cursor-pointer font-bold">
+                      {statuses.map((status) => (
+                        <option key={status} value={status}>{status}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left border-collapse">
+                    <thead>
+                      <tr className="border-b border-border text-[10px] font-bold text-text-secondary uppercase">
+                        <th className="px-4 md:px-5 pb-3 pt-4">Pengguna</th>
+                        <th className="px-4 md:px-5 pb-3 pt-4 hidden md:table-cell">Role</th>
+                        <th className="px-4 md:px-5 pb-3 pt-4 hidden lg:table-cell">Organisasi</th>
+                        <th className="px-4 md:px-5 pb-3 pt-4 text-center hidden sm:table-cell">Status</th>
+                        <th className="px-4 md:px-5 pb-3 pt-4 text-right">Aksi</th>
                       </tr>
-                    ))
-                  )}
-                </tbody>
-              </table>
-            </div>
+                    </thead>
+                    <tbody className="divide-y divide-slate-50 text-[11px]">
+                      {filteredUsers.length === 0 ? (
+                        <tr>
+                          <td colSpan="5" className="px-5 py-12 text-center text-text-secondary">
+                            <span className="material-symbols-outlined text-3xl mb-1 block">search_off</span>
+                            Tidak ada pengguna ditemukan
+                          </td>
+                        </tr>
+                      ) : (
+                        filteredUsers.map((user) => (
+                          <tr key={user.id} className="hover:bg-slate-50/50 transition-colors">
+                            <td className="px-4 md:px-5 py-2.5">
+                              <div className="flex items-center gap-3">
+                                <img src={user.avatarSrc} alt="" className="w-12 h-12 rounded-full object-cover border border-border/50 flex-shrink-0" />
+                                <div className="min-w-0">
+                                  <p className="font-bold text-text-primary truncate max-w-[220px] md:max-w-[320px]">{user.name}</p>
+                                  <p className="text-text-secondary text-[10px] truncate mt-0.5">{user.email}</p>
+                                </div>
+                              </div>
+                            </td>
+                            <td className="px-4 md:px-5 py-2.5 hidden md:table-cell">{getRoleBadge(user.role)}</td>
+                            <td className="px-4 md:px-5 py-2.5 hidden lg:table-cell text-text-secondary font-medium">{user.organization}</td>
+                            <td className="px-4 md:px-5 py-2.5 text-center hidden sm:table-cell">
+                              <span className={`inline-block px-2.5 py-0.5 rounded-full text-[9px] font-bold border ${user.status === 'Aktif' ? 'bg-[#E6F4EA] text-[#10B981] border-[#D1FAE5]' : 'bg-[#FEE2E2] text-[#EF4444] border-[#FECACA]'}`}>
+                                {user.status}
+                              </span>
+                            </td>
+                            <td className="px-4 md:px-5 py-2.5">
+                              <div className="flex items-center justify-end gap-1">
+                                <button
+                                  onClick={() => { setEditingUser(user); setShowForm(true); }}
+                                  className="p-1.5 rounded-lg text-text-secondary hover:text-[#1E5EF3] hover:bg-[#EBF3FF] transition-colors"
+                                  title="Edit"
+                                >
+                                  <span className="material-symbols-outlined text-[16px]">edit</span>
+                                </button>
+                                <button
+                                  onClick={() => setDeleteConfirm(user.id)}
+                                  className="p-1.5 rounded-lg text-text-secondary hover:text-rose-500 hover:bg-rose-50 transition-colors"
+                                  title="Hapus"
+                                >
+                                  <span className="material-symbols-outlined text-[16px]">delete</span>
+                                </button>
+                              </div>
+                            </td>
+                          </tr>
+                        ))
+                      )}
+                    </tbody>
+                  </table>
+                </div>
 
-            <div className="p-md md:p-lg border-t border-border flex items-center justify-between gap-md">
-              <p className="text-text-secondary text-xs">
-                Menampilkan <span className="font-bold text-text-primary">{filteredUsers.length}</span> dari <span className="font-bold text-text-primary">{users.length}</span> pengguna
-              </p>
-              {searchQuery && (
-                <button onClick={() => setSearchQuery('')} className="text-primary-blue text-xs font-semibold hover:underline">
-                  Reset Pencarian
-                </button>
-              )}
-            </div>
+                <div className="p-4 border-t border-border flex items-center justify-between">
+                  <p className="text-text-secondary text-[10px] font-bold">
+                    Menampilkan <span className="text-text-primary font-black">{filteredUsers.length}</span> dari <span className="text-text-primary font-black">{users.length}</span> pengguna
+                  </p>
+                  {searchQuery && (
+                    <button onClick={() => setSearchQuery('')} className="text-[#1E5EF3] text-[10px] font-bold hover:underline">
+                      Reset Pencarian
+                    </button>
+                  )}
+                </div>
+              </div>
+            </>
+          )}
+
+          {/* Footer Section */}
+          <div className="mt-8 pt-4 border-t border-border flex justify-between items-center text-[10px] font-bold text-text-secondary">
+            <p>© 2025 CampuSphere • Fakultas Universitas Airlangga</p>
+            <p>v1.0.0</p>
           </div>
         </div>
       </div>
 
       {deleteConfirm !== null && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-md">
-          <div className="bg-white rounded-2xl p-lg md:p-xl max-w-md w-full shadow-lg">
-            <h3 className="font-headline-lg text-lg text-text-primary mb-sm">Hapus Pengguna?</h3>
-            <p className="text-text-secondary text-sm mb-lg">Data pengguna yang dihapus tidak dapat dikembalikan. Lanjutkan?</p>
-            <div className="flex items-center justify-end gap-sm">
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-2xl p-5 md:p-6 max-w-sm w-full shadow-lg border border-border">
+            <h3 className="font-bold text-text-primary text-sm mb-2">Hapus Pengguna?</h3>
+            <p className="text-text-secondary text-xs mb-4">Data pengguna yang dihapus tidak dapat dikembalikan. Lanjutkan?</p>
+            <div className="flex items-center justify-end gap-2 text-xs font-bold">
               <button
                 onClick={() => setDeleteConfirm(null)}
-                className="px-lg py-2.5 rounded-xl border border-border text-text-primary text-sm font-semibold hover:bg-surface transition-colors"
+                className="px-4 py-2 rounded-xl border border-border text-text-secondary hover:bg-slate-50 transition-colors"
               >
                 Batal
               </button>
               <button
                 onClick={() => handleDeleteUser(deleteConfirm)}
-                className="px-lg py-2.5 rounded-xl bg-error hover:bg-error/90 text-white text-sm font-semibold transition-colors"
+                className="px-4 py-2 rounded-xl bg-rose-500 hover:bg-rose-600 text-white transition-colors"
               >
                 Hapus
               </button>
