@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 const StepIndicator = ({ steps, currentStep, nodeBgColor = 'bg-white' }) => {
   return (
@@ -10,7 +10,7 @@ const StepIndicator = ({ steps, currentStep, nodeBgColor = 'bg-white' }) => {
         const stepNum = index + 1;
         const isCompleted = stepNum < currentStep;
         const isCurrent = stepNum === currentStep;
-        const isUpcoming = stepNum > currentStep;
+
 
         // Styling based on state
         let circleClasses = "w-8 h-8 md:w-10 md:h-10 shrink-0 rounded-full flex items-center justify-center font-bold text-[12px] md:text-body-md transition-colors ";

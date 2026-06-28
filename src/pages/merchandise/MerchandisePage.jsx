@@ -43,21 +43,14 @@ const MerchandisePage = () => {
   const [activePriceRange, setActivePriceRange] = useState('Any Price');
   const [activeSort, setActiveSort] = useState('Newest Arrivals');
   const [activeStore, setActiveStore] = useState('Semua Store');
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
 
   // Pagination State
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 10; // 10 items per page for 2 rows on desktop
   
   useEffect(() => {
-    setCurrentPage(1);
+    Promise.resolve().then(() => setCurrentPage(1));
   }, [activeCategory, activePriceRange, activeSort, activeStore]);
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 1024);
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   const categories = merchCategories;
   const priceRanges = merchPriceRanges;

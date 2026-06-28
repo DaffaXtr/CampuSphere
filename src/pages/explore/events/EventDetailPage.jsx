@@ -17,7 +17,7 @@ const EventDetailPage = () => {
       </section>
       
       {/* Main Content & Sidebar */}
-      <div className="px-margin-mobile md:px-margin-desktop py-3xl">
+      <div className="px-margin-mobile md:px-margin-desktop py-xl md:py-3xl max-w-[1440px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-xl">
           {/* Left Column: Event Details */}
           <div className="lg:col-span-8 space-y-2xl">

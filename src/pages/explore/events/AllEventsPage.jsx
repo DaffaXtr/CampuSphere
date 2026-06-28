@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+
 import EventCard from '../../../components/explore/EventCard';
 import Breadcrumb from '../../../components/common/Breadcrumb';
 import heroImage from '../../../assets/Tiket.png';
@@ -34,7 +34,7 @@ const AllEventsPage = () => {
   });
 
   return (
-    <div className="py-lg md:py-xl px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto min-h-screen flex flex-col">
+    <div className="py-md md:py-xl px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto min-h-screen flex flex-col">
       <header className="mb-xl md:mb-2xl relative overflow-hidden">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-lg">
           {/* Left Content */}

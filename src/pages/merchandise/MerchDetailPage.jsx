@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useParams, Link } from 'react-router-dom';
 import Breadcrumb from '../../components/common/Breadcrumb';
 import MerchCard from '../../components/merchandise/MerchCard';
 
 const MerchDetailPage = () => {
   const { id } = useParams();
-  const navigate = useNavigate();
 
   // Scroll to top on mount or when ID changes
   useEffect(() => {
@@ -90,7 +89,7 @@ const MerchDetailPage = () => {
   };
 
   return (
-    <div className="py-lg md:py-xl px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto min-h-screen flex flex-col">
+    <div className="py-md md:py-xl px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto min-h-screen flex flex-col">
       {/* Breadcrumb */}
       <div className="mb-xl">
         <Breadcrumb items={[

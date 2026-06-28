@@ -55,6 +55,10 @@ const AdminTransactionsPage = () => {
     setDeleteConfirm(null);
   };
 
+  const totalRevenue = transactions
+    .filter((trx) => trx.status === 'Berhasil')
+    .reduce((sum, trx) => sum + (trx.numericTotal || 0), 0);
+
   return (
     <div className="min-h-screen bg-background flex flex-col xl:flex-row w-full">
       <AdminSidebar />

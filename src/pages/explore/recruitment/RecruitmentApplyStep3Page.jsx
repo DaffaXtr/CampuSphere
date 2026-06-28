@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import StepIndicator from '../../../components/common/StepIndicator';
 import Breadcrumb from '../../../components/common/Breadcrumb';
@@ -12,7 +12,7 @@ const RecruitmentApplyStep3Page = () => {
   }, []);
 
   return (
-    <div className="py-xl px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto">
+    <div className="py-md md:py-xl px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto min-h-screen flex flex-col">
       {/* Breadcrumb & Header */}
       <header className="mb-xl md:mb-2xl">
         <Breadcrumb items={[
@@ -20,7 +20,7 @@ const RecruitmentApplyStep3Page = () => {
           { label: 'SDC Recruitment 2026', path: `/recruitment/${id || 1}` },
           { label: 'Apply' }
         ]} />
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-md">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-md mt-md">
           <div>
             <h1 className="font-bold text-headline-md md:font-headline-xl md:text-headline-xl text-text-primary tracking-tight mb-2">Application Form</h1>
             <p className="font-body-sm md:font-body-md md:text-body-md text-text-secondary">Take the first step to join our community of innovators.</p>

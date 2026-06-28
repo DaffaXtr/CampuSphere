@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Breadcrumb from '../../components/common/Breadcrumb';
 import ProfileSidebar from '../../components/profile/ProfileSidebar';
@@ -121,7 +121,7 @@ const HistoryPage = () => {
         <ProfileSidebar activeTab="history" />
 
         {/* Right Side: Content Area */}
-        <main className="flex-1 py-lg md:py-xl px-margin-mobile md:px-margin-desktop flex flex-col gap-xl">
+        <main className="flex-1 py-md md:py-xl px-margin-mobile md:px-margin-desktop flex flex-col gap-xl">
           
           {/* Breadcrumb & Header */}
           <div>

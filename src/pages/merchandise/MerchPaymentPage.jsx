@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import Breadcrumb from '../../components/common/Breadcrumb';
 
@@ -49,7 +49,7 @@ const MerchPaymentPage = () => {
   };
 
   return (
-    <div className="py-xl px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto min-h-screen">
+    <div className="py-md md:py-xl px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto min-h-screen">
       {/* Breadcrumb */}
       <div className="mb-xl">
         <Breadcrumb items={[

@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 const MerchCard = ({ 
   id = 1, 
   name, 
-  category, 
   price, 
   imageSrc, 
   ratingValue = 4.8, 

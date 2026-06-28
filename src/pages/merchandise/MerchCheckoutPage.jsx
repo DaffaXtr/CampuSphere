@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import Breadcrumb from '../../components/common/Breadcrumb';
 
 const MerchCheckoutPage = () => {
@@ -47,7 +47,7 @@ const MerchCheckoutPage = () => {
   };
 
   return (
-    <div className="py-lg md:py-xl px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto min-h-screen flex flex-col bg-surface-container-lowest">
+    <div className="py-md md:py-xl px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto min-h-screen flex flex-col bg-surface-container-lowest">
       
       {/* Header & Breadcrumb */}
       <header className="mb-xl">

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Breadcrumb from '../../components/common/Breadcrumb';
 import ProfileSidebar from '../../components/profile/ProfileSidebar';
@@ -13,7 +13,7 @@ const ProfilePage = () => {
   // Modal State for Digital Ticket
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedTicket, setSelectedTicket] = useState(null);
-  const [showToast, setShowToast] = useState(false);
+
 
   const tickets = [
     {
@@ -37,21 +37,10 @@ const ProfilePage = () => {
     setIsModalOpen(true);
   };
 
-  const handleDownloadSKP = () => {
-    setShowToast(true);
-    setTimeout(() => setShowToast(false), 3000);
-  };
+
 
   return (
     <div className="max-w-[1440px] mx-auto min-h-screen flex flex-col relative text-left">
-      {/* Toast Notification */}
-      {showToast && (
-        <div className="fixed bottom-lg right-lg bg-text-primary text-white px-md py-sm rounded-xl shadow-lg flex items-center gap-2 z-50 animate-fade-in transition-all">
-          <span className="material-symbols-outlined text-success">check_circle</span>
-          <span className="font-body-sm text-xs font-semibold">Draf SKP (PDF) berhasil diunduh!</span>
-        </div>
-      )}
-
       {/* Main Layout Container: 2 Columns */}
       <div className="flex flex-col md:flex-row w-full flex-grow items-stretch">
         

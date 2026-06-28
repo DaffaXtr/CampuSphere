@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import StepIndicator from '../../../components/common/StepIndicator';
 import Breadcrumb from '../../../components/common/Breadcrumb';
 
 const RegistrationPage = () => {
-  const navigate = useNavigate();
   const location = useLocation();
   const eventData = location.state?.eventData;
 
@@ -13,13 +12,8 @@ const RegistrationPage = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const handleNext = (e) => {
-    e.preventDefault();
-    navigate('/explore/ticket-selection', { state: { eventData } });
-  };
-
   return (
-    <div className="py-xl px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto">
+    <div className="py-md md:py-xl px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto min-h-screen flex flex-col">
       {/* Breadcrumb & Header */}
       <header className="mb-2xl">
         <Breadcrumb items={[
@@ -27,7 +21,7 @@ const RegistrationPage = () => {
           { label: 'Global Tech Conference 2026', path: `/event/${eventData?.id || 1}` },
           { label: 'Register' }
         ]} />
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-md">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-md mt-md">
           <div>
             <h1 className="font-headline-xl text-headline-xl text-text-primary tracking-tight mb-2">Registration</h1>
             <p className="font-body-md text-body-md text-text-secondary">Secure your spot for the biggest tech event of the year.</p>

@@ -8,17 +8,19 @@ import { upcomingEvents, recruitments } from '../../data/eventsData';
 const ExplorePage = () => {
 
   return (
-    <main className="py-md md:py-xl px-margin-mobile md:px-margin-desktop mx-auto max-w-[1440px] min-h-screen flex flex-col gap-xl">
-      <div className="hidden md:block text-left">
+    <main className="py-md md:py-xl px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto min-h-screen flex flex-col">
+      <header className="mb-md hidden md:block text-left">
         <Breadcrumb items={[
           { label: 'Explore' }
         ]} />
+      </header>
+
+      <div className="mb-2xl">
+        <FeaturedEvent />
       </div>
 
-      <FeaturedEvent />
-
-      <section>
-        <div className="flex items-center justify-between mb-4 md:mb-lg">
+      <section className="mb-2xl text-left">
+        <div className="flex justify-between items-center mb-md">
           <h2 className="font-headline-md text-[16px] md:text-headline-md">Other Upcoming Events</h2>
           <Link to="/events" className="text-primary text-[11px] md:text-label-md font-label-md hover:underline">View All Events</Link>
         </div>
@@ -29,8 +31,8 @@ const ExplorePage = () => {
         </div>
       </section>
 
-      <section>
-        <div className="flex items-center justify-between mb-4 md:mb-lg">
+      <section className="mb-2xl text-left">
+        <div className="flex justify-between items-center mb-md">
           <h2 className="font-headline-md text-[16px] md:text-headline-md">Organization Recruitment Board</h2>
           <Link to="/recruitments" className="text-primary text-[11px] md:text-label-md font-label-md hover:underline">View All Positions</Link>
         </div>

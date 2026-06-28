@@ -86,7 +86,7 @@ const ArticlePage = () => {
   };
 
   return (
-    <div className="py-sm md:py-xl px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto min-h-screen flex flex-col">
+    <div className="py-md md:py-xl px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto min-h-screen flex flex-col">
       {/* Breadcrumb */}
       <header className="mb-md hidden md:block">
         <Breadcrumb items={[

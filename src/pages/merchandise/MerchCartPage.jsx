@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Breadcrumb from '../../components/common/Breadcrumb';
 
@@ -91,7 +91,7 @@ const MerchCartPage = () => {
   };
 
   return (
-    <div className="py-xl px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto min-h-screen">
+    <div className="py-md md:py-xl px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto min-h-screen">
       <div className="mb-xl">
         <Breadcrumb items={[
           { label: 'Merchandise', path: '/merchandise' },

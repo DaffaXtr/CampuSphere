@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Breadcrumb from '../../components/common/Breadcrumb';
 import ProfileSidebar from '../../components/profile/ProfileSidebar';
 
