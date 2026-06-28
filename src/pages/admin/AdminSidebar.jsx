@@ -46,32 +46,34 @@ const AdminSidebar = () => {
   ];
 
   const renderSidebarContent = (onItemClick) => (
-    <div className="w-full flex flex-col justify-between h-full overflow-y-auto hide-scrollbar">
-      <div className="w-full p-6 flex flex-col text-left">
-        {/* Logo Brand & Close Button on Mobile */}
-        <div className="flex items-center justify-between mb-8">
-          <div className="flex items-center gap-3">
-            {/* Logo C */}
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0F52BA] text-white font-bold text-2xl shadow-sm shrink-0">
-              C
-            </div>
-            <div>
-              <h2 className="font-bold text-base text-[#0F52BA] leading-none tracking-wide">CAMPUSPHERE</h2>
-              <p className="text-[11px] font-semibold text-text-secondary mt-1">Admin Fakultas</p>
-            </div>
+    <div className="w-full flex flex-col h-full bg-white overflow-hidden">
+      {/* Sticky Logo Header */}
+      <div className="w-full p-6 pb-4 flex items-center justify-between shrink-0 bg-white z-10 border-b border-border/40">
+        <div className="flex items-center gap-3">
+          {/* Logo C */}
+          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0F52BA] text-white font-bold text-2xl shadow-sm shrink-0">
+            C
           </div>
-          {onItemClick && (
-            <button
-              onClick={onItemClick}
-              className="xl:hidden text-text-secondary hover:text-text-primary focus:outline-none flex items-center justify-center p-1.5 rounded-lg hover:bg-slate-50 transition-colors"
-            >
-              <span className="material-symbols-outlined text-[20px]">close</span>
-            </button>
-          )}
+          <div>
+            <h2 className="font-bold text-base text-[#0F52BA] leading-none tracking-wide">CAMPUSPHERE</h2>
+            <p className="text-[11px] font-semibold text-text-secondary mt-1">Admin Fakultas</p>
+          </div>
         </div>
+        {onItemClick && (
+          <button
+            onClick={onItemClick}
+            className="xl:hidden text-text-secondary hover:text-text-primary focus:outline-none flex items-center justify-center p-1.5 rounded-lg hover:bg-slate-50 transition-colors"
+          >
+            <span className="material-symbols-outlined text-[20px]">close</span>
+          </button>
+        )}
+      </div>
 
-        {/* Menu Groups */}
-        <div className="flex flex-col gap-6">
+      {/* Scrollable Content */}
+      <div className="flex-1 overflow-y-auto hide-scrollbar flex flex-col justify-between">
+        <div className="w-full px-6 py-6 flex flex-col text-left">
+          {/* Menu Groups */}
+          <div className="flex flex-col gap-6">
           <NavLink
             to="/admin"
             end
@@ -131,6 +133,7 @@ const AdminSidebar = () => {
             <span className="material-symbols-outlined text-[72px] text-[#0F52BA]">domain</span>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );
