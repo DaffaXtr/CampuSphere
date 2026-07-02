@@ -42,6 +42,7 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Navigate to="/explore" replace />} />
+          <Route path="/CampuSphere" element={<ExplorePage />} />
           <Route path="/explore" element={<ExplorePage />} />
           <Route path="/events" element={<AllEventsPage />} />
           <Route path="/event/:id" element={<EventDetailPage />} />
