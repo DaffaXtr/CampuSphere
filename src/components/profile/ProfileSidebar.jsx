@@ -35,7 +35,7 @@ const ProfileSidebar = ({ activeTab }) => {
   ];
 
   return (
-    <aside className="hidden md:flex w-72 bg-surface border-r border-border p-md md:p-lg flex-col gap-md shrink-0">
+    <aside className="hidden md:flex w-72 bg-surface border-r border-border p-md md:p-lg flex-col gap-md shrink-0 sticky top-24 self-start h-[calc(100vh-6rem)] overflow-y-auto hide-scrollbar">
       
       {/* Student Identity Widget */}
       <div className="px-md py-md bg-white rounded-xl border border-border shadow-sm text-left">

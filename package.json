@@ -1,4 +1,5 @@
 {
+  "homepage": "https://github.com/DaffaXtr/CampuSphere",
   "name": "temp-vite",
   "private": true,
   "version": "0.0.0",
@@ -6,8 +7,9 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {

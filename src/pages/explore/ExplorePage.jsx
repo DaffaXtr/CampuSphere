@@ -11,7 +11,7 @@ const ExplorePage = () => {
     <main className="py-md md:py-xl px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto min-h-screen flex flex-col">
       <header className="mb-md hidden md:block text-left">
         <Breadcrumb items={[
-          { label: 'Explore' }
+          { label: 'Eksplorasi' }
         ]} />
       </header>
 
@@ -21,8 +21,8 @@ const ExplorePage = () => {
 
       <section className="mb-2xl text-left">
         <div className="flex justify-between items-center mb-md">
-          <h2 className="font-headline-md text-[16px] md:text-headline-md">Other Upcoming Events</h2>
-          <Link to="/events" className="text-primary text-[11px] md:text-label-md font-label-md hover:underline">View All Events</Link>
+          <h2 className="font-headline-md text-[16px] md:text-headline-md">Acara Mendatang Lainnya</h2>
+          <Link to="/events" className="text-primary text-[11px] md:text-label-md font-label-md hover:underline">Lihat Semua Acara</Link>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-sm md:gap-lg">
           {upcomingEvents.map((event, idx) => (
@@ -33,8 +33,8 @@ const ExplorePage = () => {
 
       <section className="mb-2xl text-left">
         <div className="flex justify-between items-center mb-md">
-          <h2 className="font-headline-md text-[16px] md:text-headline-md">Organization Recruitment Board</h2>
-          <Link to="/recruitments" className="text-primary text-[11px] md:text-label-md font-label-md hover:underline">View All Positions</Link>
+          <h2 className="font-headline-md text-[16px] md:text-headline-md">Papan Rekrutmen Organisasi</h2>
+          <Link to="/recruitments" className="text-primary text-[11px] md:text-label-md font-label-md hover:underline">Lihat Semua Posisi</Link>
         </div>
         <div className="grid grid-cols-2 gap-sm md:gap-lg md:grid-cols-3">
           {recruitments.map((recruitment, idx) => (

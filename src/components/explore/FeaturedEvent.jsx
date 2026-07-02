@@ -37,7 +37,7 @@ const FeaturedEvent = () => {
           <div className="flex flex-col justify-between flex-1 relative z-10 pr-lg">
             <div>
               <span className="text-primary-blue font-bold text-[10px] md:text-xs tracking-wider uppercase">
-                Featured Event
+                Acara Unggulan
               </span>
 
               <h2 className="font-headline-xl text-2xl lg:text-[32px] text-text-primary mt-md mb-sm leading-tight max-w-[380px]">
@@ -66,7 +66,7 @@ const FeaturedEvent = () => {
                 to={`/event/${featuredEvents[0].id}`}
                 className="bg-primary-blue hover:bg-secondary-blue text-white px-lg py-2.5 rounded-xl font-label-md transition-all active:scale-95 inline-flex items-center gap-2 shadow-sm"
               >
-                Register Ticket
+                Daftar Tiket
                 <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
               </Link>
 
@@ -79,7 +79,7 @@ const FeaturedEvent = () => {
                   <div className="inline-flex items-center justify-center h-8 w-8 rounded-full ring-2 ring-white bg-primary-yellow text-text-primary text-[8px] font-extrabold">+99</div>
                 </div>
                 <span className="text-xs text-text-secondary font-medium">
-                  Join <strong>{featuredEvents[0].participants}</strong> participants
+                  Bergabung dengan <strong>{featuredEvents[0].participants}</strong> peserta
                 </span>
               </div>
             </div>
@@ -126,7 +126,7 @@ const FeaturedEvent = () => {
                   to={`/event/${featuredEvents[1].id}`}
                   className="bg-primary-yellow hover:bg-secondary-yellow text-text-primary text-[11px] px-4 py-1.5 rounded-lg font-bold inline-block transition-colors"
                 >
-                  View Details
+                  Lihat Detail
                 </Link>
               </div>
             </div>
@@ -167,7 +167,7 @@ const FeaturedEvent = () => {
                   to={`/event/${featuredEvents[2].id}`}
                   className="bg-primary-blue hover:bg-secondary-blue text-white text-[11px] px-4 py-1.5 rounded-lg font-semibold inline-block transition-colors"
                 >
-                  View Details
+                  Lihat Detail
                 </Link>
               </div>
             </div>
@@ -199,7 +199,7 @@ const FeaturedEvent = () => {
 
             <div className="flex flex-col justify-between h-full flex-1 relative z-10 pr-3">
               <div>
-                <span className="text-primary-blue font-bold text-[9px] tracking-wider uppercase">FEATURED EVENT</span>
+                <span className="text-primary-blue font-bold text-[9px] tracking-wider uppercase">ACARA UNGGULAN</span>
                 <h2 className="font-bold text-[18px] text-text-primary mt-1 leading-tight max-w-[170px] line-clamp-2">
                   {featuredEvents[0].title}
                 </h2>
@@ -214,7 +214,7 @@ const FeaturedEvent = () => {
                   to={`/event/${featuredEvents[0].id}`}
                   className="bg-primary-blue text-white text-[11px] px-4 py-1.5 rounded-lg font-semibold inline-block w-fit"
                 >
-                  Register Ticket
+                  Daftar Tiket
                 </Link>
                 <div className="flex items-center gap-1.5">
                   <div className="flex -space-x-1.5">
@@ -222,7 +222,7 @@ const FeaturedEvent = () => {
                     <img className="inline-block h-5 w-5 rounded-full ring-1 ring-white object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop" alt="" />
                     <div className="inline-flex items-center justify-center h-5 w-5 rounded-full ring-1 ring-white bg-primary-yellow text-[6px] font-bold text-text-primary">+99</div>
                   </div>
-                  <span className="text-[9px] text-text-secondary">Join {featuredEvents[0].participants}</span>
+                  <span className="text-[9px] text-text-secondary">Gabung {featuredEvents[0].participants}</span>
                 </div>
               </div>
             </div>
@@ -235,7 +235,7 @@ const FeaturedEvent = () => {
               />
               {/* Mobile Early Bird Badge */}
               <div className="absolute bottom-0 inset-x-0 bg-primary-yellow/95 text-center py-1 px-1">
-                <p className="text-[7px] font-bold text-text-primary uppercase">Early Bird • 25% Off</p>
+                <p className="text-[7px] font-bold text-text-primary uppercase">Early Bird • Diskon 25%</p>
               </div>
             </div>
           </div>
@@ -260,7 +260,7 @@ const FeaturedEvent = () => {
                   to={`/event/${featuredEvents[1].id}`}
                   className="bg-primary-yellow hover:bg-secondary-yellow text-text-primary text-[11px] px-4 py-1.5 rounded-lg font-bold inline-block transition-colors"
                 >
-                  View Details
+                  Lihat Detail
                 </Link>
               </div>
             </div>
@@ -294,7 +294,7 @@ const FeaturedEvent = () => {
                   to={`/event/${featuredEvents[2].id}`}
                   className="bg-primary-blue hover:bg-secondary-blue text-white text-[11px] px-4 py-1.5 rounded-lg font-semibold inline-block transition-colors"
                 >
-                  View Details
+                  Lihat Detail
                 </Link>
               </div>
             </div>

@@ -14,7 +14,7 @@ const RecruitmentDetailPage = () => {
     <main className="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-desktop py-xl md:py-3xl">
       <div className="mb-lg">
         <Breadcrumb items={[
-          { label: 'Explore', path: '/explore' },
+          { label: 'Eksplorasi', path: '/explore' },
           { label: 'Student Developer Club Recruitment 2026' }
         ]} />
       </div>
@@ -35,10 +35,10 @@ const RecruitmentDetailPage = () => {
                 </div>
                 <div>
                   <p className="font-bold text-[12px] md:font-label-md md:text-label-md text-text-primary">SDC Portal</p>
-                  <p className="font-body-sm text-[10px] md:text-body-sm text-text-secondary">Official Hub</p>
+                  <p className="font-body-sm text-[10px] md:text-body-sm text-text-secondary">Hub Resmi</p>
                 </div>
               </div>
-              <div className="bg-primary-fixed text-primary px-2 py-0.5 md:px-sm md:py-xs rounded-full text-[9px] md:text-label-sm font-label-sm">ACTIVE</div>
+              <div className="bg-primary-fixed text-primary px-2 py-0.5 md:px-sm md:py-xs rounded-full text-[9px] md:text-label-sm font-label-sm">AKTIF</div>
             </div>
           </div>
         </div>
@@ -64,7 +64,7 @@ const RecruitmentDetailPage = () => {
           {/* Description */}
           <div className="bg-white p-md md:p-lg rounded-xl border border-border">
             <p className="text-text-primary text-[13px] md:text-body-lg leading-relaxed">
-              Join our community of student innovators and coders. We're looking for passionate individuals to help us build the future of campus tech. At SDC, we don't just write code; we solve real-world problems for students, by students.
+              Bergabunglah dengan komunitas inovator dan pengembang mahasiswa kami. Kami mencari individu yang bersemangat untuk membantu kami membangun masa depan teknologi kampus. Di SDC, kami tidak hanya menulis kode; kami memecahkan masalah dunia nyata untuk mahasiswa, oleh mahasiswa.
             </p>
           </div>
           
@@ -75,7 +75,7 @@ const RecruitmentDetailPage = () => {
             <div className="bg-white p-md md:p-lg rounded-xl border border-border flex flex-col gap-sm md:gap-md">
               <div className="flex items-center gap-sm">
                 <span className="material-symbols-outlined text-[18px] md:text-[24px] text-primary">work</span>
-                <h3 className="font-bold text-[16px] md:font-headline-md md:text-headline-md">Available Roles</h3>
+                <h3 className="font-bold text-[16px] md:font-headline-md md:text-headline-md">Peran yang Tersedia</h3>
               </div>
               <ul className="flex flex-col gap-xs md:gap-sm">
                 <li className="flex items-center gap-sm md:gap-md p-1 md:p-sm hover:bg-surface rounded-lg transition-colors group">
@@ -100,13 +100,13 @@ const RecruitmentDetailPage = () => {
             {/* Stats & Metadata */}
             <div className="flex flex-col gap-md md:gap-lg">
               <div className="bg-primary p-md md:p-lg rounded-xl border border-primary text-on-primary flex flex-col gap-0 md:gap-xs">
-                <p className="text-[10px] md:text-label-sm font-label-sm opacity-80 uppercase tracking-wider mb-1">Application Deadline</p>
-                <p className="text-[18px] md:text-headline-md font-bold md:font-headline-md mb-1">Closing in 10 days</p>
-                <p className="text-[11px] md:text-body-sm opacity-70">March 25, 2026</p>
+                <p className="text-[10px] md:text-label-sm font-label-sm opacity-80 uppercase tracking-wider mb-1">Tenggat Waktu Pendaftaran</p>
+                <p className="text-[18px] md:text-headline-md font-bold md:font-headline-md mb-1">Ditutup dalam 10 hari</p>
+                <p className="text-[11px] md:text-body-sm opacity-70">25 Maret 2026</p>
               </div>
               <div className="bg-surface p-md md:p-lg rounded-xl border border-border flex justify-between items-center h-full">
                 <div>
-                  <p className="text-[10px] md:text-label-sm font-label-sm text-text-secondary mb-1">Current Applicants</p>
+                  <p className="text-[10px] md:text-label-sm font-label-sm text-text-secondary mb-1">Pelamar Saat Ini</p>
                   <p className="text-[18px] md:text-headline-md font-bold md:font-headline-md text-text-primary">142</p>
                 </div>
                 <div className="flex -space-x-2">
@@ -127,35 +127,35 @@ const RecruitmentDetailPage = () => {
           <div className="bg-white p-md md:p-lg rounded-xl border border-border flex flex-col gap-sm md:gap-md">
             <div className="flex items-center gap-sm">
               <span className="material-symbols-outlined text-[18px] md:text-[24px] text-primary">checklist</span>
-              <h3 className="font-bold text-[16px] md:font-headline-md md:text-headline-md">Requirements</h3>
+              <h3 className="font-bold text-[16px] md:font-headline-md md:text-headline-md">Persyaratan</h3>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-sm md:gap-md">
               <div className="flex items-start gap-sm md:gap-md">
                 <span className="material-symbols-outlined text-[16px] md:text-[24px] text-success mt-0.5 md:mt-1">check_circle</span>
-                <p className="text-[12px] md:text-body-md text-text-primary">Enrolled in at least one STEM-related course this semester.</p>
+                <p className="text-[12px] md:text-body-md text-text-primary">Terdaftar di setidaknya satu mata kuliah terkait STEM semester ini.</p>
               </div>
               <div className="flex items-start gap-sm md:gap-md">
                 <span className="material-symbols-outlined text-[16px] md:text-[24px] text-success mt-0.5 md:mt-1">check_circle</span>
-                <p className="text-[12px] md:text-body-md text-text-primary">Basic proficiency in Git/GitHub and collaborative workflows.</p>
+                <p className="text-[12px] md:text-body-md text-text-primary">Kemahiran dasar dalam Git/GitHub dan alur kerja kolaboratif.</p>
               </div>
               <div className="flex items-start gap-sm md:gap-md">
                 <span className="material-symbols-outlined text-[16px] md:text-[24px] text-success mt-0.5 md:mt-1">check_circle</span>
-                <p className="text-[12px] md:text-body-md text-text-primary">Willingness to commit 5-10 hours per week for club projects.</p>
+                <p className="text-[12px] md:text-body-md text-text-primary">Kesediaan untuk meluangkan waktu 5-10 jam per minggu untuk proyek klub.</p>
               </div>
               <div className="flex items-start gap-sm md:gap-md">
                 <span className="material-symbols-outlined text-[16px] md:text-[24px] text-success mt-0.5 md:mt-1">check_circle</span>
-                <p className="text-[12px] md:text-body-md text-text-primary">A portfolio or repository showcasing at least one personal project.</p>
+                <p className="text-[12px] md:text-body-md text-text-primary">Portofolio atau repositori yang menampilkan setidaknya satu proyek pribadi.</p>
               </div>
             </div>
           </div>
           
           {/* Actions */}
           <div className="flex flex-col sm:flex-row gap-sm md:gap-md items-center mt-sm md:mt-md">
-            <Link to={`/recruitment/${id || 1}/apply`} className="w-full sm:w-auto bg-primary text-on-primary px-md md:px-xl py-sm md:py-md rounded-lg font-bold text-body-sm md:text-body-md hover:bg-primary-hover shadow-lg shadow-primary/10 transition-all hover:-translate-y-1 active:translate-y-0 text-center cursor-pointer">
-              Apply Now
+            <Link to={`/recruitment/${id || 1}/apply`} className="w-full sm:w-auto bg-primary text-on-primary px-md md:px-xl py-sm md:py-md rounded-lg font-bold text-body-sm md:text-body-md hover:bg-primary-hover shadow-lg shadow-primary/10 transition-all text-center cursor-pointer">
+              Lamar Sekarang
             </Link>
             <button className="w-full sm:w-auto bg-white text-text-primary border border-border px-md md:px-xl py-sm md:py-md rounded-lg font-bold text-body-sm md:text-body-md hover:bg-surface transition-all flex items-center justify-center gap-xs md:gap-sm group">
-              Learn More about SDC
+              Pelajari Lebih Lanjut tentang SDC
               <span className="material-symbols-outlined text-[16px] md:text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
             </button>
           </div>
@@ -164,13 +164,13 @@ const RecruitmentDetailPage = () => {
           <div className="flex items-center justify-between py-sm md:py-md border-t border-border mt-sm md:mt-md">
             <div className="flex gap-sm md:gap-md">
               <button className="flex items-center gap-1 md:gap-xs text-text-secondary hover:text-primary transition-colors text-[10px] md:text-label-sm font-label-sm">
-                <span className="material-symbols-outlined text-[14px] md:text-md">share</span> <span className="hidden sm:inline">Share Position</span>
+                <span className="material-symbols-outlined text-[14px] md:text-md">share</span> <span className="hidden sm:inline">Bagikan Posisi</span>
               </button>
               <button className="flex items-center gap-1 md:gap-xs text-text-secondary hover:text-primary transition-colors text-[10px] md:text-label-sm font-label-sm">
-                <span className="material-symbols-outlined text-[14px] md:text-md">bookmark_border</span> <span className="hidden sm:inline">Save for later</span>
+                <span className="material-symbols-outlined text-[14px] md:text-md">bookmark_border</span> <span className="hidden sm:inline">Simpan untuk Nanti</span>
               </button>
             </div>
-            <p className="text-[10px] md:text-label-sm font-label-sm text-text-secondary italic">Last updated: 2 days ago</p>
+            <p className="text-[10px] md:text-label-sm font-label-sm text-text-secondary italic">Terakhir diperbarui: 2 hari yang lalu</p>
           </div>
           
         </div>

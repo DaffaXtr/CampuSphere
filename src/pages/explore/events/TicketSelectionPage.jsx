@@ -18,37 +18,37 @@ const TicketSelectionPage = () => {
     {
       id: 'early-bird',
       name: 'Student Early Bird',
-      description: 'Perfect for early planners looking to secure their spot at no cost.',
+      description: 'Sangat cocok untuk perencana awal yang ingin mengamankan slot tanpa biaya.',
       price: 0,
-      priceLabel: 'FREE',
+      priceLabel: 'GRATIS',
       tag: 'Early Bird',
       features: [
-        { icon: 'card_membership', text: 'Digital Certificate' },
+        { icon: 'card_membership', text: 'Sertifikat Digital' },
         { icon: 'inventory_2', text: 'Seminar Kit' }
       ]
     },
     {
       id: 'regular',
-      name: 'Regular Student Admission',
-      description: 'General access to all tech sessions and keynote presentations.',
+      name: 'Tiket Masuk Mahasiswa Reguler',
+      description: 'Akses umum ke semua sesi teknologi dan presentasi utama.',
       price: 0,
-      priceLabel: 'FREE',
+      priceLabel: 'GRATIS',
       features: [
-        { icon: 'meeting_room', text: 'All Session Access' },
-        { icon: 'card_membership', text: 'Digital Certificate' }
+        { icon: 'meeting_room', text: 'Akses Semua Sesi' },
+        { icon: 'card_membership', text: 'Sertifikat Digital' }
       ]
     },
     {
       id: 'vip',
-      name: 'VIP Student Access',
-      description: 'The ultimate premium experience for aspiring tech leaders.',
+      name: 'Akses Mahasiswa VIP',
+      description: 'Pengalaman premium terbaik untuk calon pemimpin teknologi.',
       price: 50000,
-      priceLabel: 'IDR 50.000',
+      priceLabel: 'Rp 50.000',
       isLimited: true,
       features: [
-        { icon: 'event_seat', text: 'Front-row Seating', warning: true },
-        { icon: 'restaurant', text: 'Networking Lunch', warning: true },
-        { icon: 'redeem', text: 'Exclusive Merchandise', warning: true }
+        { icon: 'event_seat', text: 'Tempat Duduk Baris Depan', warning: true },
+        { icon: 'restaurant', text: 'Makan Siang Networking', warning: true },
+        { icon: 'redeem', text: 'Merchandise Eksklusif', warning: true }
       ]
     }
   ];
@@ -58,18 +58,18 @@ const TicketSelectionPage = () => {
       {/* Breadcrumb & Header */}
       <header className="mb-2xl">
         <Breadcrumb items={[
-          { label: 'Explore', path: '/explore' },
+          { label: 'Eksplorasi', path: '/explore' },
           { label: 'Global Tech Conference 2026', path: `/event/${eventData?.id || 1}` },
-          { label: 'Register' }
+          { label: 'Daftar' }
         ]} />
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-md mt-md">
           <div>
-            <h1 className="font-headline-xl text-headline-xl text-text-primary tracking-tight mb-2">Registration</h1>
-            <p className="font-body-md text-body-md text-text-secondary">Secure your spot for the biggest tech event of the year.</p>
+            <h1 className="font-headline-xl text-headline-xl text-text-primary tracking-tight mb-2">Pendaftaran</h1>
+            <p className="font-body-md text-body-md text-text-secondary">Amankan slot Anda untuk acara teknologi terbesar tahun ini.</p>
           </div>
           <div className="flex items-center gap-2 bg-primary-fixed text-primary px-md py-1 rounded-full w-fit">
             <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>schedule</span>
-            <span className="font-label-sm text-[10px] md:text-label-sm">Closing in 2 days</span>
+            <span className="font-label-sm text-[10px] md:text-label-sm">Ditutup dalam 2 hari</span>
           </div>
         </div>
       </header>
@@ -81,7 +81,7 @@ const TicketSelectionPage = () => {
           <div className="bento-card rounded-xl p-lg md:p-xl shadow-sm bg-white">
             {/* Steps Indicator */}
             <StepIndicator 
-              steps={['Personal Info', 'Ticket Selection', 'Payment', 'Confirmation']} 
+              steps={['Informasi Pribadi', 'Pemilihan Tiket', 'Pembayaran', 'Konfirmasi']} 
               currentStep={2} 
               nodeBgColor="bg-white" 
             />
@@ -94,7 +94,7 @@ const TicketSelectionPage = () => {
                   className={`border p-lg rounded-xl flex flex-col md:flex-row justify-between items-start md:items-center gap-lg relative overflow-hidden transition-all duration-300 ${selectedTicket?.id === ticket.id ? 'border-primary bg-primary-fixed/30 ring-1 ring-primary' : 'border-border hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 bg-white'}`}
                 >
                   {ticket.isLimited && (
-                    <div className="absolute top-4 -right-8 bg-warning text-on-primary text-[10px] font-bold px-8 py-1 rotate-45 uppercase">Limited</div>
+                    <div className="absolute top-4 -right-8 bg-warning text-on-primary text-[10px] font-bold px-8 py-1 rotate-45 uppercase">Terbatas</div>
                   )}
                   <div className="flex-1">
                     {ticket.tag && (
@@ -124,7 +124,7 @@ const TicketSelectionPage = () => {
                       onClick={() => setSelectedTicket(ticket)}
                       className={`w-full md:w-auto font-label-md text-label-md py-md px-xl rounded-lg transition-all active:scale-95 ${selectedTicket?.id === ticket.id ? 'bg-primary text-on-primary' : 'bg-surface-container-low hover:bg-primary/10 text-primary border border-primary/20'}`}
                     >
-                      {selectedTicket?.id === ticket.id ? 'Selected' : 'Select'}
+                      {selectedTicket?.id === ticket.id ? 'Terpilih' : 'Pilih'}
                     </button>
                   </div>
                 </div>
@@ -159,12 +159,12 @@ const TicketSelectionPage = () => {
               <div className="border-t border-border pt-lg">
                 {!selectedTicket ? (
                   <div className="text-center py-md mb-xl">
-                    <p className="text-body-sm text-text-secondary italic">No ticket selected yet.</p>
+                    <p className="text-body-sm text-text-secondary italic">Belum ada tiket yang dipilih.</p>
                   </div>
                 ) : (
                   <>
                     <div className="flex justify-between items-center mb-sm">
-                      <span className="font-label-md text-label-md text-text-secondary">Selected Ticket</span>
+                      <span className="font-label-md text-label-md text-text-secondary">Tiket Terpilih</span>
                       <span className="font-label-md text-label-md text-primary">{selectedTicket.priceLabel}</span>
                     </div>
                     <p className="font-body-sm text-body-sm text-on-surface-variant mb-xl">{selectedTicket.name}</p>
@@ -181,12 +181,12 @@ const TicketSelectionPage = () => {
                     state={{ ticket: selectedTicket }}
                     className="w-full bg-primary text-on-primary font-label-md text-label-md py-md rounded-lg hover:bg-primary-hover active:scale-95 transition-all flex items-center justify-center gap-sm cursor-pointer"
                   >
-                    Proceed to Next Step
+                    Lanjutkan ke Langkah Berikutnya
                     <span className="material-symbols-outlined">arrow_forward</span>
                   </Link>
                 ) : (
                   <button disabled className="w-full bg-surface-container-low text-text-secondary font-label-md text-label-md py-md rounded-lg opacity-50 cursor-not-allowed flex items-center justify-center gap-sm">
-                    Proceed to Next Step
+                    Lanjutkan ke Langkah Berikutnya
                     <span className="material-symbols-outlined">arrow_forward</span>
                   </button>
                 )}
@@ -198,7 +198,7 @@ const TicketSelectionPage = () => {
             <div className="w-10 h-10 rounded-full bg-warning/10 flex items-center justify-center text-warning shrink-0">
               <span className="material-symbols-outlined">security</span>
             </div>
-            <p className="font-body-sm text-body-sm text-text-secondary">Your information is securely encrypted and will only be used for event-related communications.</p>
+            <p className="font-body-sm text-body-sm text-text-secondary">Informasi Anda dienkripsi secara aman dan hanya akan digunakan untuk komunikasi terkait acara.</p>
           </div>
         </div>
       </div>

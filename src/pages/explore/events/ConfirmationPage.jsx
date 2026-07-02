@@ -28,18 +28,18 @@ const ConfirmationPage = () => {
       {/* Breadcrumb & Header */}
       <header className="mb-2xl">
         <Breadcrumb items={[
-          { label: 'Explore', path: '/explore' },
+          { label: 'Eksplorasi', path: '/explore' },
           { label: 'Global Tech Conference 2026', path: `/event/${eventData?.id || 1}` },
-          { label: 'Register' }
+          { label: 'Daftar' }
         ]} />
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-md mt-md">
           <div>
-            <h1 className="font-headline-xl text-headline-xl text-text-primary tracking-tight mb-2">Registration</h1>
-            <p className="font-body-md text-body-md text-text-secondary">Secure your spot for the biggest tech event of the year.</p>
+            <h1 className="font-headline-xl text-headline-xl text-text-primary tracking-tight mb-2">Pendaftaran</h1>
+            <p className="font-body-md text-body-md text-text-secondary">Amankan slot Anda untuk acara teknologi terbesar tahun ini.</p>
           </div>
           <div className="flex items-center gap-2 bg-primary-fixed text-primary px-md py-1 rounded-full w-fit">
             <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>schedule</span>
-            <span className="font-label-sm text-[10px] md:text-label-sm">Closing in 2 days</span>
+            <span className="font-label-sm text-[10px] md:text-label-sm">Ditutup dalam 2 hari</span>
           </div>
         </div>
       </header>
@@ -51,7 +51,7 @@ const ConfirmationPage = () => {
           <div className="bento-card rounded-xl p-lg bg-white border border-border">
             {/* Steps Indicator */}
             <StepIndicator 
-              steps={['Personal Info', 'Ticket Selection', 'Payment', 'Confirmation']} 
+              steps={['Informasi Pribadi', 'Pemilihan Tiket', 'Pembayaran', 'Konfirmasi']} 
               currentStep={4} 
               nodeBgColor="bg-white" 
             />
@@ -61,33 +61,33 @@ const ConfirmationPage = () => {
               <div className="w-20 h-20 aspect-square shrink-0 bg-success/20 text-success rounded-full flex items-center justify-center mb-md transform scale-110">
                 <span className="material-symbols-outlined text-5xl font-bold">check</span>
               </div>
-              <h2 className="font-headline-lg text-headline-lg text-text-primary mb-2">Registration Confirmed!</h2>
-              <p className="text-body-md text-text-secondary max-w-lg mx-auto">Thank you for registering. Your ticket and detailed event information have been sent to your university email.</p>
+              <h2 className="font-headline-lg text-headline-lg text-text-primary mb-2">Pendaftaran Dikonfirmasi!</h2>
+              <p className="text-body-md text-text-secondary max-w-lg mx-auto">Terima kasih telah mendaftar. Tiket Anda dan informasi detail acara telah dikirim ke email universitas Anda.</p>
             </div>
 
             <div className="space-y-xl">
               {/* Review Details */}
               <div className="bg-surface p-lg rounded-xl border border-border">
-                <h3 className="font-headline-sm text-headline-sm text-text-primary mb-md border-b border-border pb-sm">Registration Review</h3>
+                <h3 className="font-headline-sm text-headline-sm text-text-primary mb-md border-b border-border pb-sm">Tinjauan Pendaftaran</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-y-md gap-x-lg">
                   <div>
-                    <p className="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider mb-xs">Attendee Name</p>
+                    <p className="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider mb-xs">Nama Peserta</p>
                     <p className="font-body-md text-body-md text-text-primary font-medium">Alex Johnson</p>
                   </div>
                   <div>
-                    <p className="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider mb-xs">Ticket Type</p>
+                    <p className="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider mb-xs">Tipe Tiket</p>
                     <p className="font-body-md text-body-md text-text-primary font-medium">{ticket.name}</p>
                   </div>
                   <div>
-                    <p className="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider mb-xs">Registration ID</p>
+                    <p className="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider mb-xs">ID Pendaftaran</p>
                     <p className="font-body-md text-body-md text-primary font-medium">TCK-2026-X89B</p>
                   </div>
                   <div>
-                    <p className="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider mb-xs">Payment Status</p>
+                    <p className="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider mb-xs">Status Pembayaran</p>
                     {ticket.price === 0 ? (
-                      <p className="font-label-md text-label-md text-text-secondary px-2 py-1 bg-surface-variant rounded-md w-fit">FREE</p>
+                      <p className="font-label-md text-label-md text-text-secondary px-2 py-1 bg-surface-variant rounded-md w-fit">GRATIS</p>
                     ) : (
-                      <p className="font-label-md text-label-md text-success px-2 py-1 bg-success/10 rounded-md w-fit">PAID</p>
+                      <p className="font-label-md text-label-md text-success px-2 py-1 bg-success/10 rounded-md w-fit">LUNAS</p>
                     )}
                   </div>
                 </div>
@@ -102,12 +102,12 @@ const ConfirmationPage = () => {
                   </svg>
                 </div>
                 <div className="flex-1 text-center sm:text-left">
-                  <h3 className="font-headline-sm text-headline-sm text-[#0F172A] mb-1">Join the Event WhatsApp Group</h3>
-                  <p className="text-body-sm text-[#475569]">Get the latest announcements, seminar materials, and network with other attendees before the event starts.</p>
+                  <h3 className="font-headline-sm text-headline-sm text-[#0F172A] mb-1">Gabung ke Grup WhatsApp Acara</h3>
+                  <p className="text-body-sm text-[#475569]">Dapatkan pengumuman terbaru, materi seminar, dan berjejaring dengan peserta lain sebelum acara dimulai.</p>
                 </div>
                 <a href="#" onClick={(e) => e.preventDefault()} className="w-full sm:w-auto bg-[#25D366] hover:bg-[#20bd5a] text-white font-label-md text-label-md py-sm px-xl rounded-lg transition-all active:scale-95 text-center shrink-0 flex items-center justify-center gap-xs">
                   <span className="material-symbols-outlined text-[18px]">group_add</span>
-                  Join Group
+                  Gabung Grup
                 </a>
               </div>
             </div>
@@ -125,27 +125,27 @@ const ConfirmationPage = () => {
             </div>
             <div className="p-lg flex flex-col gap-lg">
               <div>
-                <h3 className="font-headline-md text-headline-md text-text-primary mb-md">Grand Annual Tech Seminar 2026</h3>
+                <h3 className="font-headline-md text-headline-md text-text-primary mb-md">Seminar Teknologi Tahunan Terbesar 2026</h3>
                 <div className="space-y-sm">
                   <div className="flex items-center gap-sm text-on-surface-variant">
                     <span className="material-symbols-outlined text-sm">calendar_today</span>
-                    <span className="font-body-sm text-body-sm">October 24, 2026 • 09:00 AM</span>
+                    <span className="font-body-sm text-body-sm">24 Oktober 2026 • 09:00 WIB</span>
                   </div>
                   <div className="flex items-center gap-sm text-on-surface-variant">
                     <span className="material-symbols-outlined text-sm">location_on</span>
-                    <span className="font-body-sm text-body-sm">Main Auditorium, Campus Hub</span>
+                    <span className="font-body-sm text-body-sm">Auditorium Utama, Campus Hub</span>
                   </div>
                 </div>
               </div>
               <div className="border-t border-border pt-lg">
                 <div className="flex justify-between items-center mb-sm">
-                  <span className="font-label-md text-label-md text-text-secondary">Selected Ticket</span>
+                  <span className="font-label-md text-label-md text-text-secondary">Tiket Terpilih</span>
                   <span className="font-label-md text-label-md text-primary">{ticket.priceLabel}</span>
                 </div>
                 <p className="font-body-sm text-body-sm text-on-surface-variant mb-xl">{ticket.name}</p>
                 
                 <div className="flex justify-between items-center py-md border-t border-dashed border-border mb-lg">
-                  <span className="font-headline-md text-headline-md text-text-primary">Total Paid</span>
+                  <span className="font-headline-md text-headline-md text-text-primary">Total Dibayar</span>
                   <span className="font-headline-md text-headline-md text-primary">{ticket.priceLabel}</span>
                 </div>
 
@@ -154,7 +154,7 @@ const ConfirmationPage = () => {
                   className="w-full bg-surface-container-low text-primary border border-primary/20 font-label-md text-label-md py-md rounded-lg hover:bg-primary/10 active:scale-95 transition-all flex items-center justify-center gap-sm cursor-pointer"
                 >
                   <span className="material-symbols-outlined">explore</span>
-                  Back to Explore
+                  Kembali ke Eksplorasi
                 </Link>
               </div>
             </div>

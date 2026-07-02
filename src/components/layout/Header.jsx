@@ -52,16 +52,16 @@ const Header = () => {
           <div className="relative group">
             <NavLink to="/explore" className={({ isActive }) => getLinkClass({ isActive: isActive || isExploreActive })}>
               <span className="flex items-center gap-1">
-                Explore
+                Eksplorasi
                 <span className="material-symbols-outlined text-[18px] transition-transform group-hover:rotate-180">expand_more</span>
               </span>
             </NavLink>
             <div className="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all z-50">
               <div className="w-48 bg-surface-container-lowest dark:bg-inverse-surface border border-border dark:border-outline-variant rounded-lg shadow-lg py-2 flex flex-col">
-                <NavLink to="/explore" end className={({isActive}) => `px-4 py-2 text-body-sm transition-colors ${isActive ? 'bg-surface-container text-secondary-blue dark:text-primary-fixed-dim font-bold' : 'text-on-surface-variant dark:text-on-secondary-fixed-variant hover:bg-surface-container hover:text-primary-blue dark:hover:text-primary-fixed-dim'}`}>All</NavLink>
-                <NavLink to="/events" className={({isActive}) => `px-4 py-2 text-body-sm transition-colors ${isActive ? 'bg-surface-container text-secondary-blue dark:text-primary-fixed-dim font-bold' : 'text-on-surface-variant dark:text-on-secondary-fixed-variant hover:bg-surface-container hover:text-primary-blue dark:hover:text-primary-fixed-dim'}`}>Events</NavLink>
-                <NavLink to="/recruitments" className={({isActive}) => `px-4 py-2 text-body-sm transition-colors ${isActive ? 'bg-surface-container text-secondary-blue dark:text-primary-fixed-dim font-bold' : 'text-on-surface-variant dark:text-on-secondary-fixed-variant hover:bg-surface-container hover:text-primary-blue dark:hover:text-primary-fixed-dim'}`}>Recruitment</NavLink>
-                <NavLink to="/challenges" className={({isActive}) => `px-4 py-2 text-body-sm transition-colors ${isActive ? 'bg-surface-container text-secondary-blue dark:text-primary-fixed-dim font-bold' : 'text-on-surface-variant dark:text-on-secondary-fixed-variant hover:bg-surface-container hover:text-primary-blue dark:hover:text-primary-fixed-dim'}`}>Challenges</NavLink>
+                <NavLink to="/explore" end className={({isActive}) => `px-4 py-2 text-body-sm transition-colors ${isActive ? 'bg-surface-container text-secondary-blue dark:text-primary-fixed-dim font-bold' : 'text-on-surface-variant dark:text-on-secondary-fixed-variant hover:bg-surface-container hover:text-primary-blue dark:hover:text-primary-fixed-dim'}`}>Semua</NavLink>
+                <NavLink to="/events" className={({isActive}) => `px-4 py-2 text-body-sm transition-colors ${isActive ? 'bg-surface-container text-secondary-blue dark:text-primary-fixed-dim font-bold' : 'text-on-surface-variant dark:text-on-secondary-fixed-variant hover:bg-surface-container hover:text-primary-blue dark:hover:text-primary-fixed-dim'}`}>Acara</NavLink>
+                <NavLink to="/recruitments" className={({isActive}) => `px-4 py-2 text-body-sm transition-colors ${isActive ? 'bg-surface-container text-secondary-blue dark:text-primary-fixed-dim font-bold' : 'text-on-surface-variant dark:text-on-secondary-fixed-variant hover:bg-surface-container hover:text-primary-blue dark:hover:text-primary-fixed-dim'}`}>Rekrutmen</NavLink>
+                <NavLink to="/challenges" className={({isActive}) => `px-4 py-2 text-body-sm transition-colors ${isActive ? 'bg-surface-container text-secondary-blue dark:text-primary-fixed-dim font-bold' : 'text-on-surface-variant dark:text-on-secondary-fixed-variant hover:bg-surface-container hover:text-primary-blue dark:hover:text-primary-fixed-dim'}`}>Tantangan</NavLink>
               </div>
             </div>
           </div>
@@ -71,11 +71,11 @@ const Header = () => {
         </nav>
 
         {/* Profile / Actions */}
-        <div className="flex items-center gap-2 md:gap-md">
+        <div className="flex items-center gap-3 sm:gap-4 md:gap-md">
           <Link to="/merchandise/cart" className="p-1 md:p-2 text-on-surface-variant hover:text-primary-blue transition-colors flex items-center justify-center relative">
             <span className="material-symbols-outlined text-[20px] md:text-[24px]">shopping_cart</span>
             {cartCount > 0 && (
-              <span className="absolute top-0 right-0 md:top-1 md:right-1 bg-error text-white text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full border-2 border-surface-container-lowest">
+              <span className="absolute -top-1 -right-1 md:top-0 md:right-0 bg-error text-white text-[10px] font-bold w-4 h-4 flex items-center justify-center rounded-full border-2 border-surface-container-lowest">
                 {cartCount > 9 ? '9+' : cartCount}
               </span>
             )}
@@ -84,10 +84,10 @@ const Header = () => {
           {/* Profile Dropdown */}
           <div className="relative" ref={profileRef}>
             <div 
-              className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-surface-variant overflow-hidden border-2 border-border cursor-pointer hover:border-primary-blue transition-colors shrink-0"
+              className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-surface-variant overflow-hidden border-2 border-border cursor-pointer hover:border-primary-blue transition-colors shrink-0 flex items-center justify-center"
               onClick={() => setIsProfileDropdownOpen(!isProfileDropdownOpen)}
             >
-              <img src="https://ui-avatars.com/api/?name=Student+User&background=2E7D32&color=fff&size=128" alt="Profile" className="w-full h-full object-cover" />
+              <img src="https://ui-avatars.com/api/?name=Student+User&background=2E7D32&color=fff&size=128" alt="Profile" className="w-full h-full object-cover object-center" />
             </div>
             
             {/* Dropdown Menu */}
@@ -97,19 +97,19 @@ const Header = () => {
                   <p className="text-body-sm font-bold text-on-surface">Student User</p>
                   <p className="text-label-sm text-on-surface-variant">student@campus.edu</p>
                 </div>
-                <Link to="/profile" className="px-4 py-2 text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-primary-blue transition-colors flex items-center gap-2" onClick={() => setIsProfileDropdownOpen(false)}>
+                <Link to="/profile" className={`px-4 py-2 text-body-sm transition-colors flex items-center gap-2 ${location.pathname === '/profile' ? 'bg-primary-blue/10 text-primary-blue font-bold' : 'text-on-surface-variant hover:bg-surface-container hover:text-primary-blue'}`} onClick={() => setIsProfileDropdownOpen(false)}>
                   <span className="material-symbols-outlined text-[18px]">dashboard</span> Activity Hub
                 </Link>
-                <Link to="/tickets" className="px-4 py-2 text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-primary-blue transition-colors flex items-center gap-2" onClick={() => setIsProfileDropdownOpen(false)}>
+                <Link to="/tickets" className={`px-4 py-2 text-body-sm transition-colors flex items-center gap-2 ${location.pathname === '/tickets' ? 'bg-primary-blue/10 text-primary-blue font-bold' : 'text-on-surface-variant hover:bg-surface-container hover:text-primary-blue'}`} onClick={() => setIsProfileDropdownOpen(false)}>
                   <span className="material-symbols-outlined text-[18px]">confirmation_number</span> My E-Tickets
                 </Link>
-                <Link to="/certificates" className="px-4 py-2 text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-primary-blue transition-colors flex items-center gap-2" onClick={() => setIsProfileDropdownOpen(false)}>
+                <Link to="/certificates" className={`px-4 py-2 text-body-sm transition-colors flex items-center gap-2 ${location.pathname === '/certificates' ? 'bg-primary-blue/10 text-primary-blue font-bold' : 'text-on-surface-variant hover:bg-surface-container hover:text-primary-blue'}`} onClick={() => setIsProfileDropdownOpen(false)}>
                   <span className="material-symbols-outlined text-[18px]">workspace_premium</span> E-Certificates
                 </Link>
-                <Link to="/history" className="px-4 py-2 text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-primary-blue transition-colors flex items-center gap-2" onClick={() => setIsProfileDropdownOpen(false)}>
+                <Link to="/history" className={`px-4 py-2 text-body-sm transition-colors flex items-center gap-2 ${location.pathname === '/history' ? 'bg-primary-blue/10 text-primary-blue font-bold' : 'text-on-surface-variant hover:bg-surface-container hover:text-primary-blue'}`} onClick={() => setIsProfileDropdownOpen(false)}>
                   <span className="material-symbols-outlined text-[18px]">history</span> Transactions
                 </Link>
-                <Link to="/settings" className="px-4 py-2 text-body-sm text-on-surface-variant hover:bg-surface-container hover:text-primary-blue transition-colors flex items-center gap-2" onClick={() => setIsProfileDropdownOpen(false)}>
+                <Link to="/settings" className={`px-4 py-2 text-body-sm transition-colors flex items-center gap-2 ${location.pathname === '/settings' ? 'bg-primary-blue/10 text-primary-blue font-bold' : 'text-on-surface-variant hover:bg-surface-container hover:text-primary-blue'}`} onClick={() => setIsProfileDropdownOpen(false)}>
                   <span className="material-symbols-outlined text-[18px]">settings</span> Settings
                 </Link>
                 <div className="border-t border-border my-1"></div>
@@ -120,7 +120,7 @@ const Header = () => {
             )}
           </div>
 
-          <button className="md:hidden p-1 ml-1 text-on-surface-variant hover:text-primary-blue transition-colors" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+          <button className="md:hidden p-1 text-on-surface-variant hover:text-primary-blue transition-colors flex items-center justify-center" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
             <span className="material-symbols-outlined text-[24px]">{isMobileMenuOpen ? 'close' : 'menu'}</span>
           </button>
         </div>
@@ -134,15 +134,15 @@ const Header = () => {
               className={`flex items-center justify-between cursor-pointer ${isExploreActive ? 'text-secondary-blue font-bold' : 'text-on-surface-variant'}`}
               onClick={() => setIsMobileExploreOpen(!isMobileExploreOpen)}
             >
-              <span>Explore</span>
+              <span>Eksplorasi</span>
               <span className={`material-symbols-outlined transition-transform ${isMobileExploreOpen ? 'rotate-180' : ''}`}>expand_more</span>
             </div>
             {isMobileExploreOpen && (
               <div className="pl-4 flex flex-col gap-3 border-l-2 border-border ml-2 mt-3 animate-fade-in-down">
-                <NavLink end to="/explore" className={({isActive}) => `text-body-sm ${isActive ? 'text-secondary-blue font-bold' : 'text-on-surface-variant'}`} onClick={() => setIsMobileMenuOpen(false)}>All</NavLink>
-                <NavLink to="/events" className={({isActive}) => `text-body-sm ${isActive ? 'text-secondary-blue font-bold' : 'text-on-surface-variant'}`} onClick={() => setIsMobileMenuOpen(false)}>Events</NavLink>
-                <NavLink to="/recruitments" className={({isActive}) => `text-body-sm ${isActive ? 'text-secondary-blue font-bold' : 'text-on-surface-variant'}`} onClick={() => setIsMobileMenuOpen(false)}>Recruitment</NavLink>
-                <NavLink to="/challenges" className={({isActive}) => `text-body-sm ${isActive ? 'text-secondary-blue font-bold' : 'text-on-surface-variant'}`} onClick={() => setIsMobileMenuOpen(false)}>Challenges</NavLink>
+                <NavLink end to="/explore" className={({isActive}) => `text-body-sm ${isActive ? 'text-secondary-blue font-bold' : 'text-on-surface-variant'}`} onClick={() => setIsMobileMenuOpen(false)}>Semua</NavLink>
+                <NavLink to="/events" className={({isActive}) => `text-body-sm ${isActive ? 'text-secondary-blue font-bold' : 'text-on-surface-variant'}`} onClick={() => setIsMobileMenuOpen(false)}>Acara</NavLink>
+                <NavLink to="/recruitments" className={({isActive}) => `text-body-sm ${isActive ? 'text-secondary-blue font-bold' : 'text-on-surface-variant'}`} onClick={() => setIsMobileMenuOpen(false)}>Rekrutmen</NavLink>
+                <NavLink to="/challenges" className={({isActive}) => `text-body-sm ${isActive ? 'text-secondary-blue font-bold' : 'text-on-surface-variant'}`} onClick={() => setIsMobileMenuOpen(false)}>Tantangan</NavLink>
               </div>
             )}
           </div>

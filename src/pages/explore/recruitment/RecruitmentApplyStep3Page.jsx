@@ -14,20 +14,20 @@ const RecruitmentApplyStep3Page = () => {
   return (
     <div className="py-md md:py-xl px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto min-h-screen flex flex-col">
       {/* Breadcrumb & Header */}
-      <header className="mb-xl md:mb-2xl">
+      <header className="mb-2xl">
         <Breadcrumb items={[
-          { label: 'Explore', path: '/explore' },
-          { label: 'SDC Recruitment 2026', path: `/recruitment/${id || 1}` },
-          { label: 'Apply' }
+          { label: 'Eksplorasi', path: '/explore' },
+          { label: 'Student Developer Club', path: `/recruitment/${id || 1}` },
+          { label: 'Lamar' }
         ]} />
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-md mt-md">
           <div>
-            <h1 className="font-bold text-headline-md md:font-headline-xl md:text-headline-xl text-text-primary tracking-tight mb-2">Application Form</h1>
-            <p className="font-body-sm md:font-body-md md:text-body-md text-text-secondary">Take the first step to join our community of innovators.</p>
+            <h1 className="font-headline-xl text-headline-xl text-text-primary tracking-tight mb-2">Formulir Lamaran</h1>
+            <p className="font-body-md text-body-md text-text-secondary">Isi detail Anda di bawah ini untuk mengirimkan lamaran Anda ke Student Developer Club.</p>
           </div>
           <div className="flex items-center gap-2 bg-primary-fixed text-primary px-md py-1 rounded-full w-fit">
             <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>schedule</span>
-            <span className="font-label-sm text-[10px] md:text-label-sm">Closing in 10 days</span>
+            <span className="font-label-sm text-[10px] md:text-label-sm">Ditutup dalam 10 hari</span>
           </div>
         </div>
       </header>
@@ -39,7 +39,7 @@ const RecruitmentApplyStep3Page = () => {
           <div className="bg-white border border-border rounded-xl p-md md:p-lg shadow-sm">
             {/* Steps Indicator */}
             <StepIndicator 
-              steps={['Personal Info', 'Requirements', 'Confirmation']} 
+              steps={['Informasi Pribadi', 'Akademik & Portofolio', 'Tinjau & Kirim']} 
               currentStep={3} 
               nodeBgColor="bg-white" 
             />
@@ -49,32 +49,32 @@ const RecruitmentApplyStep3Page = () => {
               <div className="w-16 h-16 md:w-20 md:h-20 aspect-square shrink-0 bg-success/20 text-success rounded-full flex items-center justify-center mb-md transform scale-110">
                 <span className="material-symbols-outlined text-4xl md:text-5xl font-bold">check</span>
               </div>
-              <h2 className="font-bold text-[20px] md:font-headline-lg md:text-headline-lg text-text-primary mb-2">Application Confirmed!</h2>
+              <h2 className="font-bold text-[20px] md:font-headline-lg md:text-headline-lg text-text-primary mb-2">Lamaran Dikonfirmasi!</h2>
               <p className="text-[12px] md:text-body-md text-text-secondary max-w-lg mx-auto leading-relaxed">
-                Thank you for applying to the Student Developer Club. Your application details have been saved and sent to your university email.
+                Terima kasih telah melamar ke Student Developer Club. Detail lamaran Anda telah disimpan dan dikirim ke email universitas Anda.
               </p>
             </div>
 
             <div className="space-y-xl">
               {/* Review Details */}
               <div className="bg-surface p-md md:p-lg rounded-xl border border-border">
-                <h3 className="font-bold text-[16px] md:font-headline-sm md:text-headline-sm text-text-primary mb-md border-b border-border pb-sm">Application Review</h3>
+                <h3 className="font-bold text-[16px] md:font-headline-sm md:text-headline-sm text-text-primary mb-md border-b border-border pb-sm">Tinjauan Lamaran</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-y-md gap-x-lg">
                   <div>
-                    <p className="font-label-sm text-[10px] md:text-label-sm text-text-secondary uppercase tracking-wider mb-xs">Applicant Name</p>
+                    <p className="font-label-sm text-[10px] md:text-label-sm text-text-secondary uppercase tracking-wider mb-xs">Nama Pelamar</p>
                     <p className="text-[13px] md:font-body-md md:text-body-md text-text-primary font-medium">Alex Johnson</p>
                   </div>
                   <div>
-                    <p className="font-label-sm text-[10px] md:text-label-sm text-text-secondary uppercase tracking-wider mb-xs">Applied Role</p>
+                    <p className="font-label-sm text-[10px] md:text-label-sm text-text-secondary uppercase tracking-wider mb-xs">Peran yang Dilamar</p>
                     <p className="text-[13px] md:font-body-md md:text-body-md text-text-primary font-medium">Frontend Developer</p>
                   </div>
                   <div>
-                    <p className="font-label-sm text-[10px] md:text-label-sm text-text-secondary uppercase tracking-wider mb-xs">Application ID</p>
+                    <p className="font-label-sm text-[10px] md:text-label-sm text-text-secondary uppercase tracking-wider mb-xs">ID Lamaran</p>
                     <p className="text-[13px] md:font-body-md md:text-body-md text-primary font-mono font-medium">REC-2026-A12B</p>
                   </div>
                   <div>
                     <p className="font-label-sm text-[10px] md:text-label-sm text-text-secondary uppercase tracking-wider mb-xs">Status</p>
-                    <p className="font-bold text-[10px] md:font-label-md md:text-label-md text-success px-2 py-1 bg-success/10 rounded-md w-fit">UNDER REVIEW</p>
+                    <p className="font-bold text-[10px] md:font-label-md md:text-label-md text-success px-2 py-1 bg-success/10 rounded-md w-fit">SEDANG DITINJAU</p>
                   </div>
                 </div>
               </div>
@@ -88,12 +88,12 @@ const RecruitmentApplyStep3Page = () => {
                   </svg>
                 </div>
                 <div className="flex-1 text-center sm:text-left">
-                  <h3 className="font-bold text-[14px] md:font-headline-sm md:text-headline-sm text-[#0F172A] mb-1">Join the Applicants Group</h3>
-                  <p className="text-[11px] md:text-body-sm text-[#475569]">Get the latest announcements, interview schedules, and interact with other applicants.</p>
+                  <h3 className="font-bold text-[14px] md:font-headline-sm md:text-headline-sm text-[#0F172A] mb-1">Gabung ke Grup Pelamar</h3>
+                  <p className="text-[11px] md:text-body-sm text-[#475569]">Dapatkan pengumuman terbaru, jadwal wawancara, dan berinteraksi dengan pelamar lainnya.</p>
                 </div>
                 <a href="#" onClick={(e) => e.preventDefault()} className="w-full sm:w-auto bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-[13px] md:font-label-md md:text-label-md py-sm px-lg md:px-xl rounded-lg transition-all active:scale-95 text-center shrink-0 flex items-center justify-center gap-xs">
                   <span className="material-symbols-outlined text-[16px] md:text-[18px]">group_add</span>
-                  Join Group
+                  Gabung Grup
                 </a>
               </div>
             </div>
@@ -106,7 +106,7 @@ const RecruitmentApplyStep3Page = () => {
             <div className="relative h-40 md:h-48 w-full bg-surface-container">
               <img alt="SDC Recruitment Poster" className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYXjKaOYj38rvdw5FTMz4hNI65pj-zmRRK5dkCRFK21NA-CNACfBl8_DiMDqRGyEjjQgZJV_gq44_AHMRkW7wRuEPv9IBvt0ay5nsRRdbBx2hn_rAkdrdD1pT7vjbwGpi7EZHWAeuGzMohGwkRqtCXZ7vDHLjO_l4Fz3TChzcHNG6G2hCaB-Pl61yhCgL1O8mf1GCI2LCZGY4GJIGEX4Tt1E54S462SQxrM7NnPaLKL0idK4-jGQs54VrW4uHV794xKxXiXJ_sDWNR" />
               <div className="absolute bottom-3 left-3 md:bottom-4 md:left-4">
-                <span className="bg-primary text-on-primary px-2 py-0.5 md:px-3 md:py-1 rounded-full font-bold text-[10px] md:font-label-sm md:text-label-sm">Recruitment</span>
+                <span className="bg-primary text-on-primary px-2 py-0.5 md:px-3 md:py-1 rounded-full font-bold text-[10px] md:font-label-sm md:text-label-sm">Rekrutmen</span>
               </div>
             </div>
             <div className="p-md md:p-lg flex flex-col gap-md md:gap-lg">
@@ -115,23 +115,23 @@ const RecruitmentApplyStep3Page = () => {
                 <div className="space-y-1 md:space-y-sm">
                   <div className="flex items-center gap-xs md:gap-sm text-on-surface-variant">
                     <span className="material-symbols-outlined text-[14px] md:text-sm">groups</span>
-                    <span className="text-[11px] md:font-body-sm md:text-body-sm">Staff Recruitment 2026</span>
+                    <span className="text-[11px] md:font-body-sm md:text-body-sm">Rekrutmen Staf 2026</span>
                   </div>
                 </div>
               </div>
               <div className="border-t border-border pt-md md:pt-lg">
                 <div className="flex justify-between items-center mb-sm">
-                  <span className="font-bold text-[12px] md:font-label-md md:text-label-md text-text-secondary">Selected Role</span>
-                  <span className="font-bold text-[12px] md:font-label-md md:text-label-md text-primary">Frontend Developer</span>
+                  <span className="font-label-md text-label-md text-text-secondary">Peran Terpilih</span>
+                  <span className="font-label-md text-label-md text-primary">Frontend Developer</span>
                 </div>
-                <p className="text-[11px] md:font-body-sm md:text-body-sm text-on-surface-variant mb-md md:mb-xl italic">Portfolio and Requirements attached.</p>
+                <p className="text-[11px] md:font-body-sm md:text-body-sm text-on-surface-variant mb-md md:mb-xl italic">Portofolio dan Persyaratan terlampir.</p>
                 
                 <Link 
                   to="/explore" 
                   className="w-full mt-md bg-surface-container-low text-primary border border-primary/20 font-bold text-[12px] md:font-label-md md:text-label-md py-sm md:py-md rounded-lg hover:bg-primary/10 active:scale-95 transition-all flex items-center justify-center gap-xs md:gap-sm cursor-pointer"
                 >
                   <span className="material-symbols-outlined text-[18px]">explore</span>
-                  Back to Explore
+                  Kembali ke Eksplorasi
                 </Link>
               </div>
             </div>

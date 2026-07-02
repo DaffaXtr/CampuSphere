@@ -10,7 +10,7 @@ const EventDetailPage = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-on-surface/20 to-transparent"></div>
         <div className="absolute bottom-0 left-0 w-full px-margin-mobile md:px-margin-desktop py-2xl">
           <div className="max-w-4xl">
-            <span className="inline-block px-md py-xs bg-primary-container text-on-primary-container rounded-full font-label-sm text-label-sm mb-md uppercase tracking-wider">Major Event 2026</span>
+            <span className="inline-block px-md py-xs bg-primary-container text-on-primary-container rounded-full font-label-sm text-label-sm mb-md uppercase tracking-wider">Acara Utama 2026</span>
             <h1 className="font-headline-xl text-headline-xl text-white mb-md drop-shadow-lg">Grand Annual Tech Seminar 2026</h1>
           </div>
         </div>
@@ -28,8 +28,8 @@ const EventDetailPage = () => {
                   <span className="material-symbols-outlined">calendar_today</span>
                 </div>
                 <div>
-                  <p className="font-label-sm text-label-sm text-text-secondary">Date</p>
-                  <p className="font-label-md text-label-md text-text-primary">June 25, 2026</p>
+                  <p className="font-label-sm text-label-sm text-text-secondary">Tanggal</p>
+                  <p className="font-label-md text-label-md text-text-primary">25 Juni 2026</p>
                 </div>
               </div>
               <div className="w-px h-10 bg-border hidden md:block"></div>
@@ -38,8 +38,8 @@ const EventDetailPage = () => {
                   <span className="material-symbols-outlined">schedule</span>
                 </div>
                 <div>
-                  <p className="font-label-sm text-label-sm text-text-secondary">Time</p>
-                  <p className="font-label-md text-label-md text-text-primary">09:00 AM - 04:00 PM</p>
+                  <p className="font-label-sm text-label-sm text-text-secondary">Waktu</p>
+                  <p className="font-label-md text-label-md text-text-primary">09:00 - 16:00 WIB</p>
                 </div>
               </div>
               <div className="w-px h-10 bg-border hidden md:block"></div>
@@ -48,7 +48,7 @@ const EventDetailPage = () => {
                   <span className="material-symbols-outlined">location_on</span>
                 </div>
                 <div>
-                  <p className="font-label-sm text-label-sm text-text-secondary">Location</p>
+                  <p className="font-label-sm text-label-sm text-text-secondary">Lokasi</p>
                   <p className="font-label-md text-label-md text-text-primary">Airlangga Convention Center</p>
                 </div>
               </div>
@@ -56,16 +56,16 @@ const EventDetailPage = () => {
             
             {/* Description */}
             <article className="space-y-md">
-              <h2 className="font-headline-lg text-headline-lg text-text-primary">About the Seminar</h2>
+              <h2 className="font-headline-lg text-headline-lg text-text-primary">Tentang Seminar</h2>
               <div className="font-body-lg text-body-lg text-text-secondary space-y-md leading-relaxed">
-                <p>Step into the future of innovation at the Grand Annual Tech Seminar 2026. This year's flagship event brings together the brightest minds from the global technology sector to explore the rapidly evolving landscape of artificial intelligence, sustainable computing, and digital transformation.</p>
-                <p>Featuring a series of high-impact keynote presentations from executives of global tech giants, the seminar is designed to provide actionable insights. Beyond theoretical discussions, attendees will participate in exclusive hands-on workshops focused on emerging AI trends, including generative models and ethical automation frameworks.</p>
+                <p>Melangkahlah ke masa depan inovasi di Seminar Teknologi Tahunan Terbesar 2026. Acara unggulan tahun ini mempertemukan pemikiran-pemikiran paling cemerlang dari sektor teknologi global untuk mengeksplorasi lanskap kecerdasan buatan, komputasi berkelanjutan, dan transformasi digital yang berkembang pesat.</p>
+                <p>Menampilkan serangkaian presentasi utama yang berdampak tinggi dari para eksekutif raksasa teknologi global, seminar ini dirancang untuk memberikan wawasan yang dapat ditindaklanjuti. Di luar diskusi teoritis, peserta akan berpartisipasi dalam lokakarya langsung eksklusif yang berfokus pada tren AI yang berkembang, termasuk model generatif dan kerangka kerja otomatisasi yang etis.</p>
               </div>
             </article>
             
             {/* Speakers Section */}
             <section className="space-y-xl">
-              <h2 className="font-headline-lg text-headline-lg text-text-primary">Keynote Speakers</h2>
+              <h2 className="font-headline-lg text-headline-lg text-text-primary">Pembicara Utama</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-lg">
                 {/* Speaker 1 */}
                 <div className="group text-center">
@@ -75,7 +75,7 @@ const EventDetailPage = () => {
                     </div>
                   </div>
                   <h3 className="font-headline-md text-headline-md text-text-primary">Sarah Chen</h3>
-                  <p className="font-body-md text-body-md text-text-secondary">Chief AI Architect, Google</p>
+                  <p className="font-body-md text-body-md text-text-secondary">Arsitek Utama AI, Google</p>
                 </div>
                 {/* Speaker 2 */}
                 <div className="group text-center">
@@ -85,7 +85,7 @@ const EventDetailPage = () => {
                     </div>
                   </div>
                   <h3 className="font-headline-md text-headline-md text-text-primary">David Hoffmann</h3>
-                  <p className="font-body-md text-body-md text-text-secondary">VP of Innovation, NVIDIA</p>
+                  <p className="font-body-md text-body-md text-text-secondary">VP Inovasi, NVIDIA</p>
                 </div>
                 {/* Speaker 3 */}
                 <div className="group text-center">
@@ -95,7 +95,7 @@ const EventDetailPage = () => {
                     </div>
                   </div>
                   <h3 className="font-headline-md text-headline-md text-text-primary">Elena Rodriguez</h3>
-                  <p className="font-body-md text-body-md text-text-secondary">Director of Ethics, OpenAI</p>
+                  <p className="font-body-md text-body-md text-text-secondary">Direktur Etika, OpenAI</p>
                 </div>
               </div>
             </section>
@@ -107,29 +107,29 @@ const EventDetailPage = () => {
               {/* Registration Card */}
               <div className="bg-white p-xl rounded-2xl border border-border shadow-sm">
                 <div className="flex justify-between items-center mb-lg">
-                  <span className="font-label-md text-label-md text-text-secondary">Ticket Price</span>
-                  <span className="font-headline-md text-headline-md text-success">Free for Students</span>
+                  <span className="font-label-md text-label-md text-text-secondary">Harga Tiket</span>
+                  <span className="font-headline-md text-headline-md text-success">Gratis untuk Mahasiswa</span>
                 </div>
                 <Link to="/event/1/register" className="w-full py-md bg-primary text-on-primary rounded-xl font-label-md text-label-md hover:bg-primary-hover transition-all transform active:scale-95 mb-md flex items-center justify-center gap-sm cursor-pointer">
                   <span className="material-symbols-outlined">local_activity</span>
-                  Register Ticket
+                  Daftar Tiket
                 </Link>
                 <a className="w-full py-md bg-surface text-primary border border-primary-fixed rounded-xl font-label-md text-label-md hover:bg-primary-fixed/20 transition-all flex items-center justify-center gap-sm" href="#">
                   <span className="material-symbols-outlined">calendar_add_on</span>
-                  Add to Calendar
+                  Tambah ke Kalender
                 </a>
                 <div className="mt-xl pt-lg border-t border-border">
-                  <p className="font-body-sm text-body-sm text-text-secondary mb-md">Includes: Access to all keynote sessions, lunch buffet, digital certificate, and workshop materials.</p>
+                  <p className="font-body-sm text-body-sm text-text-secondary mb-md">Termasuk: Akses ke semua sesi utama, makan siang prasmanan, sertifikat digital, dan materi lokakarya.</p>
                   <div className="flex items-center gap-sm text-warning">
                     <span className="material-symbols-outlined text-[18px]">info</span>
-                    <span className="font-label-sm text-label-sm">Limited seats available</span>
+                    <span className="font-label-sm text-label-sm">Kursi terbatas</span>
                   </div>
                 </div>
               </div>
               
               {/* Map Card */}
               <div className="bg-white p-lg rounded-2xl border border-border overflow-hidden">
-                <h4 className="font-label-md text-label-md text-text-primary mb-md">Event Location</h4>
+                <h4 className="font-label-md text-label-md text-text-primary mb-md">Lokasi Acara</h4>
                 <div className="h-48 bg-surface-container rounded-lg overflow-hidden relative">
                   <img alt="Map location of Airlangga Convention Center" className="w-full h-full object-cover grayscale opacity-50" data-location="Surabaya" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMsTiWIrME6hGEpPyZWW_j6IVdY858uETOqulg3RyXoxqhqSUBeoRuTFKD8lyswIgtYXFdyWQqiKC_wvQKNlaxo5jYyvduHPj4HVNgGP1M8q1VWXXKFfIYvXGIQnK1ShBPw6IYwRYgozcfG8iz9TUrYEWU5g29AbE56eI3CQyEmGh2HheOqsvK0YI2q03IlsvqB0ymlVQhlvhEUfoQWve_9gKx5DAJSsLD5MTWVh-Panb9LvjlXwH2CHLVMlUabXe2noTxjziSH6KN"/>
                   <div className="absolute inset-0 flex items-center justify-center">
@@ -138,7 +138,7 @@ const EventDetailPage = () => {
                     </div>
                   </div>
                 </div>
-                <p className="mt-md font-body-sm text-body-sm text-text-secondary">Kampus C UNAIR, Mulyorejo, Surabaya, East Java</p>
+                <p className="mt-md font-body-sm text-body-sm text-text-secondary">Kampus C UNAIR, Mulyorejo, Surabaya, Jawa Timur</p>
               </div>
             </div>
           </aside>

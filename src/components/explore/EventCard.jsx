@@ -46,7 +46,7 @@ const EventCard = ({ id = 1, title, subtitle, imageSrc, icon, iconColor, tags, t
             <span className="material-symbols-outlined text-[12px] md:text-body-sm">schedule</span> {timeRemaining}
           </span>
           <span className="text-primary font-label-md text-[11px] md:text-label-md flex items-center gap-1">
-            Apply <span className="material-symbols-outlined text-[12px] md:text-[14px]">arrow_forward</span>
+            Daftar <span className="material-symbols-outlined text-[12px] md:text-[14px]">arrow_forward</span>
           </span>
         </div>
       </div>

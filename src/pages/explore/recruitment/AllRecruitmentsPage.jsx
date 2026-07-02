@@ -10,9 +10,9 @@ const AllRecruitmentsPage = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const [activeDepartment, setActiveDepartment] = useState('All Positions');
-  const [activeRoleType, setActiveRoleType] = useState('All Types');
-  const [activeStatus, setActiveStatus] = useState('Any Status');
+  const [activeDepartment, setActiveDepartment] = useState('Semua Posisi');
+  const [activeRoleType, setActiveRoleType] = useState('Semua Tipe');
+  const [activeStatus, setActiveStatus] = useState('Semua Status');
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
 
   useEffect(() => {
@@ -29,11 +29,11 @@ const AllRecruitmentsPage = () => {
       imageSrc: 'https://www.risetechnical.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBN2haTHc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e8857707636a509dc4e3a4117252ed2b8e3a032d/Why%20Use%20a%20Recruitment%20Agency.webp',
       icon: 'groups',
       iconColor: 'text-primary',
-      tags: ['Engineering', 'Full-time'],
-      timeRemaining: 'Closing in 2d',
-      department: 'Engineering',
-      roleType: 'Full-time',
-      status: 'Open'
+      tags: ['Teknik', 'Penuh Waktu'],
+      timeRemaining: 'Tutup dalam 2 hari',
+      department: 'Teknik',
+      roleType: 'Penuh Waktu',
+      status: 'Buka'
     },
     {
       id: 2,
@@ -42,11 +42,11 @@ const AllRecruitmentsPage = () => {
       imageSrc: 'https://www.risetechnical.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBN2haTHc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e8857707636a509dc4e3a4117252ed2b8e3a032d/Why%20Use%20a%20Recruitment%20Agency.webp',
       icon: 'record_voice_over',
       iconColor: 'text-tertiary',
-      tags: ['Marketing', 'Part-time'],
-      timeRemaining: 'Closing in 5d',
-      department: 'Marketing',
-      roleType: 'Part-time',
-      status: 'Closing Soon'
+      tags: ['Pemasaran', 'Paruh Waktu'],
+      timeRemaining: 'Tutup dalam 5 hari',
+      department: 'Pemasaran',
+      roleType: 'Paruh Waktu',
+      status: 'Segera Tutup'
     },
     {
       id: 3,
@@ -55,11 +55,11 @@ const AllRecruitmentsPage = () => {
       imageSrc: 'https://www.risetechnical.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBN2haTHc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e8857707636a509dc4e3a4117252ed2b8e3a032d/Why%20Use%20a%20Recruitment%20Agency.webp',
       icon: 'mic',
       iconColor: 'text-warning',
-      tags: ['Media', 'Contract'],
-      timeRemaining: 'Closing in 1w',
+      tags: ['Media', 'Kontrak'],
+      timeRemaining: 'Tutup dalam 1 minggu',
       department: 'Media',
-      roleType: 'Contract',
-      status: 'Urgent'
+      roleType: 'Kontrak',
+      status: 'Mendesak'
     },
     {
       id: 4,
@@ -68,11 +68,11 @@ const AllRecruitmentsPage = () => {
       imageSrc: 'https://www.risetechnical.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBN2haTHc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e8857707636a509dc4e3a4117252ed2b8e3a032d/Why%20Use%20a%20Recruitment%20Agency.webp',
       icon: 'palette',
       iconColor: 'text-secondary',
-      tags: ['Design', 'Internship'],
-      timeRemaining: 'Closing in 3w',
-      department: 'Design',
-      roleType: 'Internship',
-      status: 'Open'
+      tags: ['Desain', 'Magang'],
+      timeRemaining: 'Tutup dalam 3 minggu',
+      department: 'Desain',
+      roleType: 'Magang',
+      status: 'Buka'
     },
     {
       id: 5,
@@ -81,11 +81,11 @@ const AllRecruitmentsPage = () => {
       imageSrc: 'https://www.risetechnical.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBN2haTHc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e8857707636a509dc4e3a4117252ed2b8e3a032d/Why%20Use%20a%20Recruitment%20Agency.webp',
       icon: 'trending_up',
       iconColor: 'text-success',
-      tags: ['Finance', 'Full-time'],
-      timeRemaining: 'Closing in 1m',
-      department: 'Finance',
-      roleType: 'Full-time',
-      status: 'Open'
+      tags: ['Keuangan', 'Penuh Waktu'],
+      timeRemaining: 'Tutup dalam 1 bulan',
+      department: 'Keuangan',
+      roleType: 'Penuh Waktu',
+      status: 'Buka'
     },
     {
       id: 6,
@@ -94,22 +94,22 @@ const AllRecruitmentsPage = () => {
       imageSrc: 'https://www.risetechnical.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBN2haTHc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e8857707636a509dc4e3a4117252ed2b8e3a032d/Why%20Use%20a%20Recruitment%20Agency.webp',
       icon: 'smart_toy',
       iconColor: 'text-primary',
-      tags: ['Engineering', 'Part-time'],
-      timeRemaining: 'Closing in 2d',
-      department: 'Engineering',
-      roleType: 'Part-time',
-      status: 'Closing Soon'
+      tags: ['Teknik', 'Paruh Waktu'],
+      timeRemaining: 'Tutup dalam 2 hari',
+      department: 'Teknik',
+      roleType: 'Paruh Waktu',
+      status: 'Segera Tutup'
     }
   ];
 
-  const departments = ['All Positions', 'Engineering', 'Design', 'Marketing', 'Media', 'Finance'];
-  const roleTypes = ['All Types', 'Full-time', 'Part-time', 'Internship', 'Contract'];
-  const statuses = ['Any Status', 'Open', 'Urgent', 'Closing Soon'];
+  const departments = ['Semua Posisi', 'Teknik', 'Desain', 'Pemasaran', 'Media', 'Keuangan'];
+  const roleTypes = ['Semua Tipe', 'Penuh Waktu', 'Paruh Waktu', 'Magang', 'Kontrak'];
+  const statuses = ['Semua Status', 'Buka', 'Mendesak', 'Segera Tutup'];
 
   const filteredRecruitments = allRecruitments.filter(item => {
-    if (activeDepartment !== 'All Positions' && item.department !== activeDepartment) return false;
-    if (activeRoleType !== 'All Types' && item.roleType !== activeRoleType) return false;
-    if (activeStatus !== 'Any Status' && item.status !== activeStatus) return false;
+    if (activeDepartment !== 'Semua Posisi' && item.department !== activeDepartment) return false;
+    if (activeRoleType !== 'Semua Tipe' && item.roleType !== activeRoleType) return false;
+    if (activeStatus !== 'Semua Status' && item.status !== activeStatus) return false;
     return true;
   });
 
@@ -120,13 +120,13 @@ const AllRecruitmentsPage = () => {
           {/* Left Content */}
           <div className="z-10 w-full md:w-3/5">
             <Breadcrumb items={[
-              { label: 'Explore', path: '/explore' },
-              { label: 'All Positions' }
+              { label: 'Eksplorasi', path: '/explore' },
+              { label: 'Semua Posisi' }
             ]} />
             
-            <h1 className="font-headline-xl text-headline-xl text-text-primary tracking-tight mt-md mb-xs">Open Positions</h1>
+            <h1 className="font-headline-xl text-headline-xl text-text-primary tracking-tight mt-md mb-xs">Posisi Terbuka</h1>
             <p className="font-body-md text-body-md text-text-secondary max-w-lg mb-lg">
-              Browse and apply for the latest recruitment opportunities<br className="hidden md:inline" /> from top student organizations.
+              Jelajahi dan lamar peluang rekrutmen terbaru<br className="hidden md:inline" /> dari organisasi mahasiswa teratas.
             </p>
 
             {/* Stat Cards - compact single row */}
@@ -137,7 +137,7 @@ const AllRecruitmentsPage = () => {
                 </div>
                 <div>
                   <h4 className="font-headline-sm text-headline-sm text-text-primary leading-none">24+</h4>
-                  <p className="font-label-sm text-label-sm text-text-secondary leading-tight">Organizations</p>
+                  <p className="font-label-sm text-label-sm text-text-secondary leading-tight">Organisasi</p>
                 </div>
               </div>
               
@@ -147,7 +147,7 @@ const AllRecruitmentsPage = () => {
                 </div>
                 <div>
                   <h4 className="font-headline-sm text-headline-sm text-text-primary leading-none">56+</h4>
-                  <p className="font-label-sm text-label-sm text-text-secondary leading-tight">Open Positions</p>
+                  <p className="font-label-sm text-label-sm text-text-secondary leading-tight">Posisi Terbuka</p>
                 </div>
               </div>
               
@@ -157,7 +157,7 @@ const AllRecruitmentsPage = () => {
                 </div>
                 <div>
                   <h4 className="font-headline-sm text-headline-sm text-text-primary leading-none">320+</h4>
-                  <p className="font-label-sm text-label-sm text-text-secondary leading-tight">Applications</p>
+                  <p className="font-label-sm text-label-sm text-text-secondary leading-tight">Lamaran</p>
                 </div>
               </div>
               
@@ -167,7 +167,7 @@ const AllRecruitmentsPage = () => {
                 </div>
                 <div>
                   <h4 className="font-headline-sm text-headline-sm text-text-primary leading-none">98%</h4>
-                  <p className="font-label-sm text-label-sm text-text-secondary leading-tight">Response Rate</p>
+                  <p className="font-label-sm text-label-sm text-text-secondary leading-tight">Tingkat Respon</p>
                 </div>
               </div>
             </div>
@@ -204,7 +204,7 @@ const AllRecruitmentsPage = () => {
         {isMobile && (
           <div className="flex flex-wrap gap-sm md:gap-lg items-end bg-surface border border-border p-sm md:p-md rounded-xl">
             <div className="flex flex-col gap-1 w-full sm:w-auto flex-1 min-w-[140px]">
-              <label className="font-label-sm text-text-secondary">Departments</label>
+              <label className="font-label-sm text-text-secondary">Departemen</label>
               <div className="relative">
                 <select 
                   value={activeDepartment} 
@@ -217,7 +217,7 @@ const AllRecruitmentsPage = () => {
               </div>
             </div>
             <div className="flex flex-col gap-1 w-full sm:w-auto flex-1 min-w-[140px]">
-              <label className="font-label-sm text-text-secondary">Role Type</label>
+              <label className="font-label-sm text-text-secondary">Tipe Peran</label>
               <div className="relative">
                 <select 
                   value={activeRoleType} 
@@ -243,16 +243,16 @@ const AllRecruitmentsPage = () => {
               </div>
             </div>
             
-            {(activeDepartment !== 'All Positions' || activeRoleType !== 'All Types' || activeStatus !== 'Any Status') && (
+            {(activeDepartment !== 'Semua Posisi' || activeRoleType !== 'Semua Tipe' || activeStatus !== 'Semua Status') && (
               <button 
                 onClick={() => {
-                  setActiveDepartment('All Positions');
-                  setActiveRoleType('All Types');
-                  setActiveStatus('Any Status');
+                  setActiveDepartment('Semua Posisi');
+                  setActiveRoleType('Semua Tipe');
+                  setActiveStatus('Semua Status');
                 }}
                 className="text-error font-label-sm hover:underline py-sm px-sm w-full sm:w-auto shrink-0 text-center"
               >
-                Clear Filters
+                Hapus Filter
               </button>
             )}
           </div>
@@ -265,25 +265,25 @@ const AllRecruitmentsPage = () => {
               <div className="flex items-center justify-between mb-lg border-b border-border pb-sm">
                 <div className="flex items-center gap-sm">
                   <span className="material-symbols-outlined text-primary">tune</span>
-                  <h2 className="font-headline-sm text-headline-sm text-text-primary">Filters</h2>
+                  <h2 className="font-headline-sm text-headline-sm text-text-primary">Filter</h2>
                 </div>
-                {(activeDepartment !== 'All Positions' || activeRoleType !== 'All Types' || activeStatus !== 'Any Status') && (
+                {(activeDepartment !== 'Semua Posisi' || activeRoleType !== 'Semua Tipe' || activeStatus !== 'Semua Status') && (
                   <button 
                     onClick={() => {
-                      setActiveDepartment('All Positions');
-                      setActiveRoleType('All Types');
-                      setActiveStatus('Any Status');
+                      setActiveDepartment('Semua Posisi');
+                      setActiveRoleType('Semua Tipe');
+                      setActiveStatus('Semua Status');
                     }}
                     className="text-primary font-label-sm hover:underline"
                   >
-                    Reset All
+                    Atur Ulang Semua
                   </button>
                 )}
               </div>
 
               {/* Department Filter */}
               <div className="mb-lg">
-                <h3 className="font-label-md text-label-md text-text-secondary uppercase tracking-wider mb-sm">Departments</h3>
+                <h3 className="font-label-md text-label-md text-text-secondary uppercase tracking-wider mb-sm">Departemen</h3>
                 <div className="flex flex-col gap-xs">
                   {departments.map(dept => (
                     <label key={dept} className="flex items-center gap-sm cursor-pointer group">
@@ -295,7 +295,7 @@ const AllRecruitmentsPage = () => {
                         onChange={() => setActiveDepartment(dept)}
                       />
                       <span className={`font-body-sm text-body-sm group-hover:text-primary transition-colors ${activeDepartment === dept ? 'text-primary font-bold' : 'text-text-primary'}`}>
-                        {dept === 'All Positions' ? 'All Departments' : dept}
+                        {dept === 'Semua Posisi' ? 'Semua Departemen' : dept}
                       </span>
                     </label>
                   ))}
@@ -304,7 +304,7 @@ const AllRecruitmentsPage = () => {
 
               {/* Role Type Filter */}
               <div className="mb-lg">
-                <h3 className="font-label-md text-label-md text-text-secondary uppercase tracking-wider mb-sm">Role Type</h3>
+                <h3 className="font-label-md text-label-md text-text-secondary uppercase tracking-wider mb-sm">Tipe Peran</h3>
                 <div className="flex flex-wrap gap-xs">
                   {roleTypes.map(type => (
                     <button 
@@ -312,7 +312,7 @@ const AllRecruitmentsPage = () => {
                       onClick={() => setActiveRoleType(type)}
                       className={`px-sm py-1 rounded-full font-label-sm text-label-sm border transition-all ${activeRoleType === type ? 'bg-primary text-on-primary border-primary' : 'bg-surface-container-low text-text-secondary border-border hover:border-primary/50'}`}
                     >
-                      {type === 'All Types' ? 'Any' : type}
+                      {type === 'Semua Tipe' ? 'Semua' : type}
                     </button>
                   ))}
                 </div>
@@ -328,7 +328,7 @@ const AllRecruitmentsPage = () => {
                       onClick={() => setActiveStatus(status)}
                       className={`px-sm py-1 rounded-full font-label-sm text-label-sm border transition-all ${activeStatus === status ? 'bg-primary text-on-primary border-primary' : 'bg-surface-container-low text-text-secondary border-border hover:border-primary/50'}`}
                     >
-                      {status === 'Any Status' ? 'Any' : status}
+                      {status === 'Semua Status' ? 'Semua' : status}
                     </button>
                   ))}
                 </div>
@@ -338,7 +338,7 @@ const AllRecruitmentsPage = () => {
               <div className="mt-xl pt-md border-t border-border">
                 <button className="w-full py-sm md:py-md bg-white border border-primary text-primary font-label-md text-label-md rounded-xl hover:bg-primary/5 transition-colors flex items-center justify-center gap-xs shadow-sm">
                   <span className="material-symbols-outlined text-primary">bookmark</span>
-                  Saved Positions
+                  Posisi Tersimpan
                 </button>
               </div>
             </div>
@@ -348,13 +348,13 @@ const AllRecruitmentsPage = () => {
         {/* Recruitment Grid */}
         <div className="flex-1">
           <div className="flex justify-between items-center mb-md">
-            <p className="font-body-sm text-body-sm text-text-secondary">Showing <span className="font-bold text-text-primary">{filteredRecruitments.length}</span> positions</p>
+            <p className="font-body-sm text-body-sm text-text-secondary">Menampilkan <span className="font-bold text-text-primary">{filteredRecruitments.length}</span> posisi</p>
             <div className="flex items-center gap-xs">
-              <span className="font-label-sm text-label-sm text-text-secondary">Sort by:</span>
+              <span className="font-label-sm text-label-sm text-text-secondary">Urutkan:</span>
               <select className="bg-transparent font-label-sm text-label-sm text-text-primary outline-none cursor-pointer border-b border-dashed border-border pb-0.5">
-                <option>Newest First</option>
-                <option>Deadline</option>
-                <option>Most Popular</option>
+                <option>Terbaru Dahulu</option>
+                <option>Tenggat Waktu</option>
+                <option>Terpopuler</option>
               </select>
             </div>
           </div>
@@ -374,30 +374,30 @@ const AllRecruitmentsPage = () => {
                     <span className="material-symbols-outlined text-primary text-3xl">send</span>
                   </div>
                   <div>
-                    <h3 className="font-headline-sm text-headline-sm text-text-primary mb-1">Don't miss your dream opportunity!</h3>
-                    <p className="font-body-md text-body-md text-text-secondary">Turn on notifications and be the first to know when new positions open.</p>
+                    <h3 className="font-headline-sm text-headline-sm text-text-primary mb-1">Jangan lewatkan kesempatan impian Anda!</h3>
+                    <p className="font-body-md text-body-md text-text-secondary">Aktifkan notifikasi dan jadilah yang pertama tahu saat ada posisi baru dibuka.</p>
                   </div>
                 </div>
                 <button className="px-xl py-md bg-primary text-on-primary font-label-lg text-label-lg rounded-xl hover:bg-primary-hover transition-colors shrink-0 flex items-center gap-sm">
                   <span className="material-symbols-outlined">notifications_active</span>
-                  Enable Notifications
+                  Aktifkan Notifikasi
                 </button>
               </div>
             </>
           ) : (
             <div className="bg-surface border border-border border-dashed rounded-xl p-3xl flex flex-col items-center justify-center text-center mt-lg">
               <span className="material-symbols-outlined text-5xl text-text-secondary mb-md">work_off</span>
-              <h3 className="font-headline-md text-headline-md text-text-primary mb-xs">No positions found</h3>
-              <p className="font-body-md text-body-md text-text-secondary max-w-sm">We couldn't find any positions matching your current filters. Try adjusting them or clearing all filters.</p>
+              <h3 className="font-headline-md text-headline-md text-text-primary mb-xs">Tidak ada posisi ditemukan</h3>
+              <p className="font-body-md text-body-md text-text-secondary max-w-sm">Kami tidak dapat menemukan posisi yang sesuai dengan filter Anda saat ini. Coba sesuaikan atau hapus semua filter.</p>
               <button 
                 onClick={() => {
-                  setActiveDepartment('All Positions');
-                  setActiveRoleType('All Types');
-                  setActiveStatus('Any Status');
+                  setActiveDepartment('Semua Posisi');
+                  setActiveRoleType('Semua Tipe');
+                  setActiveStatus('Semua Status');
                 }}
                 className="mt-lg px-xl py-sm bg-primary text-on-primary font-label-md text-label-md rounded-lg hover:bg-primary-hover transition-colors"
               >
-                Clear Filters
+                Hapus Filter
               </button>
             </div>
           )}

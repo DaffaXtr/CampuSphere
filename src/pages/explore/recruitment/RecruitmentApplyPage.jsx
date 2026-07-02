@@ -14,20 +14,20 @@ const RecruitmentApplyPage = () => {
   return (
     <div className="py-md md:py-xl px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto min-h-screen flex flex-col">
       {/* Breadcrumb & Header */}
-      <header className="mb-xl md:mb-2xl">
+      <header className="mb-2xl">
         <Breadcrumb items={[
-          { label: 'Explore', path: '/explore' },
-          { label: 'SDC Recruitment 2026', path: `/recruitment/${id || 1}` },
-          { label: 'Apply' }
+          { label: 'Eksplorasi', path: '/explore' },
+          { label: 'Student Developer Club', path: `/recruitment/${id || 1}` },
+          { label: 'Lamar' }
         ]} />
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-md mt-md">
           <div>
-            <h1 className="font-bold text-headline-md md:font-headline-xl md:text-headline-xl text-text-primary tracking-tight mb-2">Application Form</h1>
-            <p className="font-body-sm md:font-body-md md:text-body-md text-text-secondary">Take the first step to join our community of innovators.</p>
+            <h1 className="font-headline-xl text-headline-xl text-text-primary tracking-tight mb-2">Formulir Lamaran</h1>
+            <p className="font-body-md text-body-md text-text-secondary">Isi detail Anda di bawah ini untuk mengirimkan lamaran Anda ke Student Developer Club.</p>
           </div>
           <div className="flex items-center gap-2 bg-primary-fixed text-primary px-md py-1 rounded-full w-fit">
             <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>schedule</span>
-            <span className="font-label-sm text-[10px] md:text-label-sm">Closing in 10 days</span>
+            <span className="font-label-sm text-[10px] md:text-label-sm">Ditutup dalam 10 hari</span>
           </div>
         </div>
       </header>
@@ -39,53 +39,53 @@ const RecruitmentApplyPage = () => {
           <div className="bg-white border border-border rounded-xl p-md md:p-lg shadow-sm">
             {/* Steps Indicator */}
             <StepIndicator 
-              steps={['Personal Info', 'Requirements', 'Confirmation']} 
+              steps={['Informasi Pribadi', 'Akademik & Portofolio', 'Tinjau & Kirim']} 
               currentStep={1} 
               nodeBgColor="bg-white" 
             />
             
             {/* Step 1 Content */}
-            <form className="space-y-lg md:space-y-xl">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-md md:gap-lg">
-                <div className="flex flex-col gap-xs md:gap-sm">
-                  <label className="font-bold text-[12px] md:font-label-md md:text-label-md text-text-primary">Full Name</label>
-                  <input className="w-full h-10 md:h-12 px-md rounded-lg border border-border focus:border-primary outline-none focus:ring-1 focus:ring-primary transition-all text-[13px] md:font-body-md md:text-body-md" placeholder="e.g., Alex Johnson" type="text" />
+            <form className="space-y-xl mt-xl">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-lg">
+                <div className="flex flex-col gap-sm">
+                  <label className="font-label-md text-label-md text-text-primary">Nama Lengkap</label>
+                  <input className="w-full h-12 px-md rounded-lg border border-border focus:border-primary outline-none input-glow transition-all font-body-md" placeholder="misal: Alex Johnson" type="text" />
                 </div>
-                <div className="flex flex-col gap-xs md:gap-sm">
-                  <label className="font-bold text-[12px] md:font-label-md md:text-label-md text-text-primary">Student ID (NIM)</label>
-                  <input className="w-full h-10 md:h-12 px-md rounded-lg border border-border focus:border-primary outline-none focus:ring-1 focus:ring-primary transition-all text-[13px] md:font-body-md md:text-body-md" placeholder="e.g., 202610110" type="text" />
+                <div className="flex flex-col gap-sm">
+                  <label className="font-label-md text-label-md text-text-primary">Nomor Induk Mahasiswa (NIM)</label>
+                  <input className="w-full h-12 px-md rounded-lg border border-border focus:border-primary outline-none input-glow transition-all font-body-md" placeholder="misal: 202610110" type="text" />
                 </div>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-md md:gap-lg">
-                <div className="flex flex-col gap-xs md:gap-sm">
-                  <label className="font-bold text-[12px] md:font-label-md md:text-label-md text-text-primary">Major / Faculty</label>
-                  <select className="w-full h-10 md:h-12 px-md rounded-lg border border-border focus:border-primary outline-none focus:ring-1 focus:ring-primary transition-all text-[13px] md:font-body-md md:text-body-md bg-white" defaultValue="">
-                    <option disabled value="">Select your faculty</option>
-                    <option>Faculty of Computer Science</option>
-                    <option>Faculty of Engineering</option>
-                    <option>Faculty of Business</option>
-                    <option>Faculty of Arts</option>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-lg">
+                <div className="flex flex-col gap-sm">
+                  <label className="font-label-md text-label-md text-text-primary">Jurusan / Fakultas</label>
+                  <select className="w-full h-12 px-md rounded-lg border border-border focus:border-primary outline-none input-glow transition-all font-body-md bg-white" defaultValue="">
+                    <option disabled value="">Pilih fakultas Anda</option>
+                    <option>Fakultas Ilmu Komputer</option>
+                    <option>Fakultas Teknik</option>
+                    <option>Fakultas Bisnis</option>
+                    <option>Fakultas Seni</option>
                   </select>
                 </div>
-                <div className="flex flex-col gap-xs md:gap-sm">
-                  <label className="font-bold text-[12px] md:font-label-md md:text-label-md text-text-primary">Phone Number</label>
+                <div className="flex flex-col gap-sm">
+                  <label className="font-label-md text-label-md text-text-primary">Nomor Telepon</label>
                   <div className="relative">
-                    <span className="absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant text-[13px] md:text-body-md">+62</span>
-                    <input className="w-full h-10 md:h-12 pl-12 md:pl-16 pr-md rounded-lg border border-border focus:border-primary outline-none focus:ring-1 focus:ring-primary transition-all text-[13px] md:font-body-md md:text-body-md" placeholder="812 3456 7890" type="tel" />
+                    <span className="absolute left-md top-1/2 -translate-y-1/2 text-on-surface-variant">+62</span>
+                    <input className="w-full h-12 pl-16 pr-md rounded-lg border border-border focus:border-primary outline-none input-glow transition-all font-body-md" placeholder="812 3456 7890" type="tel" />
                   </div>
                 </div>
               </div>
               
-              <div className="flex flex-col gap-xs md:gap-sm">
-                <label className="font-bold text-[12px] md:font-label-md md:text-label-md text-text-primary">University Email</label>
-                <input className="w-full h-10 md:h-12 px-md rounded-lg border border-border focus:border-primary outline-none focus:ring-1 focus:ring-primary transition-all text-[13px] md:font-body-md md:text-body-md" placeholder="alex.j@university.ac.id" type="email" />
+              <div className="flex flex-col gap-sm">
+                <label className="font-label-md text-label-md text-text-primary">Email Universitas</label>
+                <input className="w-full h-12 px-md rounded-lg border border-border focus:border-primary outline-none input-glow transition-all font-body-md" placeholder="alex.j@university.ac.id" type="email" />
               </div>
               
-              <div className="p-sm md:p-md rounded-lg bg-surface flex gap-sm md:gap-md items-start">
+              <div className="p-md rounded-lg bg-surface flex gap-md items-start">
                 <input className="mt-1 rounded text-primary focus:ring-primary" id="terms" type="checkbox" />
-                <label className="text-[11px] md:font-body-sm md:text-body-sm text-text-secondary leading-relaxed" htmlFor="terms">
-                  I certify that the information provided is accurate and I understand that any false information may result in the rejection of my application.
+                <label className="font-body-sm text-body-sm text-text-secondary" htmlFor="terms">
+                  Saya menyatakan bahwa informasi yang diberikan adalah akurat dan saya menyetujui <a className="text-primary hover:underline" href="#">ketentuan lamaran</a>, termasuk pemrosesan data untuk keperluan rekrutmen.
                 </label>
               </div>
             </form>
@@ -115,26 +115,32 @@ const RecruitmentApplyPage = () => {
                   </div>
                 </div>
               </div>
-              <div className="border-t border-border pt-md md:pt-lg">
-                <div className="flex justify-between items-center mb-sm">
-                  <span className="font-bold text-[12px] md:font-label-md md:text-label-md text-text-secondary">Selected Role</span>
-                  <span className="font-bold text-[12px] md:font-label-md md:text-label-md text-text-primary">Not Selected</span>
+              <div className="border-t border-border pt-lg">
+                <div className="mb-md">
+                  <span className="font-label-md text-label-md text-text-secondary">Posisi Terpilih</span>
+                  <div className="flex items-center gap-2 mt-xs">
+                    <span className="material-symbols-outlined text-primary text-md">groups</span>
+                    <span className="font-label-md text-label-md text-text-primary font-bold">Student Developer Club</span>
+                  </div>
+                  <p className="font-body-sm text-body-sm text-text-secondary ml-7">Core Team Member</p>
                 </div>
-                <p className="text-[11px] md:font-body-sm md:text-body-sm text-on-surface-variant mb-md md:mb-xl italic">You will select your role in the next step.</p>
-                
-                <Link to={`/recruitment/${id || 1}/apply/step2`} className="w-full bg-primary text-on-primary font-bold text-[13px] md:font-label-md md:text-label-md py-sm md:py-md rounded-lg hover:bg-primary-hover active:scale-95 transition-all flex items-center justify-center gap-xs md:gap-sm">
-                  Proceed to Next Step
-                  <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+                <div className="flex justify-between items-center py-md border-y border-dashed border-border mb-lg">
+                  <span className="font-label-md text-label-md text-text-secondary">Tenggat Waktu</span>
+                  <span className="font-label-md text-label-md text-text-primary font-bold">25 Maret 2026</span>
+                </div>
+                <Link to={`/recruitment/${id || 1}/apply/step2`} className="w-full bg-primary text-on-primary font-label-md text-label-md py-md rounded-lg hover:bg-primary-hover active:scale-95 transition-all flex items-center justify-center gap-sm">
+                  Lanjutkan ke Langkah Berikutnya
+                  <span className="material-symbols-outlined">arrow_forward</span>
                 </Link>
               </div>
             </div>
           </div>
           
-          <div className="mt-md md:mt-lg p-sm md:p-md rounded-xl border border-primary bg-primary-fixed/30 flex gap-sm md:gap-md items-center">
-            <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0">
-              <span className="material-symbols-outlined text-[16px] md:text-[24px]">info</span>
+          <div className="mt-lg p-md rounded-xl border border-warning bg-warning/5 flex gap-md items-center">
+            <div className="w-10 h-10 rounded-full bg-warning/10 flex items-center justify-center text-warning shrink-0">
+              <span className="material-symbols-outlined">security</span>
             </div>
-            <p className="text-[11px] md:font-body-sm md:text-body-sm text-text-secondary leading-relaxed">Please make sure to use your active university email for further announcements.</p>
+            <p className="font-body-sm text-body-sm text-text-secondary">Informasi Anda dienkripsi secara aman dan hanya akan digunakan untuk komunikasi terkait rekrutmen.</p>
           </div>
         </div>
       </div>
