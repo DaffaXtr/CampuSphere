@@ -38,11 +38,10 @@ import AdminOrganizationsPage from './pages/admin/AdminOrganizationsPage';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/CampuSphere">
       <Layout>
         <Routes>
           <Route path="/" element={<Navigate to="/explore" replace />} />
-          <Route path="/CampuSphere/" element={<Navigate to="/explore" replace />} />
           <Route path="/explore" element={<ExplorePage />} />
           <Route path="/events" element={<AllEventsPage />} />
           <Route path="/event/:id" element={<EventDetailPage />} />
