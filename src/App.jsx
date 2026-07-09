@@ -37,8 +37,9 @@ import AdminUsersPage from './pages/admin/AdminUsersPage';
 import AdminOrganizationsPage from './pages/admin/AdminOrganizationsPage';
 
 function App() {
+  const basename = window.location.pathname.startsWith('/CampuSphere') ? '/CampuSphere' : '/';
   return (
-    <Router basename="/CampuSphere">
+    <Router basename={basename}>
       <Layout>
         <Routes>
           <Route path="/" element={<Navigate to="/explore" replace />} />
