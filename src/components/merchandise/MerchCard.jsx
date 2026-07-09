@@ -41,19 +41,19 @@ const MerchCard = ({
   return (
     <Link 
       to={`/merchandise/${id}`} 
-      className="bg-white border border-border rounded-2xl p-md hover:border-primary-blue/50 hover:shadow-md transition-all duration-300 flex flex-col gap-sm group relative cursor-pointer text-left"
+      className="bg-white border border-border rounded-2xl overflow-hidden hover:border-primary-blue/50 hover:shadow-md transition-all duration-300 flex flex-col group relative cursor-pointer text-left"
     >
       {/* Product Image Area */}
-      <div className="aspect-square overflow-hidden rounded-xl bg-surface-container-high flex items-center justify-center relative">
+      <div className="aspect-square w-full overflow-hidden bg-surface-container-high flex items-center justify-center relative">
         <img 
           alt={name} 
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+          className="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-500" 
           src={imageSrc} 
         />
 
         {/* Top-Left Tag Badge */}
         {tag && (
-          <span className={`absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full text-[9px] font-bold tracking-wider uppercase ${getTagBgColor(tag)}`}>
+          <span className={`absolute top-3 left-3 px-2.5 py-0.5 rounded-full text-[9px] font-bold tracking-wider uppercase ${getTagBgColor(tag)} z-10`}>
             {tag}
           </span>
         )}
@@ -61,7 +61,7 @@ const MerchCard = ({
         {/* Top-Right Favorite Button */}
         <button 
           onClick={handleLikeToggle}
-          className="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-white/85 hover:bg-white text-text-secondary hover:text-primary-yellow shadow-sm flex items-center justify-center transition-all"
+          className="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/85 hover:bg-white text-text-secondary hover:text-primary-yellow shadow-sm flex items-center justify-center transition-all z-10"
         >
           <span className={`material-symbols-outlined text-[18px] ${isLiked ? 'fill-primary-yellow text-primary-yellow' : 'text-text-secondary'}`}>
             favorite
@@ -70,7 +70,7 @@ const MerchCard = ({
       </div>
       
       {/* Product Details */}
-      <div className="flex flex-col flex-1 gap-1">
+      <div className="flex flex-col flex-1 p-md pt-xs gap-1">
         {/* Title */}
         <h4 className="font-bold text-sm text-text-primary line-clamp-2 group-hover:text-primary-blue transition-colors leading-snug">
           {name}

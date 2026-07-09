@@ -14,6 +14,8 @@ const AllEventsPage = () => {
   const [activeCategory, setActiveCategory] = useState('All');
   const [activePrice, setActivePrice] = useState('All');
   const [activeFormat, setActiveFormat] = useState('All');
+  const [sortBy, setSortBy] = useState('Terbaru Dahulu');
+  const [isSortOpen, setIsSortOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
 
   useEffect(() => {
@@ -31,6 +33,18 @@ const AllEventsPage = () => {
     if (activePrice !== 'All' && event.price !== activePrice) return false;
     if (activeFormat !== 'All' && event.format !== activeFormat) return false;
     return true;
+  });
+
+  const sortOptions = ['Terbaru Dahulu', 'Terlama Dahulu', 'Terpopuler'];
+
+  const sortedEvents = [...filteredEvents].sort((a, b) => {
+    if (sortBy === 'Terlama Dahulu') {
+      return a.id - b.id;
+    }
+    if (sortBy === 'Terpopuler') {
+      return (b.id % 3) - (a.id % 3);
+    }
+    return b.id - a.id; // Terbaru Dahulu
   });
 
   return (
@@ -265,22 +279,44 @@ const AllEventsPage = () => {
 
         {/* Event Grid */}
         <div className="flex-1">
-          <div className="flex justify-between items-center mb-md">
+          <div className="flex justify-between items-center mb-md relative">
             <p className="font-body-sm text-body-sm text-text-secondary">Menampilkan <span className="font-bold text-text-primary">{filteredEvents.length}</span> acara</p>
-            <div className="flex items-center gap-xs">
-              <span className="font-label-sm text-label-sm text-text-secondary">Urutkan:</span>
-              <select className="bg-transparent font-label-sm text-label-sm text-text-primary outline-none cursor-pointer border-b border-dashed border-border pb-0.5">
-                <option>Terbaru Dahulu</option>
-                <option>Terlama Dahulu</option>
-                <option>Terpopuler</option>
-              </select>
+            <div className="relative">
+              <button 
+                onClick={() => setIsSortOpen(!isSortOpen)}
+                className="flex items-center gap-xs font-label-sm text-label-sm text-text-primary bg-surface border border-border/80 px-md py-1.5 rounded-lg hover:border-primary hover:bg-surface-container-low transition-all cursor-pointer shadow-sm"
+              >
+                <span className="text-text-secondary">Urutkan:</span>
+                <span className="font-bold">{sortBy}</span>
+                <span className="material-symbols-outlined text-[16px] text-text-secondary transition-transform duration-200" style={{ transform: isSortOpen ? 'rotate(180deg)' : 'rotate(0)' }}>expand_more</span>
+              </button>
+              
+              {isSortOpen && (
+                <>
+                  <div className="fixed inset-0 z-20" onClick={() => setIsSortOpen(false)} />
+                  <div className="absolute right-0 mt-xs w-44 bg-white border border-border rounded-xl shadow-lg py-xs z-30 animate-in fade-in slide-in-from-top-1 duration-200">
+                    {sortOptions.map(option => (
+                      <button
+                        key={option}
+                        onClick={() => {
+                          setSortBy(option);
+                          setIsSortOpen(false);
+                        }}
+                        className={`w-full text-left px-md py-sm font-body-sm text-body-sm transition-colors cursor-pointer block ${sortBy === option ? 'bg-primary/8 text-primary font-bold' : 'text-text-primary hover:bg-surface'}`}
+                      >
+                        {option}
+                      </button>
+                    ))}
+                  </div>
+                </>
+              )}
             </div>
           </div>
 
-          {filteredEvents.length > 0 ? (
+          {sortedEvents.length > 0 ? (
             <>
               <div className="grid grid-cols-2 xl:grid-cols-3 gap-xs md:gap-lg">
-                {filteredEvents.map(event => (
+                {sortedEvents.map(event => (
                   <EventCard key={event.id} {...event} />
                 ))}
               </div>

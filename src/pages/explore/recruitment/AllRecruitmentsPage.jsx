@@ -13,6 +13,8 @@ const AllRecruitmentsPage = () => {
   const [activeDepartment, setActiveDepartment] = useState('Semua Posisi');
   const [activeRoleType, setActiveRoleType] = useState('Semua Tipe');
   const [activeStatus, setActiveStatus] = useState('Semua Status');
+  const [sortBy, setSortBy] = useState('Terbaru Dahulu');
+  const [isSortOpen, setIsSortOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
 
   useEffect(() => {
@@ -24,93 +26,110 @@ const AllRecruitmentsPage = () => {
   const allRecruitments = [
     {
       id: 1,
-      title: 'Google Developer Student Club',
-      subtitle: 'Core Team Member',
-      imageSrc: 'https://www.risetechnical.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBN2haTHc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e8857707636a509dc4e3a4117252ed2b8e3a032d/Why%20Use%20a%20Recruitment%20Agency.webp',
-      icon: 'groups',
+      title: 'Vocational IT Olympiad 2026',
+      subtitle: 'HIMA D4 Teknik Informatika',
+      imageSrc: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=600',
+      icon: 'code',
       iconColor: 'text-primary',
-      tags: ['Teknik', 'Penuh Waktu'],
+      tags: ['Teknik', 'Staff Divisi'],
       timeRemaining: 'Tutup dalam 2 hari',
       department: 'Teknik',
-      roleType: 'Penuh Waktu',
+      roleType: 'Staff Divisi',
       status: 'Buka'
     },
     {
       id: 2,
-      title: 'Student Executive Board',
-      subtitle: 'Head of Public Relations',
-      imageSrc: 'https://www.risetechnical.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBN2haTHc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e8857707636a509dc4e3a4117252ed2b8e3a032d/Why%20Use%20a%20Recruitment%20Agency.webp',
-      icon: 'record_voice_over',
+      title: 'Tax & Accounting Fair 2026',
+      subtitle: 'HIMA D4 Akuntansi Perpajakan',
+      imageSrc: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=600',
+      icon: 'account_balance_wallet',
       iconColor: 'text-tertiary',
-      tags: ['Pemasaran', 'Paruh Waktu'],
+      tags: ['Bisnis', 'BPH'],
       timeRemaining: 'Tutup dalam 5 hari',
-      department: 'Pemasaran',
-      roleType: 'Paruh Waktu',
+      department: 'Bisnis',
+      roleType: 'BPH',
       status: 'Segera Tutup'
     },
     {
       id: 3,
-      title: 'Campus Radio Station',
-      subtitle: 'Podcast Host / Announcer',
-      imageSrc: 'https://www.risetechnical.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBN2haTHc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e8857707636a509dc4e3a4117252ed2b8e3a032d/Why%20Use%20a%20Recruitment%20Agency.webp',
-      icon: 'mic',
+      title: 'K3 National Seminar & Safety Expo',
+      subtitle: 'HIMA D4 Keselamatan & Kesehatan Kerja',
+      imageSrc: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=600',
+      icon: 'health_and_safety',
       iconColor: 'text-warning',
-      tags: ['Media', 'Kontrak'],
+      tags: ['Kesehatan', 'Staff Divisi'],
       timeRemaining: 'Tutup dalam 1 minggu',
-      department: 'Media',
-      roleType: 'Kontrak',
+      department: 'Kesehatan',
+      roleType: 'Staff Divisi',
       status: 'Mendesak'
     },
     {
       id: 4,
-      title: 'UX Society',
-      subtitle: 'UI/UX Design Intern',
-      imageSrc: 'https://www.risetechnical.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBN2haTHc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e8857707636a509dc4e3a4117252ed2b8e3a032d/Why%20Use%20a%20Recruitment%20Agency.webp',
-      icon: 'palette',
+      title: 'Vocational Robotics Competition',
+      subtitle: 'HIMA D4 Teknologi Rekayasa Instrumentasi',
+      imageSrc: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=600',
+      icon: 'precision_manufacturing',
       iconColor: 'text-secondary',
-      tags: ['Desain', 'Magang'],
+      tags: ['Teknik', 'Volunteer'],
       timeRemaining: 'Tutup dalam 3 minggu',
-      department: 'Desain',
-      roleType: 'Magang',
+      department: 'Teknik',
+      roleType: 'Volunteer',
       status: 'Buka'
     },
     {
       id: 5,
-      title: 'Investment Club',
-      subtitle: 'Financial Analyst',
-      imageSrc: 'https://www.risetechnical.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBN2haTHc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e8857707636a509dc4e3a4117252ed2b8e3a032d/Why%20Use%20a%20Recruitment%20Agency.webp',
-      icon: 'trending_up',
+      title: 'Vocational Tourism Festival',
+      subtitle: 'HIMA D4 Destinasi Pariwisata',
+      imageSrc: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=600',
+      icon: 'travel_explore',
       iconColor: 'text-success',
-      tags: ['Keuangan', 'Penuh Waktu'],
+      tags: ['Bisnis', 'Staff Divisi'],
       timeRemaining: 'Tutup dalam 1 bulan',
-      department: 'Keuangan',
-      roleType: 'Penuh Waktu',
+      department: 'Bisnis',
+      roleType: 'Staff Divisi',
       status: 'Buka'
     },
     {
       id: 6,
-      title: 'Robotics Club',
-      subtitle: 'Software Engineer',
-      imageSrc: 'https://www.risetechnical.com/rails/active_storage/blobs/proxy/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBBN2haTHc9PSIsImV4cCI6bnVsbCwicHVyIjoiYmxvYl9pZCJ9fQ==--e8857707636a509dc4e3a4117252ed2b8e3a032d/Why%20Use%20a%20Recruitment%20Agency.webp',
-      icon: 'smart_toy',
+      title: 'Animal Health Care & Rabies Camp',
+      subtitle: 'HIMA D3 Paramedik Veteriner',
+      imageSrc: 'https://images.unsplash.com/photo-1584132967334-10e028bd69f7?q=80&w=600',
+      icon: 'pets',
       iconColor: 'text-primary',
-      tags: ['Teknik', 'Paruh Waktu'],
+      tags: ['Kesehatan', 'Volunteer'],
       timeRemaining: 'Tutup dalam 2 hari',
-      department: 'Teknik',
-      roleType: 'Paruh Waktu',
+      department: 'Kesehatan',
+      roleType: 'Volunteer',
       status: 'Segera Tutup'
     }
   ];
 
-  const departments = ['Semua Posisi', 'Teknik', 'Desain', 'Pemasaran', 'Media', 'Keuangan'];
-  const roleTypes = ['Semua Tipe', 'Penuh Waktu', 'Paruh Waktu', 'Magang', 'Kontrak'];
+  const departments = ['Semua Posisi', 'Teknik', 'Bisnis', 'Kesehatan'];
+  const roleTypes = ['Semua Tipe', 'BPH', 'Staff Divisi', 'Volunteer', 'Magang'];
   const statuses = ['Semua Status', 'Buka', 'Mendesak', 'Segera Tutup'];
+  const sortOptions = ['Terbaru Dahulu', 'Tenggat Waktu', 'Terpopuler'];
 
   const filteredRecruitments = allRecruitments.filter(item => {
     if (activeDepartment !== 'Semua Posisi' && item.department !== activeDepartment) return false;
     if (activeRoleType !== 'Semua Tipe' && item.roleType !== activeRoleType) return false;
     if (activeStatus !== 'Semua Status' && item.status !== activeStatus) return false;
     return true;
+  });
+
+  const sortedRecruitments = [...filteredRecruitments].sort((a, b) => {
+    if (sortBy === 'Tenggat Waktu') {
+      const getDays = (str) => {
+        if (str.includes('hari')) return parseInt(str.match(/\d+/)[0]);
+        if (str.includes('minggu')) return parseInt(str.match(/\d+/)[0]) * 7;
+        if (str.includes('bulan')) return parseInt(str.match(/\d+/)[0]) * 30;
+        return 999;
+      };
+      return getDays(a.timeRemaining) - getDays(b.timeRemaining);
+    }
+    if (sortBy === 'Terpopuler') {
+      return b.id - a.id;
+    }
+    return a.id - b.id; // Terbaru Dahulu (default)
   });
 
   return (
@@ -347,22 +366,44 @@ const AllRecruitmentsPage = () => {
 
         {/* Recruitment Grid */}
         <div className="flex-1">
-          <div className="flex justify-between items-center mb-md">
+          <div className="flex justify-between items-center mb-md relative">
             <p className="font-body-sm text-body-sm text-text-secondary">Menampilkan <span className="font-bold text-text-primary">{filteredRecruitments.length}</span> posisi</p>
-            <div className="flex items-center gap-xs">
-              <span className="font-label-sm text-label-sm text-text-secondary">Urutkan:</span>
-              <select className="bg-transparent font-label-sm text-label-sm text-text-primary outline-none cursor-pointer border-b border-dashed border-border pb-0.5">
-                <option>Terbaru Dahulu</option>
-                <option>Tenggat Waktu</option>
-                <option>Terpopuler</option>
-              </select>
+            <div className="relative">
+              <button 
+                onClick={() => setIsSortOpen(!isSortOpen)}
+                className="flex items-center gap-xs font-label-sm text-label-sm text-text-primary bg-surface border border-border/80 px-md py-1.5 rounded-lg hover:border-primary hover:bg-surface-container-low transition-all cursor-pointer shadow-sm"
+              >
+                <span className="text-text-secondary">Urutkan:</span>
+                <span className="font-bold">{sortBy}</span>
+                <span className="material-symbols-outlined text-[16px] text-text-secondary transition-transform duration-200" style={{ transform: isSortOpen ? 'rotate(180deg)' : 'rotate(0)' }}>expand_more</span>
+              </button>
+              
+              {isSortOpen && (
+                <>
+                  <div className="fixed inset-0 z-20" onClick={() => setIsSortOpen(false)} />
+                  <div className="absolute right-0 mt-xs w-44 bg-white border border-border rounded-xl shadow-lg py-xs z-30 animate-in fade-in slide-in-from-top-1 duration-200">
+                    {sortOptions.map(option => (
+                      <button
+                        key={option}
+                        onClick={() => {
+                          setSortBy(option);
+                          setIsSortOpen(false);
+                        }}
+                        className={`w-full text-left px-md py-sm font-body-sm text-body-sm transition-colors cursor-pointer block ${sortBy === option ? 'bg-primary/8 text-primary font-bold' : 'text-text-primary hover:bg-surface'}`}
+                      >
+                        {option}
+                      </button>
+                    ))}
+                  </div>
+                </>
+              )}
             </div>
           </div>
 
-          {filteredRecruitments.length > 0 ? (
+          {sortedRecruitments.length > 0 ? (
             <>
               <div className="grid grid-cols-2 xl:grid-cols-3 gap-xs md:gap-lg">
-                {filteredRecruitments.map(item => (
+                {sortedRecruitments.map(item => (
                   <RecruitmentCard key={item.id} {...item} />
                 ))}
               </div>

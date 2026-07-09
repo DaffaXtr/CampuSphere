@@ -2,60 +2,60 @@
 export const featuredEvents = [
   {
     id: 1,
-    title: "Seminar Teknologi Tahunan Terbesar 2026",
+    title: "Sistem Informasi Creative Expo 2026",
     date: "25 Juni 2026",
     location: "Airlangga Convention Center",
-    description: "Bergabunglah dengan kami untuk acara teknologi paling dinanti tahun ini. Menampilkan pembicara utama dari raksasa teknologi global dan lokakarya langsung.",
-    imageSrc: "https://lh3.googleusercontent.com/aida-public/AB6AXuC64WMTr1JSH3GzEwX4GKeKQczvQs2ldcPlNHLjb6cRcHhz53NhyeJXEZQbgBxVyA9OQH6SnTFPv02xTZFaNExMV5MLFNyrsBEOpFdmhdnqDeZzsvJM-HsexhahfzR6IC3sdU-79bQ4PmBzHzowwNDZ_dXWgnBgzB1b00_tmej0gaCk2jE8Lbv-n4ax-5aSEDj0PqOHt4BRPIaXUg2dzrnL_YYeEN_bmiol-TvqFR8LGjJOROb79fsdHTSXAYgHzM9qjSv0aod08dly",
+    description: "Pameran proyek sistem informasi kreatif, showcase software inovatif, dan talkshow teknologi dari HIMA D3 Sistem Informasi.",
+    imageSrc: "https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=1000&auto=format&fit=crop",
     participants: "1.000+"
   },
   {
     id: 2,
-    tag: "KTT",
-    title: "Global Leadership Summit",
+    tag: "SEMINAR",
+    title: "Banking & Financial Technology Seminar",
     date: "10 Agustus 2026",
-    location: "Auditorium Utama",
-    description: "KTT dua hari yang mempertemukan para pemimpin mahasiswa dan eksekutif untuk mendiskusikan kepemimpinan.",
-    imageSrc: "https://lh3.googleusercontent.com/aida-public/AB6AXuAIqB2zFNt3nWkgMg_bYksFuB8HPv8bMuFHeCmEmOYfGrX7_zkwhSUlAZvuVLxLYFQCNvG2lT9rLYTc1AhCwNHIzT4s4cUokwmUzqG9dLr4nyN7B1kTChLzu4k4KyN0Rsj3Hwl9wsARgFSdZRiYdhUYfJqSW0asuJivvL-gFlMWL6nJ3fYwxolOG9Gs4RpYZqb_V_DFPpJcDLMOjJnSZDASzxrIRJ_eYQR-JLYkTZcF5arwc7ftYOAyi04YJ7eJt40facEw3U78Ckm2"
+    location: "Auditorium Utama Kampus B",
+    description: "Seminar nasional persembahan HIMA D4 Manajemen Perbankan dan Keuangan tentang masa depan industri FinTech dan literasi keuangan digital.",
+    imageSrc: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1000&auto=format&fit=crop"
   },
   {
     id: 3,
-    tag: "KARIR",
-    title: "Campus Career Fair",
+    tag: "WORKSHOP",
+    title: "Workshop Kesehatan & Kesejahteraan Hewan",
     date: "5 September 2026",
     location: "Student Center Plaza",
-    description: "Terhubung dengan lebih dari 100 perusahaan teratas yang merekrut untuk posisi magang dan penuh waktu.",
-    imageSrc: "https://lh3.googleusercontent.com/aida/AP1WRLsAuycVp7COkXQOKwJJ6oX5uW6flNZFbj0jl1yuY8Wp7vsYADcYQcFcEEQK_A-G-LnmPn7_bCMbNXU5kQxl2u8VjtnyinjU1V6oU_fVBkggNshHeKx10xE2bRCpRz3zU7oww7v2y6qM2BN_vM7uUnOEEiBqFfcSESN6eq5WmHkG2_ent737jdvci7Nr0h-I8sZ4mjWmVu8otIocLscQXejb21tnLc31jC5YCPHLh5JUrwmFOpF3nCk0-6w"
+    description: "Workshop penanganan klinis, pemeriksaan hewan gratis, dan edukasi kesejahteraan hewan peliharaan dari HIMA D3 Paramedik Veteriner.",
+    imageSrc: "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?q=80&w=1000&auto=format&fit=crop"
   }
 ];
 
 // ===== Upcoming Events (ExplorePage event cards) =====
 export const upcomingEvents = [
   {
-    title: "HIMA Teknik Informatika",
-    subtitle: "Penerimaan Staf 2026",
-    imageSrc: "https://lh3.googleusercontent.com/aida-public/AB6AXuAIqB2zFNt3nWkgMg_bYksFuB8HPv8bMuFHeCmEmOYfGrX7_zkwhSUlAZvuVLxLYFQCNvG2lT9rLYTc1AhCwNHIzT4s4cUokwmUzqG9dLr4nyN7B1kTChLzu4k4KyN0Rsj3Hwl9wsARgFSdZRiYdhUYfJqSW0asuJivvL-gFlMWL6nJ3fYwxolOG9Gs4RpYZqb_V_DFPpJcDLMOjJnSZDASzxrIRJ_eYQR-JLYkTZcF5arwc7ftYOAyi04YJ7eJt40facEw3U78Ckm2",
-    icon: "groups",
+    title: "Workshop Web Development & UI/UX",
+    subtitle: "HIMA D4 Teknik Informatika",
+    imageSrc: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=600&auto=format&fit=crop",
+    icon: "computer",
     iconColor: "text-primary",
-    tags: ["Front-End", "UI/UX"],
+    tags: ["IT", "Workshop"],
     timeRemaining: "Tutup dalam 2 hari"
   },
   {
-    title: "Campus Startup Hub",
-    subtitle: "Project Lead & Ops",
-    imageSrc: "https://lh3.googleusercontent.com/aida/AP1WRLsAuycVp7COkXQOKwJJ6oX5uW6flNZFbj0jl1yuY8Wp7vsYADcYQcFcEEQK_A-G-LnmPn7_bCMbNXU5kQxl2u8VjtnyinjU1V6oU_fVBkggNshHeKx10xE2bRCpRz3zU7oww7v2y6qM2BN_vM7uUnOEEiBqFfcSESN6eq5WmHkG2_ent737jdvci7Nr0h-I8sZ4mjWmVu8otIocLscQXejb21tnLc31jC5YCPHLh5JUrwmFOpF3nCk0-6w",
-    icon: "rocket_launch",
+    title: "Webinar Strategi Perpajakan UMKM",
+    subtitle: "HIMA D4 Akuntansi Perpajakan",
+    imageSrc: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=600&auto=format&fit=crop",
+    icon: "co_present",
     iconColor: "text-tertiary",
-    tags: ["Operations", "Kepemimpinan"],
+    tags: ["Bisnis", "Webinar"],
     timeRemaining: "Tutup dalam 5 hari"
   },
   {
-    title: "Creative Arts Club",
-    subtitle: "Desainer Kreatif",
-    imageSrc: "https://lh3.googleusercontent.com/aida-public/AB6AXuCTbHz_veFBGzKf__BPngKfjfx6cmeYGCKwyaNBGHnfdvxKinxchVqrPmiywjOU85owbpVQQLfn8CLWCMbidgd2F-zLFv39dbAy4vsVxR2eQd6MOFOPbWjTzcXJUCAJWj6611ECrA7er9SeeOppyBqymtDFM29_rW_jHlHC_2y6qLYgzbGkYD1-_NeZpWkIg3iGhy1NJtzwc2GvQ2KZlLYc1YhEnfgTFzAH0z6-rTs1HujlZnUOVev1m4UYt1-6IX3V4wiDqrvdLE7c",
-    icon: "palette",
+    title: "Seminar Nasional K3",
+    subtitle: "HIMA D4 Keselamatan & Kesehatan Kerja",
+    imageSrc: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=600&auto=format&fit=crop",
+    icon: "health_and_safety",
     iconColor: "text-warning",
-    tags: ["Desain", "Fotografi"],
+    tags: ["Kesehatan", "Seminar"],
     timeRemaining: "Tutup dalam 7 hari"
   }
 ];
@@ -65,28 +65,28 @@ export const recruitments = [
   {
     title: "HIMA Teknik Informatika",
     subtitle: "Penerimaan Staf 2026",
-    imageSrc: "https://lh3.googleusercontent.com/aida/AP1WRLthEoxDQAXNGxGycOnjvX9UF4mGwOoEDgyNlUK0iSsJ5Ei9-sWaUITGC-sGsiivfAjxxhV_WOHoOPwe23_nKQhFY6PnRn0578_OgGCsmDM8H521ip9bS4ZiIC4_eaKjAesK-ajaUjE4BfaRUVHnYA8GYhpdkW7Dg1q1X2hgLh7ksP-m8cu7iUd78qp83HZS67hPvX6YVnrXhVaAL-lwpooizzNJOKLcsMrVCDRdXQh4FIfp14-zExsjELDB",
+    imageSrc: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=600&auto=format&fit=crop",
     icon: "groups",
     iconColor: "text-primary",
     tags: ["Front-End", "UI/UX"],
     timeRemaining: "2 hari"
   },
   {
-    title: "Campus Startup Hub",
-    subtitle: "Project Lead & Ops",
-    imageSrc: "https://lh3.googleusercontent.com/aida/AP1WRLtndD7xiKSfw-r5BQLLWT1uWya9XLneM_557l3ZKr88Jk1hmf8CeSiezea0ccTwrvcs11ClXtUIwveJxoNbyuuF1gWgaCR5mqdbIbE2-qoq2lP5C5pVok0SnsyGo0kuQiu-yq84GUtiGP9ypninRx_nKEEef5AqIibTZolPKhZAIuLyKPdnNbskxkG8X2kdkY6MTNjzRikJupFiQI78XG21DNSL1ck0QVJXvW7cBku0li37NNGuFmzhFlDn",
+    title: "Laskar Vokasi 2026",
+    subtitle: "Penerimaan Staff dan Koordinator",
+    imageSrc: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=600&auto=format&fit=crop",
     icon: "rocket_launch",
     iconColor: "text-tertiary",
-    tags: ["Operations", "Kepemimpinan"],
+    tags: ["Staff", "Koordinator"],
     timeRemaining: "5 hari"
   },
   {
-    title: "Creative Arts Club",
-    subtitle: "Desainer Kreatif",
-    imageSrc: "https://lh3.googleusercontent.com/aida-public/AB6AXuCTbHz_veFBGzKf__BPngKfjfx6cmeYGCKwyaNBGHnfdvxKinxchVqrPmiywjOU85owbpVQQLfn8CLWCMbidgd2F-zLFv39dbAy4vsVxR2eQd6MOFOPbWjTzcXJUCAJWj6611ECrA7er9SeeOppyBqymtDFM29_rW_jHlHC_2y6qLYgzbGkYD1-_NeZpWkIg3iGhy1NJtzwc2GvQ2KZlLYc1YhEnfgTFzAH0z6-rTs1HujlZnUOVev1m4UYt1-6IX3V4wiDqrvdLE7c",
-    icon: "palette",
+    title: "Kepanitiaan PKKMB UNAIR 2026",
+    subtitle: "Open Recruitment Panitia",
+    imageSrc: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=600&auto=format&fit=crop",
+    icon: "event",
     iconColor: "text-warning",
-    tags: ["Desain", "Fotografi"],
+    tags: ["Acara", "Humas", "Pubdok"],
     timeRemaining: "7 hari"
   }
 ];
@@ -95,25 +95,25 @@ export const recruitments = [
 export const allEvents = [
   {
     id: 1,
-    title: 'Global Tech Conference 2026',
-    subtitle: 'Acara teknologi terbesar tahun ini yang menampilkan para pemimpin industri.',
-    imageSrc: 'https://cdn.dribbble.com/userupload/37598126/file/original-3438643257cc8efed09a4f5e328100a1.jpg?resize=752x&vertical=center',
-    icon: 'campaign',
+    title: 'Web Development & UI/UX Bootcamp 2026',
+    subtitle: 'Bootcamp intensif pemrograman web dan desain antarmuka dari HIMA D4 Teknik Informatika.',
+    imageSrc: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=600',
+    icon: 'code',
     iconColor: 'text-primary',
-    tags: ['Teknologi', 'Konferensi', 'Networking'],
+    tags: ['Teknologi', 'Bootcamp', 'Informatika'],
     timeRemaining: 'Mulai dalam 5 hari',
     category: 'Teknologi',
     price: 'Berbayar',
-    format: 'Offline'
+    format: 'Online'
   },
   {
     id: 2,
-    title: 'UI/UX Masterclass: Designing for Gen Z',
-    subtitle: 'Pelajari tren terbaru dalam desain UI/UX dengan proyek langsung.',
-    imageSrc: 'https://cdn.dribbble.com/userupload/37598126/file/original-3438643257cc8efed09a4f5e328100a1.jpg?resize=752x&vertical=center',
+    title: 'Interactive Design & Prototyping Workshop',
+    subtitle: 'Lokakarya pembuatan prototype interaktif aplikasi mobile dari HIMA D3 Sistem Informasi.',
+    imageSrc: 'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?q=80&w=600',
     icon: 'palette',
     iconColor: 'text-secondary',
-    tags: ['Desain', 'Lokakarya'],
+    tags: ['Desain', 'Lokakarya', 'Sistem Informasi'],
     timeRemaining: 'Mulai dalam 2 minggu',
     category: 'Desain',
     price: 'Gratis',
@@ -121,12 +121,12 @@ export const allEvents = [
   },
   {
     id: 3,
-    title: 'Startup Pitch Battle 2026',
-    subtitle: 'Saksikan para wirausahawan ambisius mempresentasikan ide-ide mereka kepada investor.',
-    imageSrc: 'https://cdn.dribbble.com/userupload/37598126/file/original-3438643257cc8efed09a4f5e328100a1.jpg?resize=752x&vertical=center',
+    title: 'Tax & Financial Youth Conference 2026',
+    subtitle: 'Kompetisi presentasi studi kasus perpajakan dan keuangan nasional oleh HIMA D4 Akuntansi Perpajakan.',
+    imageSrc: 'https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=600',
     icon: 'rocket_launch',
     iconColor: 'text-tertiary',
-    tags: ['Bisnis', 'Kompetisi'],
+    tags: ['Bisnis', 'Kompetisi', 'Perpajakan'],
     timeRemaining: 'Mulai besok',
     category: 'Bisnis',
     price: 'Gratis',
@@ -134,12 +134,12 @@ export const allEvents = [
   },
   {
     id: 4,
-    title: 'Introduction to Cloud Computing',
-    subtitle: 'Sesi ramah pemula tentang AWS, Google Cloud, dan Azure.',
-    imageSrc: 'https://cdn.dribbble.com/userupload/37598126/file/original-3438643257cc8efed09a4f5e328100a1.jpg?resize=752x&vertical=center',
+    title: 'Cloud Computing Infrastructure Workshop',
+    subtitle: 'Seminar dan praktik deployment arsitektur cloud server menggunakan AWS dari HIMA D4 Teknik Informatika.',
+    imageSrc: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=600',
     icon: 'cloud',
     iconColor: 'text-primary',
-    tags: ['Teknologi', 'Seminar'],
+    tags: ['Teknologi', 'Workshop', 'Cloud'],
     timeRemaining: 'Mulai dalam 3 hari',
     category: 'Teknologi',
     price: 'Gratis',
@@ -147,12 +147,12 @@ export const allEvents = [
   },
   {
     id: 5,
-    title: 'Digital Marketing Strategies for 2026',
-    subtitle: 'Maksimalkan jangkauan Anda dengan algoritma media sosial terbaru.',
-    imageSrc: 'https://cdn.dribbble.com/userupload/37598126/file/original-3438643257cc8efed09a4f5e328100a1.jpg?resize=752x&vertical=center',
+    title: 'Financial Technology & Digital Banking Summit',
+    subtitle: 'KTT yang membahas perkembangan inovasi perbankan digital dan teknologi finansial dari HIMA D4 Manajemen Perbankan dan Keuangan.',
+    imageSrc: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=600',
     icon: 'trending_up',
     iconColor: 'text-success',
-    tags: ['Bisnis', 'Pemasaran'],
+    tags: ['Bisnis', 'Fintech', 'Perbankan'],
     timeRemaining: 'Mulai dalam 1 bulan',
     category: 'Bisnis',
     price: 'Berbayar',
@@ -160,12 +160,12 @@ export const allEvents = [
   },
   {
     id: 6,
-    title: 'Campus E-Sports Tournament',
-    subtitle: 'Bersainglah dengan tim-tim terbaik di kampus untuk memperebutkan hadiah utama.',
-    imageSrc: 'https://cdn.dribbble.com/userupload/37598126/file/original-3438643257cc8efed09a4f5e328100a1.jpg?resize=752x&vertical=center',
-    icon: 'sports_esports',
+    title: 'Futsal League Vocational Cup 2026',
+    subtitle: 'Turnamen futsal antar program studi lingkup Fakultas Vokasi yang diselenggarakan oleh HIMA Paramedik Veteriner.',
+    imageSrc: 'https://images.unsplash.com/photo-1575361204480-aadea25e6e68?q=80&w=600',
+    icon: 'sports_soccer',
     iconColor: 'text-warning',
-    tags: ['Olahraga', 'Gaming'],
+    tags: ['Olahraga', 'Turnamen', 'Futsal'],
     timeRemaining: 'Mulai dalam 2 minggu',
     category: 'Olahraga',
     price: 'Gratis',

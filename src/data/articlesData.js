@@ -248,7 +248,7 @@ export const articles = [
     category: 'Akademik',
     date: '15 Mei 2026',
     readTime: '5 mnt baca',
-    image: 'https://images.unsplash.com/photo-1523050854058-8df90110c476?q=80&w=800&auto=format&fit=crop',
+    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop',
     tags: ['MBKM', 'Akademik', 'Kampus Merdeka'],
     views: 2800,
     likes: 0,
