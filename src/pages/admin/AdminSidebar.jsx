@@ -1,8 +1,14 @@
 import { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 const AdminSidebar = () => {
+  const navigate = useNavigate();
   const [isMobileOpen, setIsMobileOpen] = useState(false);
+
+  const handleLogout = () => {
+    localStorage.removeItem('isAdminLoggedIn');
+    navigate('/explore', { replace: true });
+  };
 
   useEffect(() => {
     const handleToggle = () => setIsMobileOpen((prev) => !prev);
@@ -50,10 +56,6 @@ const AdminSidebar = () => {
       {/* Sticky Logo Header */}
       <div className="w-full p-6 pb-4 flex items-center justify-between shrink-0 bg-white z-10 border-b border-border/40">
         <div className="flex items-center gap-3">
-          {/* Logo C */}
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#0F52BA] text-white font-bold text-2xl shadow-sm shrink-0">
-            C
-          </div>
           <div>
             <h2 className="font-bold text-base text-[#0F52BA] leading-none tracking-wide">CAMPUSPHERE</h2>
             <p className="text-[11px] font-semibold text-text-secondary mt-1">Admin Fakultas</p>
@@ -114,6 +116,16 @@ const AdminSidebar = () => {
               ))}
             </div>
           ))}
+          {/* Logout Button */}
+          <div className="pt-2 border-t border-border/40">
+            <button
+              onClick={handleLogout}
+              className="flex items-center gap-3 px-3 py-2.5 rounded-xl border border-transparent text-red-600 hover:text-red-700 hover:bg-red-50 hover:border-red-100 transition-all duration-200 text-left w-full font-semibold cursor-pointer"
+            >
+              <span className="material-symbols-outlined text-[20px]">logout</span>
+              <span className="text-sm">Keluar Akun</span>
+            </button>
+          </div>
         </div>
       </div>
 

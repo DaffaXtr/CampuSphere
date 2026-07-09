@@ -111,6 +111,9 @@ const Header = () => {
                 <Link to="/settings" className={`px-4 py-2 text-body-sm transition-colors flex items-center gap-2 ${location.pathname === '/settings' ? 'bg-primary-blue/10 text-primary-blue font-bold' : 'text-on-surface-variant hover:bg-surface-container hover:text-primary-blue'}`} onClick={() => setIsProfileDropdownOpen(false)}>
                   <span className="material-symbols-outlined text-[18px]">settings</span> Settings
                 </Link>
+                <Link to="/admin" className={`px-4 py-2 text-body-sm transition-colors flex items-center gap-2 ${location.pathname.startsWith('/admin') ? 'bg-primary-blue/10 text-primary-blue font-bold' : 'text-on-surface-variant hover:bg-surface-container hover:text-primary-blue'}`} onClick={() => setIsProfileDropdownOpen(false)}>
+                  <span className="material-symbols-outlined text-[18px]">admin_panel_settings</span> Login Admin
+                </Link>
                 <div className="border-t border-border my-1"></div>
                 <button className="px-4 py-2 text-left text-body-sm text-error hover:bg-surface-container transition-colors flex items-center gap-2">
                   <span className="material-symbols-outlined text-[18px]">logout</span> Logout

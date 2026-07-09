@@ -35,6 +35,13 @@ import AdminTransactionsPage from './pages/admin/AdminTransactionsPage';
 import AdminFinancialReportPage from './pages/admin/AdminFinancialReportPage';
 import AdminUsersPage from './pages/admin/AdminUsersPage';
 import AdminOrganizationsPage from './pages/admin/AdminOrganizationsPage';
+import AdminLoginPage from './pages/admin/AdminLoginPage';
+
+// Protected route component for admin pages
+const AdminRoute = ({ children }) => {
+  const isLoggedIn = localStorage.getItem('isAdminLoggedIn') === 'true';
+  return isLoggedIn ? children : <Navigate to="/admin/login" replace />;
+};
 
 function App() {
   const basename = window.location.pathname.startsWith('/CampuSphere') ? '/CampuSphere' : '/';
@@ -69,14 +76,15 @@ function App() {
           <Route path="/article" element={<ArticlePage />} />
           <Route path="/article/:id" element={<ArticleDetailPage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/admin" element={<AdminDashboard />} />
-          <Route path="/admin/articles" element={<AdminArticlesPage />} />
-          <Route path="/admin/events" element={<AdminEventsPage />} />
-          <Route path="/admin/merchandise" element={<AdminMerchandisePage />} />
-          <Route path="/admin/transactions" element={<AdminTransactionsPage />} />
-          <Route path="/admin/financial-report" element={<AdminFinancialReportPage />} />
-          <Route path="/admin/users" element={<AdminUsersPage />} />
-          <Route path="/admin/organizations" element={<AdminOrganizationsPage />} />
+          <Route path="/admin/login" element={<AdminLoginPage />} />
+          <Route path="/admin" element={<AdminRoute><AdminDashboard /></AdminRoute>} />
+          <Route path="/admin/articles" element={<AdminRoute><AdminArticlesPage /></AdminRoute>} />
+          <Route path="/admin/events" element={<AdminRoute><AdminEventsPage /></AdminRoute>} />
+          <Route path="/admin/merchandise" element={<AdminRoute><AdminMerchandisePage /></AdminRoute>} />
+          <Route path="/admin/transactions" element={<AdminRoute><AdminTransactionsPage /></AdminRoute>} />
+          <Route path="/admin/financial-report" element={<AdminRoute><AdminFinancialReportPage /></AdminRoute>} />
+          <Route path="/admin/users" element={<AdminRoute><AdminUsersPage /></AdminRoute>} />
+          <Route path="/admin/organizations" element={<AdminRoute><AdminOrganizationsPage /></AdminRoute>} />
         </Routes>
       </Layout>
     </Router>
