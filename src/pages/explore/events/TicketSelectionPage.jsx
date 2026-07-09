@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import Breadcrumb from '../../../components/common/Breadcrumb';
 import StepIndicator from '../../../components/common/StepIndicator';
 
 const TicketSelectionPage = () => {
-  const navigate = useNavigate();
   const location = useLocation();
   const eventData = location.state?.eventData;
   const [selectedTicket, setSelectedTicket] = useState(null);

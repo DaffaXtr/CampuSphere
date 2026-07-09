@@ -115,9 +115,13 @@ const Header = () => {
                   <span className="material-symbols-outlined text-[18px]">admin_panel_settings</span> Login Admin
                 </Link>
                 <div className="border-t border-border my-1"></div>
-                <button className="px-4 py-2 text-left text-body-sm text-error hover:bg-surface-container transition-colors flex items-center gap-2">
+                <a 
+                  href="https://exuberant-types-035517.framer.app/" 
+                  className="px-4 py-2 text-left text-body-sm text-error hover:bg-surface-container transition-colors flex items-center gap-2"
+                  onClick={() => setIsProfileDropdownOpen(false)}
+                >
                   <span className="material-symbols-outlined text-[18px]">logout</span> Logout
-                </button>
+                </a>
               </div>
             )}
           </div>
